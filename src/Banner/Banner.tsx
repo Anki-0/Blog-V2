@@ -16,8 +16,8 @@ export default function Banner(): JSX.Element {
         <Image
           src='/images/banner-pic.webp'
           alt='Banner_Pic'
-          width={450}
-          height={450}
+          width={1086}
+          height={1082}
           layout='responsive'
           quality={50}
         />

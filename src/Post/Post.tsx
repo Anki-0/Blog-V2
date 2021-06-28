@@ -3,6 +3,7 @@ import Image from 'next/image';
 import React from 'react';
 
 import * as S from '../../styles/Post';
+
 const Post = (): JSX.Element => {
   return (
     <S.Post>
@@ -28,13 +29,14 @@ const Post = (): JSX.Element => {
         <S.Post_Content>
           <S.Post_Title>
             <h2 className='post__title'>
-              Customize webpack config of React App created with Create-react-app
+              Integrating an Image Upload System into a React app with Node.js, Express.js and
+              Multer
             </h2>
           </S.Post_Title>
           <S.Post_Demo>
             <h3 className='demo'>
-              It was Saturday night hanging around to solve the issue of “ReferenceError: legacyLib
-              is not defined” in my React+Typescript app. I was…
+              In this blog post, I’m going to walkthrough integrating an image upload system into a
+              react app. I wanted to make this walkthrough because…`
             </h3>
           </S.Post_Demo>
           <S.Post_Meta>

@@ -5,32 +5,9 @@ export const PageCenter = styled.div`
   margin: 0 auto;
   padding: 4.4rem;
 
-  .test {
-    display: flex;
-
-    & > .posts {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: 4.8rem;
-    }
-    & > .side {
-      width: 60rem;
-      margin-left: 2rem;
-      background-color: #e2e2e2;
-      @media only screen and (max-width: ${1173 / 16}em) {
-        width: 55rem;
-      }
-      @media only screen and (max-width: ${1023 / 16}em) {
-        width: 33rem;
-      }
-      @media only screen and (max-width: ${1000 / 16}em) {
-        display: none;
-        cursor: none;
-        pointer-events: none;
-      }
-    }
+  & > hr {
+    background: ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgba(60, 63, 70, .15)')};
+    height: 0.1rem;
   }
 
   @media only screen and (max-width: ${1023 / 16}em) {

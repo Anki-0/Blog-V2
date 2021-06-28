@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
+import { rotate } from './Animation/Animaion';
 
 /**(Toggle True) = SM Sidebar
  * &&
@@ -32,7 +33,7 @@ export const Sidebar = styled.div`
     height: calc(100vh - 8rem);
     padding: 0 0 6.4rem;
   }
-`
+`;
 
 export const Top = styled.div`
   position: absolute;
@@ -48,7 +49,7 @@ export const Top = styled.div`
   @media only screen and (max-width: 767px) {
     display: none;
   }
-`
+`;
 export const Logo = styled.div`
   display: ${({ theme }) => (theme.toggle ? 'none' : '')};
   margin-right: 3.5rem;
@@ -57,7 +58,7 @@ export const Logo = styled.div`
   .logo {
     fill: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : '#363636')};
   }
-`
+`;
 export const Burger = styled.div`
   flex-shrink: 0;
   width: 32px;
@@ -78,7 +79,7 @@ export const Burger = styled.div`
       background: ${({ theme }) => theme.colors.light.purple};
     }
   }
-`
+`;
 
 export const Wrapper = styled.div`
   max-height: 100%;
@@ -89,7 +90,7 @@ export const Wrapper = styled.div`
   @media only screen and (max-width: 767px) {
     padding: 20px 20px 32px;
   }
-`
+`;
 export const Inner = styled.div`
   width: ${({ theme }) => (theme.toggle ? '5.6rem' : '21.6rem')};
   overflow: hidden;
@@ -98,7 +99,7 @@ export const Inner = styled.div`
   @media only screen and (max-width: 767px) {
     width: 100%;
   }
-`
+`;
 export const Group = styled.div`
   position: relative;
   margin-bottom: 30px;
@@ -119,7 +120,7 @@ export const Group = styled.div`
     margin-bottom: 20px;
     padding-bottom: 15px;
   }
-`
+`;
 export const Caption = styled.div`
   margin-bottom: 15px;
   padding-left: 20px;
@@ -134,7 +135,7 @@ export const Caption = styled.div`
   & > span {
     display: ${({ theme }) => (theme.toggle ? 'none' : '')};
   }
-`
+`;
 export const menu = styled.div`
   .items {
     display: -webkit-box;
@@ -174,7 +175,7 @@ export const menu = styled.div`
       }
     }
   }
-`
+`;
 export const SidebarIcon = styled.div`
   display: flex;
 
@@ -188,16 +189,17 @@ export const SidebarIcon = styled.div`
   padding: ${({ theme }) => (theme.toggle ? '0rem' : '0 0 0 .4rem')};
 
   transition: all 0.25s;
+
   & > svg {
     fill: ${({ theme }) => theme.colors.light.graylight};
     font-size: 2rem;
   }
-`
+`;
 export const SidebarText = styled.div`
   margin-right: auto;
   padding-right: 10px;
   transition: margin 0.25s;
-`
+`;
 export const Bottom = styled.div`
   position: absolute;
   left: 0;
@@ -216,7 +218,7 @@ export const Bottom = styled.div`
     justify-content: flex-start;
     left: 7rem;
   }
-`
+`;
 export const ThemeSwitch = styled.div`
   display: inline-block;
   position: relative;
@@ -224,7 +226,7 @@ export const ThemeSwitch = styled.div`
   cursor: pointer;
   font-size: 0;
   transition: opacity 0.25s;
-`
+`;
 
 export const Box = styled.div`
   position: relative;
@@ -256,15 +258,22 @@ export const Box = styled.div`
     background: #1875e1;
     transition: all 0.25s;
   }
-`
+`;
 export const Icon = styled.div`
   position: absolute;
   top: 50%;
   left: ${({ theme }) => (theme.toggle ? '-1.2rem' : '-5.8rem')};
   transform: translateY(-50%);
   font-size: 0;
+  transition: all 0.5s;
+
+  & > .icon {
+    animation: ${({ theme }) => (theme.isDark ? rotate : rotate)} 1s;
+    animation-fill-mode: both;
+  }
+
   & > .icon {
     font-size: 2.8rem;
     fill: ${({ theme }) => theme.colors.light.green};
   }
-`
+`;

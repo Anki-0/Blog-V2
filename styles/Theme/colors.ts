@@ -14,7 +14,7 @@ export const colors: theme = {
     purplelight: '#CFC8FF',
     text: '#11142D',
     graydark: '#545863',
-    graymd: '#808191',
+    graymd: '#757575',
     graylight: '#B2B3BD',
     orange: '#FF754C',
     pink: '#FFA2C0',

@@ -18,9 +18,10 @@ export const GlobalStyle = createGlobalStyle<DefaultTheme>`
   }
 
   body {
-    min-width: 375px;
-    font-family: 'Inter', sans-serif;
-    font-size: 1.4rem;
+    /* min-width: 375px; */
+    font-family: 'Raleway', sans-serif;
+    font-size: 62.5%;
+    /* font-size: 1.4rem; */
     line-height: ${20 / 14};
     color:${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)}; ;
     background-color: ${({ theme }) =>

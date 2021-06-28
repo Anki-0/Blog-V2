@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Header = styled.div`
   position: fixed;
@@ -22,7 +22,7 @@ export const Header = styled.div`
     height: 80px;
     padding: 0 24px;
   }
-`
+`;
 export const HeaderBurger = styled.button`
   display: none;
   flex-shrink: 0;
@@ -60,7 +60,7 @@ export const HeaderBurger = styled.button`
       transform: ${({ theme }) => (!theme.toggle ? 'translateY(-4px) rotate(-45deg)' : '')};
     }
   }
-`
+`;
 
 export const HeaderBrowse = styled.div`
   position: relative;
@@ -77,7 +77,7 @@ export const HeaderBrowse = styled.div`
   @media only screen and (max-width: ${767 / 16}em) {
     display: none;
   }
-`
+`;
 export const HeaderHead = styled.div`
   position: relative;
   display: -webkit-box;
@@ -90,6 +90,7 @@ export const HeaderHead = styled.div`
   cursor: pointer;
   color: ${({ theme }) => theme.colors.light.graylight};
   transition: color 0.25s;
+  font-size: 1.3rem;
 
   &:hover {
     color: ${({ theme }) => theme.colors.light.purple};
@@ -117,7 +118,7 @@ export const HeaderHead = styled.div`
     height: 0.6rem;
     fill: ${({ theme }) => theme.colors.light.graylight};
   }
-`
+`;
 export const HeaderBody = styled.div`
   position: absolute;
   visibility: hidden;
@@ -125,6 +126,6 @@ export const HeaderBody = styled.div`
   -webkit-transition: all 0.25s;
   -o-transition: all 0.25s;
   transition: all 0.25s;
-`
-export const StarIcon = styled.div``
-export const BrowseText = styled.div``
+`;
+export const StarIcon = styled.div``;
+export const BrowseText = styled.div``;

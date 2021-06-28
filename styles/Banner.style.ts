@@ -8,20 +8,27 @@ export const Banner = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0.69));
+  background: ${({ theme }) =>
+    theme.isDark
+      ? 'linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0.69))'
+      : 'linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0))'};
   box-shadow: inset 0 -1px 0 0 ${({ theme }) => (theme.isDark ? 'rgba(228, 228, 228, .1)' : theme.colors.light.border)};
-  backdrop-filter: blur(8px);
+  backdrop-filter: ${({ theme }) => (theme.isDark ? 'blur(8px)' : 'blur(0px)')};
   overflow: hidden;
 
   .heading {
     font-size: 7rem;
   }
 `;
-export const BannerConetent = styled.div``;
+export const BannerConetent = styled.div`
+  .subHeading {
+    font-size: 2rem;
+  }
+`;
 export const BannerImage = styled.div`
   position: absolute;
   z-index: -1;
-  top: 0;
-  right: 5rem;
-  width: 70rem;
+  top: 0rem;
+  right: 4rem;
+  width: 53rem;
 `;

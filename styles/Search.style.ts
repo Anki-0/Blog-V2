@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const SearchFrom = styled.form`
   position: relative;
@@ -13,7 +13,7 @@ export const SearchFrom = styled.form`
   @media only screen and (max-width: ${767 / 16}em) {
     display: none !important;
   }
-`
+`;
 export const SearchInput = styled.input`
   width: 100%;
   height: 2.4rem;
@@ -23,7 +23,7 @@ export const SearchInput = styled.input`
   font-size: 1.4rem;
   font-weight: 600;
   color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.text)};
-`
+`;
 export const SearchBtn = styled.button`
   position: absolute;
   top: 0;
@@ -41,4 +41,4 @@ export const SearchBtn = styled.button`
     transition: fill 0.25s;
     fill: ${({ theme }) => theme.colors.light.graylight};
   }
-`
+`;

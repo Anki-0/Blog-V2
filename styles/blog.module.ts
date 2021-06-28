@@ -5,6 +5,7 @@ export const Head = styled.div`
   align-items: center;
   justify-content: space-between;
   margin-bottom: 4rem;
+  margin-top: 5.6rem;
 
   .head {
     font-size: 2.5rem;
@@ -41,3 +42,81 @@ export const FieldSelect = styled.select`
   cursor: pointer;
 `;
 export const SelectOptions = styled.option``;
+export const Container = styled.div`
+  display: flex;
+`;
+export const Posts = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4.8rem;
+`;
+export const Sidebar = styled.div`
+  max-width: 36.6rem;
+  min-width: 24.1rem;
+
+  /* padding: 0 5.6rem; */
+
+  margin-left: 5.6rem;
+  background-color: rgb(226 226 226 / 0%);
+  @media only screen and (max-width: ${1173 / 16}em) {
+    width: 33rem;
+    /* padding: 0 4rem; */
+    margin-left: 4rem;
+  }
+  @media only screen and (max-width: ${1023 / 16}em) {
+    /* padding: 0 3rem; */
+    margin-left: 3rem;
+  }
+  @media only screen and (max-width: ${1000 / 16}em) {
+    display: none;
+    cursor: none;
+    pointer-events: none;
+  }
+`;
+
+export const Recommended = styled.div`
+  padding-bottom: 4rem;
+  border-bottom: 1px solid
+    ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgb(60,63,70,.15)')};
+
+  & > p {
+    line-height: 18px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)};
+  }
+`;
+export const Tags = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+`;
+export const WhoToFollow = styled.div`
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid
+    ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgba(60,63,70,.15)')};
+  & > p {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)};
+  }
+`;
+export const SidebarFooter = styled.div`
+  padding: 2.4rem 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 1rem;
+
+  .footerItems {
+    margin-right: 2.6rem;
+    margin-bottom: 0.8rem;
+    font-size: 1.3rem;
+  }
+`;
