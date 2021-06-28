@@ -2,31 +2,31 @@
 import 'styled-components';
 
 type common = {
-  readonly bl: string;
-  readonly wh: string;
-  readonly purple: string;
-  readonly purplelight: string;
-  readonly text: string;
-  readonly graydark: string;
-  readonly graymd: string;
-  readonly graylight: string;
-  readonly orange: string;
-  readonly pink: string;
-  readonly pinklight: string;
-  readonly yellow: string;
-  readonly yellowlight: string;
-  readonly blue: string;
-  readonly bluelight: string;
-  readonly bluemd: string;
-  readonly bluedark: string;
-  readonly border: string;
-  readonly borderlight: string;
-  readonly green: string;
-  readonly link: string;
+  bl: string;
+  wh: string;
+  purple: string;
+  purplelight: string;
+  text: string;
+  graydark: string;
+  graymd: string;
+  graylight: string;
+  orange: string;
+  pink: string;
+  pinklight: string;
+  yellow: string;
+  yellowlight: string;
+  blue: string;
+  bluelight: string;
+  bluemd: string;
+  bluedark: string;
+  border: string;
+  borderlight: string;
+  green: string;
+  link: string;
 };
 type dark = {
-  readonly dark: string;
-  readonly dark1: string;
+  dark: string;
+  dark1: string;
 };
 
 declare module 'styled-components' {

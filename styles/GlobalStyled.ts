@@ -1,6 +1,6 @@
-import { createGlobalStyle, DefaultTheme } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyle = createGlobalStyle<DefaultTheme>`
+export const GlobalStyle = createGlobalStyle`
 
 *,
   *::before,
