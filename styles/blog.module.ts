@@ -10,18 +10,22 @@ export const Head = styled.div`
   .head {
     font-size: 2.5rem;
   }
-  @media only screen and (max-width: ${767 / 16}em) {
+  @media only screen and (max-width: 767px) {
+    display: block;
+    margin-bottom: 24px;
+  }
+  /* @media only screen and (max-width: ${767 / 16}em) {
     flex-direction: column;
     align-items: flex-start;
-  }
+  } */
 `;
 
 export const Sorting = styled.div`
   min-width: 235px;
   margin-left: 30px;
+  margin: auto 0;
   @media only screen and (max-width: ${767 / 16}em) {
     margin: 2rem 0 0 0;
-    color: red;
   }
 `;
 export const FieldWrap = styled.div``;
@@ -44,6 +48,7 @@ export const FieldSelect = styled.select`
 export const SelectOptions = styled.option``;
 export const Container = styled.div`
   display: flex;
+  justify-content: center;
 `;
 export const Posts = styled.div`
   display: flex;

@@ -14,7 +14,7 @@ export const Sidebar = styled.div`
   backdrop-filter: blur(12px);
 
   width: ${({ theme }) => (theme.toggle ? '9.6rem' : '25.6rem')};
-  height: 100vh;
+  height: 100%;
   padding: 9.6rem 0 7.2rem;
   overflow: hidden;
   box-shadow: inset -1px 0 0 0 ${({ theme }) => (theme.isDark ? theme.colors.dark.dark1 : theme.colors.light.border)};
@@ -30,7 +30,7 @@ export const Sidebar = styled.div`
   @media only screen and (max-width: ${767 / 16}em) {
     top: 8rem;
     width: 100%;
-    height: calc(100vh - 8rem);
+    height: calc(100% - 9rem);
     padding: 0 0 6.4rem;
   }
 `;
@@ -45,7 +45,7 @@ export const Top = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 96px;
+  height: 9.6rem;
   @media only screen and (max-width: 767px) {
     display: none;
   }
@@ -61,8 +61,8 @@ export const Logo = styled.div`
 `;
 export const Burger = styled.div`
   flex-shrink: 0;
-  width: 32px;
-  height: 32px;
+  width: 3.2rem;
+  height: 3.2rem;
   font-size: 0;
   cursor: pointer;
   &::after,
@@ -71,9 +71,9 @@ export const Burger = styled.div`
     display: inline-block;
     border-radius: 1px;
     background: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.bl)};
-    width: 32px;
-    height: 2px;
-    margin: 3px auto;
+    width: 3.2rem;
+    height: 0.2rem;
+    margin: 0.3rem auto;
     transition: all 0.25s;
     &:hover {
       background: ${({ theme }) => theme.colors.light.purple};
@@ -83,12 +83,12 @@ export const Burger = styled.div`
 
 export const Wrapper = styled.div`
   max-height: 100%;
-  padding: 0 20px 35px;
+  padding: 0 2rem 3.5rem;
   overflow-y: auto;
   scrollbar-width: none;
 
-  @media only screen and (max-width: 767px) {
-    padding: 20px 20px 32px;
+  @media only screen and (max-width: (767 / 16)em) {
+    padding: 2rem 2rem 3.2rem;
   }
 `;
 export const Inner = styled.div`
@@ -96,14 +96,14 @@ export const Inner = styled.div`
   overflow: hidden;
   transition: all 0.25s;
 
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: (767 / 16)em) {
     width: 100%;
   }
 `;
 export const Group = styled.div`
   position: relative;
-  margin-bottom: 30px;
-  padding-bottom: 25px;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem.5rem;
 
   &::before {
     content: '';
@@ -116,14 +116,14 @@ export const Group = styled.div`
       theme.isDark ? 'rgba(228,228,228, 0.1)' : theme.colors.light.border};
   }
 
-  @media only screen and (max-width: 767px) {
-    margin-bottom: 20px;
-    padding-bottom: 15px;
+  @media only screen and (max-width: (767 / 16)em) {
+    margin-bottom: 2rem;
+    padding-bottom: 1%.5rem;
   }
 `;
 export const Caption = styled.div`
-  margin-bottom: 15px;
-  padding-left: 20px;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
   white-space: nowrap;
   color: #808191;
   transition: padding 0.25s;
@@ -143,18 +143,18 @@ export const menu = styled.div`
     display: flex;
 
     align-items: center;
-    height: 56px;
+    height: 5.6rem;
     //padding-right: 20px;
-    border-radius: 12px;
+    border-radius: 1.2rem;
     background: transparent;
     white-space: nowrap;
-    font-size: 14px;
+    font-size: 1.4rem;
     font-weight: 600;
     color: ${({ theme }) => theme.colors.light.graydark};
 
     &:hover {
       background-color: #293249;
-      box-shadow: 3px 5px 20px 0 rgb(0 0 0 / 12%);
+      box-shadow: 3px 5px 20px 0 rgb(0, 0, 0, 0.12);
       transition: all 0.25s;
       color: ${({ theme }) => theme.colors.light.wh};
       svg {
@@ -197,7 +197,7 @@ export const SidebarIcon = styled.div`
 `;
 export const SidebarText = styled.div`
   margin-right: auto;
-  padding-right: 10px;
+  padding-right: 1rem;
   transition: margin 0.25s;
 `;
 export const Bottom = styled.div`
@@ -208,13 +208,13 @@ export const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 72px;
-  padding: 0 42px 0 40px;
+  height: 7.2rem;
+  padding: 0 4.2rem 0 4rem;
   box-shadow: inset 0px 1px 0px rgb(0 0 0 / 5%);
   transition: padding 0.25s;
-  @media only screen and (max-width: 767px) {
-    height: 64px;
-    padding-right: 40px;
+  @media only screen and (max-width: (767 / 16)em) {
+    height: 6.4rem;
+    padding-right: 4rem;
     justify-content: flex-start;
     left: 7rem;
   }
@@ -231,11 +231,11 @@ export const ThemeSwitch = styled.div`
 export const Box = styled.div`
   position: relative;
   display: block;
-  width: 64px;
-  height: 24px;
+  width: 6.4rem;
+  height: 2rem.4rem;
   background: ${({ theme }) =>
     theme.isDark ? 'rgba(240, 243, 246, 0.1)' : 'rgb(227, 227, 227, .5)'};
-  border-radius: 16px;
+  border-radius: 1.6rem;
   transition: all 0.25s;
   display: ${({ theme }) => (theme.toggle ? 'none' : '')};
 

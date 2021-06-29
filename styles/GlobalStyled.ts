@@ -15,14 +15,15 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     font-size: 62.5%;
+    zoom: 90%!important;
+    @media only screen and (max-width: ${1200 / 16}em) {
+      font-size: 50%;
+  }
   }
 
   body {
     /* min-width: 375px; */
-    font-family: 'Raleway', sans-serif;
-    font-size: 62.5%;
-    /* font-size: 1.4rem; */
-    line-height: ${20 / 14};
+    font-family: 'Montserrat', sans-serif, Arial, sans-serif;
     color:${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)}; ;
     background-color: ${({ theme }) =>
       theme.isDark ? theme.colors.dark.dark1 : theme.colors.light.wh};

@@ -1,8 +1,12 @@
 import styled from 'styled-components';
 
 export const TrendingWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   position: relative;
-  margin: 4rem 2rem;
+  margin: 4rem auto;
+  max-width: 119.2rem;
 `;
 export const TrendingHeading_Wrapper = styled.div`
   margin-bottom: 1.6rem;
@@ -31,10 +35,10 @@ export const TrendingMain_Wrapper = styled.div`
   position: relative;
   margin-top: 4rem;
   grid-template-columns: repeat(auto-fit, minmax(28.6rem, 1fr));
-  gap: 3.2rem;
+  gap: 5.2rem 3.2rem;
 
   @media only screen and (max-width: ${691 / 16}em) {
-    gap: 2rem;
+    gap: 4.2rem 3.2rem;
   }
 `;
 export const TrendingPost = styled.div`

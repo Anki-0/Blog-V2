@@ -12,10 +12,11 @@ export const Post_Wrapper = styled.div`
 export const Post_Author = styled.div`
   display: flex;
   gap: 1rem;
-  margin-bottom: 0.8rem;
+  align-items: center;
+  margin-bottom: 1rem;
   cursor: pointer;
   .author__img {
-    width: 2rem;
+    width: 2.5rem;
   }
   & > p {
     font-size: 1.3rem;
@@ -29,14 +30,15 @@ export const Post_Content = styled.div`
 `;
 export const Post_Title = styled.div`
   cursor: pointer;
+  margin-bottom: 1rem;
 
   h2 {
     font-size: 2.2rem;
-    line-height: 28px;
     letter-spacing: 0;
     font-weight: 800;
+    line-height: 2.7rem;
     /* max-height: 56px; */
-    width: 96%;
+    /* width: 96%; */
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
@@ -47,6 +49,9 @@ export const Post_Title = styled.div`
     }
     @media only screen and (max-width: ${766 / 16}em) {
       font-size: 1.6rem;
+    }
+    @media only screen and (max-width: ${727.98 / 16}em) {
+      font-weight: 700;
     }
   }
 `;
@@ -61,7 +66,7 @@ export const Post_Demo = styled.div`
     font-weight: 500;
     font-size: 1.6rem;
     margin-top: 0.4rem;
-    color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.graymd)};
+    color: ${({ theme }) => (theme.isDark ? '#e0e0e0' : theme.colors.light.graymd)};
     @media only screen and (max-width: ${727.98 / 16}em) {
       display: none;
       pointer-events: none;
@@ -92,7 +97,7 @@ export const Post_Image = styled.a`
   }
 `;
 export const Post_Meta = styled.div`
-  margin-top: 0.8rem;
+  margin-top: 1rem;
   color: #b2b3bd;
   font-size: 1.3rem;
   font-weight: 300;
