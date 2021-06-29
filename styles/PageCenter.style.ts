@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const PageCenter = styled.div`
   /* max-width: 134.4rem; */
   margin: 0 auto;
-  padding: 4.4rem;
+  padding: 4.4rem 6rem;
 
   & > hr {
     background: ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgba(60, 63, 70, .15)')};

@@ -6,11 +6,15 @@ export const TrendingWrapper = styled.div`
   justify-content: center;
   position: relative;
   margin: 4rem auto;
-  max-width: 119.2rem;
+  max-width: 147.2rem;
 `;
 export const TrendingHeading_Wrapper = styled.div`
   margin-bottom: 1.6rem;
   display: flex;
+  @media only screen and (min-width: ${1600 / 16}em) {
+    max-width: 180.5rem;
+    margin: 5.6rem auto;
+  }
 `;
 export const TrendingLogo = styled.div`
   content: '';

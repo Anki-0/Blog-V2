@@ -10,14 +10,14 @@ export const Head = styled.div`
   .head {
     font-size: 2.5rem;
   }
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: ${767 / 16}em) {
     display: block;
     margin-bottom: 24px;
   }
-  /* @media only screen and (max-width: ${767 / 16}em) {
-    flex-direction: column;
-    align-items: flex-start;
-  } */
+  @media only screen and (min-width: ${1440 / 16}em) {
+    max-width: 180.5rem;
+    margin: 5.6rem auto;
+  }
 `;
 
 export const Sorting = styled.div`

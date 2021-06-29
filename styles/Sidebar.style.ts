@@ -30,7 +30,7 @@ export const Sidebar = styled.div`
   @media only screen and (max-width: ${767 / 16}em) {
     top: 8rem;
     width: 100%;
-    height: calc(100% - 9rem);
+    height: calc(100% - 8rem);
     padding: 0 0 6.4rem;
   }
 `;
@@ -87,7 +87,7 @@ export const Wrapper = styled.div`
   overflow-y: auto;
   scrollbar-width: none;
 
-  @media only screen and (max-width: (767 / 16)em) {
+  @media only screen and (max-width: ${767 / 16}em) {
     padding: 2rem 2rem 3.2rem;
   }
 `;
@@ -96,7 +96,7 @@ export const Inner = styled.div`
   overflow: hidden;
   transition: all 0.25s;
 
-  @media only screen and (max-width: (767 / 16)em) {
+  @media only screen and (max-width: ${767 / 16}em) {
     width: 100%;
   }
 `;
@@ -116,7 +116,7 @@ export const Group = styled.div`
       theme.isDark ? 'rgba(228,228,228, 0.1)' : theme.colors.light.border};
   }
 
-  @media only screen and (max-width: (767 / 16)em) {
+  @media only screen and (max-width: ${767 / 16}em) {
     margin-bottom: 2rem;
     padding-bottom: 1%.5rem;
   }
@@ -125,7 +125,7 @@ export const Caption = styled.div`
   margin-bottom: 1.5rem;
   padding-left: 2rem;
   white-space: nowrap;
-  color: #808191;
+  color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)};
   transition: padding 0.25s;
   font-size: 1.2rem;
 
@@ -150,7 +150,7 @@ export const menu = styled.div`
     white-space: nowrap;
     font-size: 1.4rem;
     font-weight: 600;
-    color: ${({ theme }) => theme.colors.light.graydark};
+    color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.graydark)};
 
     &:hover {
       background-color: #293249;
@@ -212,7 +212,7 @@ export const Bottom = styled.div`
   padding: 0 4.2rem 0 4rem;
   box-shadow: inset 0px 1px 0px rgb(0 0 0 / 5%);
   transition: padding 0.25s;
-  @media only screen and (max-width: (767 / 16)em) {
+  @media only screen and (max-width: ${767 / 16}em) {
     height: 6.4rem;
     padding-right: 4rem;
     justify-content: flex-start;

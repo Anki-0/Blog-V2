@@ -24,6 +24,10 @@ export const BannerConetent = styled.div`
   .subHeading {
     font-size: 2rem;
   }
+  @media only screen and (max-width: ${768 / 16}em) {
+    text-align: center;
+    margin: auto;
+  }
 `;
 export const BannerImage = styled.div`
   position: absolute;

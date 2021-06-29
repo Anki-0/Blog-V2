@@ -4,9 +4,9 @@ import { Post_Author, Post_Meta, Post_Date } from '../../styles/Post';
 import Link from 'next/link';
 import Image from 'next/image';
 
-type props = { Number: string };
+type props = { Number: string; authorImg: string };
 
-export default function TrendingPost({ Number }: props): JSX.Element {
+export default function TrendingPost({ Number, authorImg }: props): JSX.Element {
   return (
     <S.TrendingPost>
       <S.PostNumber>
@@ -18,7 +18,7 @@ export default function TrendingPost({ Number }: props): JSX.Element {
             <a>
               <div className='author__img'>
                 <Image
-                  src='/images/banner-pic.webp'
+                  src={authorImg}
                   alt='Banner_Pic'
                   width={1086}
                   height={1082}

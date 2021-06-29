@@ -4,7 +4,12 @@ import React from 'react';
 
 import * as S from '../../styles/Post';
 
-const Post = (): JSX.Element => {
+type props = {
+  authorImg: string;
+  postImg: string;
+};
+
+const Post = ({ authorImg, postImg }: props): JSX.Element => {
   return (
     <S.Post>
       <S.Post_Wrapper>
@@ -13,8 +18,8 @@ const Post = (): JSX.Element => {
             <a>
               <div className='author__img'>
                 <Image
-                  src='/images/banner-pic.webp'
-                  alt='Banner_Pic'
+                  src={authorImg}
+                  alt='Author Image'
                   width={20}
                   height={20}
                   layout='responsive'
@@ -46,13 +51,7 @@ const Post = (): JSX.Element => {
       </S.Post_Wrapper>
       <S.Post_Image>
         <div>
-          <Image
-            className='img'
-            src='/images/test.png'
-            alt='Banner_Pic'
-            layout='fill'
-            objectFit='fill'
-          />
+          <Image className='img' src={postImg} alt='Banner_Pic' layout='fill' objectFit='fill' />
         </div>
       </S.Post_Image>
     </S.Post>
