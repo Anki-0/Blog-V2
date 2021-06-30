@@ -51,20 +51,30 @@ export const Top = styled.div`
   }
 `;
 export const Logo = styled.div`
-  display: ${({ theme }) => (theme.toggle ? 'none' : '')};
+  display: ${({ theme }) => (theme.toggle ? 'none !important' : '')};
   margin-right: 3.5rem;
   width: 10.7rem;
-
+  & > h2 {
+    font-size: 2.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   .logo {
     fill: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : '#363636')};
   }
 `;
 export const Burger = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
   flex-shrink: 0;
   width: 3.2rem;
   height: 3.2rem;
   font-size: 0;
   cursor: pointer;
+
   &::after,
   &::before {
     content: '';
@@ -192,7 +202,7 @@ export const SidebarIcon = styled.div`
 
   & > svg {
     fill: ${({ theme }) => theme.colors.light.graylight};
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 `;
 export const SidebarText = styled.div`

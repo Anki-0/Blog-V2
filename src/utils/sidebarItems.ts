@@ -1,8 +1,8 @@
-import { ExitToApp, LocalOfferRounded } from '@material-ui/icons';
+import { ExitToApp, LocalOfferRounded, YouTube, PostAddRounded } from '@material-ui/icons';
 
 export const sidebarItems = [
-  { title: 'Posts', url: '/blog', icon: ExitToApp },
-  { title: 'Video Lessons', url: '/', icon: ExitToApp },
+  { title: 'Write Post', url: '/', icon: PostAddRounded },
+  { title: 'YouTube', url: '/', icon: YouTube },
   { title: 'Tags', url: '/', icon: LocalOfferRounded },
-  { title: 'Login', url: '/login', icon: ExitToApp }
+  { title: 'Login', url: '/', icon: ExitToApp }
 ];

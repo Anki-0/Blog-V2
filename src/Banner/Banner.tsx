@@ -3,13 +3,18 @@ import Image from 'next/image';
 
 import * as S from '../../styles/Banner.style';
 
-export default function Banner(): JSX.Element {
+interface props {
+  heading: string;
+  subHeading: string;
+}
+
+export default function Banner({ heading, subHeading }: props): JSX.Element {
   return (
-    <>
+    <div style={{ position: 'relative', overflow: 'hidden' }}>
       <S.Banner>
         <S.BannerConetent>
-          <h1 className='heading'>Blog</h1>
-          <h2 className='subHeading'>Keep up-to-date with Dev Community</h2>
+          <h1 className='heading'>{heading}</h1>
+          <h2 className='subHeading'>{subHeading}</h2>
         </S.BannerConetent>
       </S.Banner>
       <S.BannerImage>
@@ -22,6 +27,6 @@ export default function Banner(): JSX.Element {
           quality={50}
         />
       </S.BannerImage>
-    </>
+    </div>
   );
 }

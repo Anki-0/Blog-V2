@@ -8,6 +8,8 @@ import Sidebar from '../src/Sidebar/Sidebar';
 
 import { SidebarToggleProvider } from '../src/Context/SidebarToggleContext';
 import { ThemeTogglerProvider } from '../src/Context/ThemeTogglerContext';
+import { HeaderMenuToggleProvider } from '../src/Context/HeaderMenuTogglwContext';
+import PageWrapper from '../src/HOC/PageWrapper';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   return (
@@ -15,20 +17,24 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <Head>
         <meta name='viewport' content='width=device-width, initial-scale=1.0' />
       </Head>
-      <ThemeTogglerProvider>
-        <SidebarToggleProvider>
-          <ThemeHoc>
-            <GlobalStyle />
-            <div className='page'>
-              <Sidebar />
-              <div className='page__wrapper'>
-                <Header />
-                <Component {...pageProps} />
+      <HeaderMenuToggleProvider>
+        <ThemeTogglerProvider>
+          <SidebarToggleProvider>
+            <ThemeHoc>
+              <GlobalStyle />
+              <div className='page'>
+                <Sidebar />
+                <PageWrapper>
+                  <>
+                    <Header />
+                    <Component {...pageProps} />
+                  </>
+                </PageWrapper>
               </div>
-            </div>
-          </ThemeHoc>
-        </SidebarToggleProvider>
-      </ThemeTogglerProvider>
+            </ThemeHoc>
+          </SidebarToggleProvider>
+        </ThemeTogglerProvider>
+      </HeaderMenuToggleProvider>
     </>
   );
 }

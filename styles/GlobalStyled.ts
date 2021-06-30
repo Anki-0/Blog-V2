@@ -16,9 +16,9 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     font-size: 62.5%;
     zoom: 90%!important;
-    @media only screen and (max-width: ${1200 / 16}em) {
+    /* @media only screen and (max-width: ${1200 / 16}em) {
       font-size: 50%;
-  }
+      } */
   }
 
   body {
@@ -56,14 +56,14 @@ export const GlobalStyle = createGlobalStyle`
   .page{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: calc(100vh + 9.6rem);
     overflow: hidden;
   }
 
   .page__wrapper{
     flex-grow: 1;
     padding-left:  ${({ theme }) => (theme.toggle ? '9.6rem' : '25.6rem')};
-    padding-top: 96px;
+    padding-top: 9.5rem;
     transition: all .25s;
 
     @media only screen and (max-width: ${1023 / 16}em){

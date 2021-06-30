@@ -13,9 +13,8 @@ import { footerItems } from '../src/utils/footerItems';
 export default function index(): JSX.Element {
   return (
     <>
-      <div style={{ position: 'relative', overflow: 'hidden' }}>
-        <Banner />
-      </div>
+      <Banner heading={'Blog'} subHeading={'Keep up-to-date with Dev Community'} />
+
       <PageCenter>
         <Trending />
         <hr />
