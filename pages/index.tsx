@@ -1,13 +1,14 @@
 import React from 'react';
+import dynamic from 'next/dynamic';
 
 import * as S from '../styles/blog.module';
 
 import { PageCenter } from '../styles/PageCenter.style';
-import Post from '../src/Post/Post';
-import Trending from '../src/Trending/Trending';
-import Banner from '../src/Banner/Banner';
-import Tag from '../src/Tag/Tag';
-import MemberCard from '../src/Member/MemberCard';
+const Post = dynamic(() => import('../src/Post/Post'));
+const Trending = dynamic(() => import('../src/Trending/Trending'));
+const Banner = dynamic(() => import('../src/Banner/Banner'));
+const Tag = dynamic(() => import('../src/Tag/Tag'));
+const MemberCard = dynamic(() => import('../src/Member/MemberCard'));
 import { footerItems } from '../src/utils/footerItems';
 
 export default function index(): JSX.Element {
