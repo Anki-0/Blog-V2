@@ -11,7 +11,7 @@ export const Banner = styled.div`
   background: ${({ theme }) =>
     theme.isDark
       ? 'linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0.69))'
-      : 'linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0))'};
+      : 'linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(55,55,55,1) 38%, rgba(60,72,89,1) 100%);'};
   box-shadow: inset 0 -1px 0 0 ${({ theme }) => (theme.isDark ? 'rgba(228, 228, 228, .1)' : theme.colors.light.border)};
   backdrop-filter: ${({ theme }) => (theme.isDark ? 'blur(8px)' : 'blur(0px)')};
   overflow: hidden;
@@ -21,6 +21,8 @@ export const Banner = styled.div`
   }
 `;
 export const BannerConetent = styled.div`
+  color: ${({ theme }) => theme.colors.light.wh};
+
   .subHeading {
     font-size: 2rem;
   }

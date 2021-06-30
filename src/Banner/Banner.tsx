@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-
+import { useThemeTogglerValue } from '../Context/ThemeTogglerContext';
 import * as S from '../../styles/Banner.style';
 
 interface props {
@@ -9,6 +9,7 @@ interface props {
 }
 
 export default function Banner({ heading, subHeading }: props): JSX.Element {
+  const { isDark } = useThemeTogglerValue();
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <S.Banner>
@@ -17,16 +18,18 @@ export default function Banner({ heading, subHeading }: props): JSX.Element {
           <h2 className='subHeading'>{subHeading}</h2>
         </S.BannerConetent>
       </S.Banner>
-      <S.BannerImage>
-        <Image
-          src='/images/banner-pic.webp'
-          alt='Banner_Pic'
-          width={1086}
-          height={1082}
-          layout='responsive'
-          quality={50}
-        />
-      </S.BannerImage>
+      {isDark ? (
+        <S.BannerImage>
+          <Image
+            src='/images/banner-pic.webp'
+            alt='Banner_Pic'
+            width={1086}
+            height={1082}
+            layout='responsive'
+            quality={50}
+          />
+        </S.BannerImage>
+      ) : null}
     </div>
   );
 }
