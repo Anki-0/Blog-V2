@@ -27,6 +27,7 @@ export default function Banner({ heading, subHeading }: props): JSX.Element {
             height={642}
             layout='responsive'
             quality={50}
+            priority={true}
           />
         </S.BannerImage>
       ) : null}
