@@ -15,8 +15,12 @@ export const Post_Author = styled.div`
   align-items: center;
   margin-bottom: 1rem;
   cursor: pointer;
+  width: 100%;
+
   .author__img {
-    width: 2.5rem;
+    position: relative;
+    width: 2rem;
+    height: 2rem;
   }
   & > p {
     font-size: 1.3rem;
@@ -78,21 +82,21 @@ export const Post_Image = styled.a`
   cursor: pointer;
   & > div {
     position: relative;
-    width: 200px;
+    width: 20rem;
     aspect-ratio: auto 150 / 100;
-    height: 134px;
+    height: 13.4rem;
     vertical-align: middle;
     @media only screen and (max-width: ${768 / 16}em) {
-      width: 150px;
+      width: 15rem;
       aspect-ratio: auto 150 / 100;
-      height: 100px;
+      height: 10rem;
       vertical-align: middle;
     }
     @media only screen and (max-width: ${548 / 16}em) {
-      width: 100px;
+      width: 10rem;
       aspect-ratio: auto 100 / 100;
       vertical-align: middle;
-      height: 100px;
+      height: 10rem;
     }
   }
 `;

@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
 import React from 'react';
-
 import * as S from '../../styles/Post';
 
 type props = {
@@ -20,10 +19,11 @@ const Post = ({ authorImg, postImg }: props): JSX.Element => {
                 <Image
                   src={authorImg}
                   alt='Author Image'
-                  width={20}
-                  height={20}
-                  layout='responsive'
-                  quality={50}
+                  layout='fill'
+                  objectFit='contain'
+                  className={'image'}
+                  priority={true}
+                  quality={20}
                 />
               </div>
             </a>
@@ -51,7 +51,15 @@ const Post = ({ authorImg, postImg }: props): JSX.Element => {
       </S.Post_Wrapper>
       <S.Post_Image>
         <div>
-          <Image className='img' src={postImg} alt='Banner_Pic' layout='fill' objectFit='fill' />
+          <Image
+            className='img'
+            src={postImg}
+            alt='Banner_Pic'
+            layout='fill'
+            objectFit='contain'
+            priority={true}
+            quality={75}
+          />
         </div>
       </S.Post_Image>
     </S.Post>

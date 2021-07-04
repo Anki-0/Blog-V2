@@ -21,10 +21,10 @@ export default function Banner({ heading, subHeading }: props): JSX.Element {
       {isDark ? (
         <S.BannerImage>
           <Image
-            src='/images/banner-pic.webp'
+            src='/images/banner-pic.png'
             alt='Banner_Pic'
-            width={1086}
-            height={1082}
+            width={644}
+            height={642}
             layout='responsive'
             quality={50}
           />
