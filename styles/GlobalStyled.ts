@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif, Arial, sans-serif;
     color:${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)}; ;
     background-color: ${({ theme }) =>
-      theme.isDark ? theme.colors.dark.dark1 : theme.colors.light.wh};
+      theme.isDark ? theme.colors.dark.dark : theme.colors.light.wh};
   }
 
   ul,
@@ -46,7 +46,7 @@ export const GlobalStyle = createGlobalStyle`
   input,
   textarea,
   select {
-    font-family: 'Inter',sans-serif;
+    font-family: 'Montserrat',sans-serif;
   }
   table {
     border-spacing: 0;
