@@ -4,11 +4,11 @@ import dynamic from 'next/dynamic';
 import * as S from '../styles/blog.module';
 
 import { PageCenter } from '../styles/PageCenter.style';
-const Post = dynamic(() => import('../src/Post/Post'));
-const Trending = dynamic(() => import('../src/Trending/Trending'));
+import Post from '../src/Post/Post';
+import Trending from '../src/Trending/Trending';
+import MemberCard from '../src/Member/MemberCard';
 const Banner = dynamic(() => import('../src/Banner/Banner'));
 const Tag = dynamic(() => import('../src/Tag/Tag'));
-const MemberCard = dynamic(() => import('../src/Member/MemberCard'));
 import { footerItems } from '../src/utils/footerItems';
 
 export default function index(): JSX.Element {
@@ -58,12 +58,12 @@ export default function index(): JSX.Element {
             <S.WhoToFollow>
               <p>Who to follow</p>
               <MemberCard
-                img={'/images/1.png'}
+                img={'/images/2.png'}
                 name={'LIONDEX'}
                 about={'Decentralized Finance at its best'}
               />
               <MemberCard
-                img={'/images/2.png'}
+                img={'/images/1.png'}
                 name={'disBalancer'}
                 about={
                   'disBalancer — is a decentralized network that provides DDoS Resistance service and decentralized load balancer for infrastructure.'

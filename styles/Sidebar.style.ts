@@ -202,7 +202,9 @@ export const SidebarIcon = styled.div`
 
   & > svg {
     fill: ${({ theme }) => theme.colors.light.graylight};
-    font-size: 2.2rem;
+    /* font-size: 2.2rem; */
+    width: 2.2rem;
+    height: 2.2rem;
   }
 `;
 export const SidebarText = styled.div`
