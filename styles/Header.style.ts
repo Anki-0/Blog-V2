@@ -47,13 +47,12 @@ export const HeaderBurger = styled.button`
     width: 3.2rem;
     height: 2px;
     margin: 3px auto;
-    transition: all 0.25s;
     &:hover {
       background: ${({ theme }) => theme.colors.light.purple};
     }
   }
   @media only screen and (max-width: ${1023 / 16}em) {
-    display: inline-block;
+    display: inline-block !important;
   }
   &::before {
     @media only screen and (max-width: ${767 / 16}em) {

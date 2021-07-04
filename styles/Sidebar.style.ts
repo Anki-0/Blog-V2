@@ -104,7 +104,6 @@ export const Wrapper = styled.div`
 export const Inner = styled.div`
   width: ${({ theme }) => (theme.toggle ? '5.6rem' : '21.6rem')};
   overflow: hidden;
-  transition: all 0.25s;
 
   @media only screen and (max-width: ${767 / 16}em) {
     width: 100%;
@@ -197,8 +196,6 @@ export const SidebarIcon = styled.div`
   width: ${({ theme }) => (theme.toggle ? '5.6rem' : '6rem')};
   height: 56px;
   padding: ${({ theme }) => (theme.toggle ? '0rem' : '0 0 0 .4rem')};
-
-  transition: all 0.25s;
 
   & > svg {
     fill: ${({ theme }) => theme.colors.light.graylight};

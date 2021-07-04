@@ -42,7 +42,7 @@ export const FieldSelect = styled.select`
   font-weight: 600;
   color: ${({ theme }) =>
     theme.isDark ? theme.colors.light.graylight : theme.colors.light.graydark};
-  transition: all 0.25s;
+  transition: color 0.25s;
   cursor: pointer;
 `;
 export const SelectOptions = styled.option``;

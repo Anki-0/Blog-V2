@@ -64,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     flex-grow: 1;
     padding-left:  ${({ theme }) => (theme.toggle ? '9.6rem' : '25.6rem')};
     padding-top: 9.5rem;
-    transition: all .25s;
+    transition: padding .25s;
 
     @media only screen and (max-width: ${1023 / 16}em){
     padding-left: 0;
