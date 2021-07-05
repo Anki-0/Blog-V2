@@ -36,5 +36,6 @@ export const BannerImage = styled.div`
   z-index: -1;
   top: 0rem;
   right: 4rem;
-  width: 53rem;
+  max-width: 53rem;
+  min-width: 100vw;
 `;
