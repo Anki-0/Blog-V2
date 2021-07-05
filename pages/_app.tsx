@@ -1,7 +1,7 @@
+import { GlobalStyle } from '../styles/GlobalStyled';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
 import Header from '../src/Header/Header';
-import { GlobalStyle } from '../styles/GlobalStyled';
 
 import ThemeHoc from '../src/HOC/ThemeHoc';
 import Sidebar from '../src/Sidebar/Sidebar';
