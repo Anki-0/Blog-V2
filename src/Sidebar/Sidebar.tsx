@@ -46,7 +46,7 @@ const Sidebar: React.FC = () => {
                     onClick={() => setActive(items.title)}
                   >
                     <S.SidebarIcon data-title='Members'>
-                      <items.icon />
+                      <items.icon height='22px' width='22px' />
                     </S.SidebarIcon>
                     <S.SidebarText>{items.title}</S.SidebarText>
                   </a>
