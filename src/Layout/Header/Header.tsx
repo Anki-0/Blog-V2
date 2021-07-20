@@ -1,24 +1,29 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { useSideabarToggleValue } from '../Context/SidebarToggleContext';
-import { useHeaderMenuToggleValue } from '../Context/HeaderMenuTogglwContext';
-import { browseItems } from '../utils/browseItems';
+import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
+import { useHeaderMenuToggleValue } from '../../Context/HeaderMenuTogglwContext';
+import { useSigninComponentToggleValue } from '../../Context/SigninComponentToggleContext';
+
+import { browseItems } from '../../utils/browseItems';
 import { Search } from '../Search/Search';
 
-import * as S from '../../styles/Header.style';
+import * as S from '../../../styles/Header.style';
+import LoginBtn from '../Button/LoginBtn';
+import useCheckAuth from '../../_services/useCheckAuth';
 
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();
   const { showMenu, setShowMenu } = useHeaderMenuToggleValue();
+  const { showSignin, setShowSignin } = useSigninComponentToggleValue();
+  const { isAuthenticated } = useCheckAuth();
 
-  console.log('show Menu', showMenu);
+  console.log('show Menu');
 
   // const headerMenuHandler = (): void => {
   //   setShowMenu(!showMenu);
   //   // setShowMenu(prevState => !prevState);
   // };
-
   return (
     <S.Header>
       <S.HeaderBurger onClick={() => setToggle(!toggle)} />
@@ -42,13 +47,27 @@ export default function Header(): JSX.Element {
                     <items.icon />
                   </S.StarIcon>
                 ) : null}
-                <S.BrowseText>{items.title}</S.BrowseText>
+                {items.title === 'Sign In' ? (
+                  <S.BrowseText onClick={() => setShowSignin(!showSignin)}>
+                    {items.title}
+                  </S.BrowseText>
+                ) : items.title === 'Sign Up' ? (
+                  <S.BrowseText>{items.title}</S.BrowseText>
+                ) : (
+                  <S.BrowseText>{items.title}</S.BrowseText>
+                )}
               </div>
             </Link>
           ))}
         </S.HeaderBody>
       </S.HeaderBrowse>
       <Search />
+      {!isAuthenticated && (
+        <S.AuthControls>
+          <LoginBtn text='Sign in' className='SignIn__btn' />
+          <LoginBtn text='Create Account' className='SignUp__btn' />
+        </S.AuthControls>
+      )}
     </S.Header>
   );
 }

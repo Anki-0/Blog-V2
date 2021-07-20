@@ -55,12 +55,12 @@ export const HeaderBurger = styled.button`
     display: inline-block !important;
   }
   &::before {
-    @media only screen and (max-width: ${767 / 16}em) {
+    @media only screen and (max-width: 767px) {
       transform: ${({ theme }) => (!theme.toggle ? 'translateY(4px) rotate(45deg)' : '')};
     }
   }
   &::after {
-    @media only screen and (max-width: ${767 / 16}em) {
+    @media only screen and (max-width: 767px) {
       transform: ${({ theme }) => (!theme.toggle ? 'translateY(-4px) rotate(-45deg)' : '')};
     }
   }
@@ -189,4 +189,15 @@ export const StarIcon = styled.div`
 export const BrowseText = styled.div`
   flex-grow: 1;
   padding: 0 16px;
+`;
+
+export const AuthControls = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+
+  & > button:not(:last-child) {
+    margin-right: 1.5rem;
+  }
 `;

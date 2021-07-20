@@ -11,9 +11,9 @@ export const TrendingWrapper = styled.div`
 export const TrendingHeading_Wrapper = styled.div`
   margin-bottom: 1.6rem;
   display: flex;
-  @media only screen and (min-width: ${1600 / 16}em) {
+  @media only screen and (max-width: ${1600 / 16}em) {
     max-width: 180.5rem;
-    margin: 5.6rem auto;
+    /* margin: 5.6rem auto; */
   }
 `;
 export const TrendingLogo = styled.div`
@@ -27,8 +27,8 @@ export const TrendingLogo = styled.div`
 
   & > svg {
     position: absolute;
-    top: 11%;
-    right: 11%;
+    top: 8%;
+    right: 8%;
   }
 `;
 export const TrendingH2 = styled.h2`

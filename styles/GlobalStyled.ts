@@ -36,6 +36,7 @@ export const GlobalStyle = createGlobalStyle`
 
   a {
     text-decoration: none;
+    color: #3F8CFF;
   }
   img {
     display: block;
@@ -47,12 +48,15 @@ export const GlobalStyle = createGlobalStyle`
   textarea,
   select {
     font-family: 'Montserrat',sans-serif;
+ 
   }
+  
   table {
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
   }
+  
   .page{
     display: flex;
     flex-direction: column;

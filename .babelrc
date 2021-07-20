@@ -5,11 +5,11 @@
       "babel-plugin-styled-components",
       {
         "ssr": true,
-        "displayName": false,
+        "displayName": true,
         "preprocess": false,
         "minify": true,
         "pure": true,
-        "fileName": false,
+        "fileName": true,
         "transpileTemplateLiterals": true
       }
     ]

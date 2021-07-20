@@ -7,7 +7,6 @@ import { ThemeProvider } from 'styled-components';
 const ThemeHOC: React.FC = ({ children }) => {
   const { isDark } = useThemeTogglerValue();
   const { toggle } = useSideabarToggleValue();
-  console.log(colors.light.blue, '⚫', isDark, '⚫', toggle);
 
   return <ThemeProvider theme={{ colors, isDark, toggle }}>{children}</ThemeProvider>;
 };

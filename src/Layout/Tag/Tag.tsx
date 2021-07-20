@@ -1,6 +1,6 @@
 import React from 'react';
 
-import * as S from '../../styles/Tag.style';
+import * as S from '../../../styles/Tag.style';
 
 type props = {
   tagName: string;

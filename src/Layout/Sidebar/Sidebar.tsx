@@ -4,15 +4,14 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import { useSideabarToggleValue } from '../Context/SidebarToggleContext';
-import { sidebarItems } from '../utils/sidebarItems';
+import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
+import { sidebarItems } from '../../utils/sidebarItems';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
-import * as S from '../../styles/Sidebar.style';
+import * as S from '../../../styles/Sidebar.style';
 
 const Sidebar: React.FC = () => {
   const [active, setActive] = useState('Posts');
   const { toggle, setToggle } = useSideabarToggleValue();
-  console.log(toggle);
 
   return (
     <S.Sidebar>

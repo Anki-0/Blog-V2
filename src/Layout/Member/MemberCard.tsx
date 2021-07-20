@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
-import * as S from '../../styles/MembersCard.style';
+import * as S from '../../../styles/MembersCard.style';
 
 type props = { img: string; name: string; about: string };
 

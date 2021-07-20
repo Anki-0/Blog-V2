@@ -5,6 +5,6 @@ export const browseItems = [
   { title: 'Privacy and Policy', url: '/legal/privacy-policy', icon: StarBorderRounded },
   { title: 'Terms of Services', url: '/legal/terms', icon: StarBorderRounded },
   { title: 'About', url: '/about', icon: StarBorderRounded },
-  { title: 'Sign In', url: '/' },
-  { title: 'Sign Up', url: '/' }
+  { title: 'Sign In', url: '#' },
+  { title: 'Sign Up', url: '/login' }
 ];
