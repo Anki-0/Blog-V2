@@ -39,6 +39,7 @@ export default function SignIn(): JSX.Element {
 
   return (
     <>
+      <button onClick={loginHandler}>LoginHandler</button>
       <button onClick={success}>LOG ME</button>
       <Toaster />
       <Loader />
