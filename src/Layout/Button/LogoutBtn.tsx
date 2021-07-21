@@ -29,7 +29,7 @@ const Btn = styled.button`
 `;
 
 export default function LooutBtn({ text, className }: props): JSX.Element {
-  const logoutHandler = async () => {
+  const logoutHandler = async (): Promise<void> => {
     try {
       const res = await axiosInstance.get(`/users/logout`);
       const data: response = res.data;

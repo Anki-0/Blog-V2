@@ -14,7 +14,7 @@ import toast, { Toaster } from 'react-hot-toast';
 export default function SignIn(): JSX.Element {
   // const [test, settest] = useState<response>(initi);
   const { isAuthenticated, user, status } = useCheckAuth();
-  const success = () => toast('Here is your toast.');
+  const success = (): string => toast('Here is your toast.');
   console.log(
     `isAuthenticated => ${isAuthenticated} ?  user => ${JSON.stringify(user)} ? status => ${status}`
   );
