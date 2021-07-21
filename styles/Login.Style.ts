@@ -54,6 +54,13 @@ export const FormWrapper = styled.div`
 export const FormGroup = styled.div`
   margin-bottom: 2.4rem;
 `;
+export const Warning = styled.span`
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  font-weight: 800;
+  color: ${({ color }) => color};
+`;
+
 export const FormGroupLable = styled.div`
   margin-bottom: 16px;
   font-size: 12px;
@@ -83,7 +90,6 @@ export const FormGroupInput = styled.input`
 export const button = styled.button<props>`
   background: ${({ color }) => color};
   color: #ffffff;
-  /* min-width: 166px; */
   min-width: 100%;
   height: 56px;
   padding: 0 20px;

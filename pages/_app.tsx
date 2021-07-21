@@ -11,7 +11,7 @@ import { ThemeTogglerProvider } from '../src/Context/ThemeTogglerContext';
 import { HeaderMenuToggleProvider } from '../src/Context/HeaderMenuTogglwContext';
 import PageWrapper from '../src/HOC/PageWrapper';
 import { Fragment } from 'react';
-import { SigninComponentToggleProvider } from '../src/Context/SigninComponentToggleContext';
+import { AuthModelToggleProvider } from '../src/Context/AuthModelToggleContext';
 import { AuthProvider } from '../src/Context/AuthContext';
 import { IsAuthenticatedProvider } from '../src/Context/isAuthenticatedContext';
 
@@ -24,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <HeaderMenuToggleProvider>
         <ThemeTogglerProvider>
           <SidebarToggleProvider>
-            <SigninComponentToggleProvider>
+            <AuthModelToggleProvider>
               <AuthProvider>
                 <IsAuthenticatedProvider>
                   <ThemeHoc>
@@ -41,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                   </ThemeHoc>
                 </IsAuthenticatedProvider>
               </AuthProvider>
-            </SigninComponentToggleProvider>
+            </AuthModelToggleProvider>
           </SidebarToggleProvider>
         </ThemeTogglerProvider>
       </HeaderMenuToggleProvider>

@@ -7,9 +7,6 @@ const useCheckAuth = (): IcheckAuth => {
   const { isAuthenticated, setIsAuthenticated } = useIsAuthenticatedValue();
 
   useEffect(() => {
-    console.log('base URL =>', process.env.NODE_ENV.trim(), process.env.BASE_URL);
-    console.log('Pro URL =>', process.env.NODE_ENV.trim(), process.env.PRODUCTION_URL);
-
     const validateCookie = async () => {
       try {
         const res = await axiosInstance.post(`/users/validateUser`, 'Validating USER');

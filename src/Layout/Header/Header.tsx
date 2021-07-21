@@ -3,20 +3,20 @@ import Link from 'next/link';
 
 import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
 import { useHeaderMenuToggleValue } from '../../Context/HeaderMenuTogglwContext';
-import { useSigninComponentToggleValue } from '../../Context/SigninComponentToggleContext';
+import { useAuthModelToggleValue } from '../../Context/AuthModelToggleContext';
 
 import { browseItems } from '../../utils/browseItems';
 import { Search } from '../Search/Search';
 
 import * as S from '../../../styles/Header.style';
-import LoginBtn from '../Button/LoginBtn';
+import Button from '../Button/Btn';
 import LogoutBtn from '../Button/LogoutBtn';
 import useCheckAuth from '../../_services/useCheckAuth';
 
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();
   const { showMenu, setShowMenu } = useHeaderMenuToggleValue();
-  const { showSignin, setShowSignin } = useSigninComponentToggleValue();
+  const { showAuthModel, setShowAuthModel } = useAuthModelToggleValue();
   const { isAuthenticated } = useCheckAuth();
 
   console.log('show Menu', process.env.PRODUCTION_URL);
@@ -49,7 +49,14 @@ export default function Header(): JSX.Element {
                   </S.StarIcon>
                 ) : null}
                 {items.title === 'Sign In' ? (
-                  <S.BrowseText onClick={() => setShowSignin(!showSignin)}>
+                  <S.BrowseText
+                    onClick={() =>
+                      setShowAuthModel({
+                        SignInModel: !showAuthModel.SignInModel,
+                        SignUpModel: showAuthModel.SignUpModel
+                      })
+                    }
+                  >
                     {items.title}
                   </S.BrowseText>
                 ) : items.title === 'Sign Up' ? (
@@ -65,8 +72,8 @@ export default function Header(): JSX.Element {
       <Search />
       {!isAuthenticated ? (
         <S.AuthControls>
-          <LoginBtn text='Sign in' className='SignIn__btn' />
-          <LoginBtn text='Create Account' className='SignUp__btn' />
+          <Button type='loginBtn' name='Sign in' className='SignIn__btn' />
+          <Button type='signupBtn' name='Create Account' className='SignUp__btn' />
         </S.AuthControls>
       ) : (
         <S.AuthControls>
