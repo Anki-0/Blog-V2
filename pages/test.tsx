@@ -1,6 +1,8 @@
 // import axios from 'axios';
 import React from 'react';
+import Loader from '../src/Loader/Loader';
 import useCheckAuth from '../src/_services/useCheckAuth';
+import toast, { Toaster } from 'react-hot-toast';
 
 // interface response {
 //   status: string | boolean;
@@ -12,7 +14,7 @@ import useCheckAuth from '../src/_services/useCheckAuth';
 export default function SignIn(): JSX.Element {
   // const [test, settest] = useState<response>(initi);
   const { isAuthenticated, user, status } = useCheckAuth();
-
+  const success = () => toast('Here is your toast.');
   console.log(
     `isAuthenticated => ${isAuthenticated} ?  user => ${JSON.stringify(user)} ? status => ${status}`
   );
@@ -37,7 +39,9 @@ export default function SignIn(): JSX.Element {
 
   return (
     <>
-      <button onClick={loginHandler}>LOG ME</button>
+      <button onClick={success}>LOG ME</button>
+      <Toaster />
+      <Loader />
     </>
   );
 }

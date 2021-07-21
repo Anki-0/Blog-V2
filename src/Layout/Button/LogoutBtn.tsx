@@ -1,7 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import axiosInstance from '../../../axiosConfig';
-// import { useSigninComponentToggleValue } from '../../Context/SigninComponentToggleContext';
 
 interface props {
   text: string;
@@ -29,20 +28,18 @@ const Btn = styled.button`
   }
 `;
 
-const logoutHandler = async () => {
-  try {
-    const res = await axiosInstance.get(`/users/logout`);
-    const data: response = res.data;
-    if (data.status === 'success') window.location.href = '/';
-  } catch (error) {
-    console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
-    alert('☠ Error Logging out try again!!');
-    return error.response;
-  }
-};
-
 export default function LooutBtn({ text, className }: props): JSX.Element {
-  // const { showSignin, setShowSignin } = useSigninComponentToggleValue();
+  const logoutHandler = async () => {
+    try {
+      const res = await axiosInstance.get(`/users/logout`);
+      const data: response = res.data;
+      if (data.status === 'success') window.location.href = '/';
+    } catch (error) {
+      console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
+      alert('☠ Error Logging out try again!!');
+      return error.response;
+    }
+  };
 
   return (
     <Btn className={className} onClick={() => logoutHandler()}>

@@ -5,11 +5,13 @@ import { Iauth as response } from '../../../interface/api';
 import * as M from '../../../styles/apiRes.style';
 import * as S from '../../../styles/Login.Style';
 import { useAuthValue } from '../../Context/AuthContext';
+import Loader from '../../Loader/Loader';
 
 export default function SignIn(): JSX.Element {
   // const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
+  const [isLoading, setIsLoading] = useState(true);
   const { authStatus, setAuthStatus } = useAuthValue();
 
   const router = useRouter();
@@ -25,10 +27,12 @@ export default function SignIn(): JSX.Element {
     try {
       const res = await axiosInstance.post(`/users/login`, userData);
       const data: response = res.data;
+      setIsLoading(true);
       setAuthStatus(data);
       console.log('res : =====> ', data);
       router.push('/') && router.reload();
     } catch (error) {
+      setIsLoading(true);
       console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
 
       return error.response;
@@ -39,12 +43,16 @@ export default function SignIn(): JSX.Element {
 
   return (
     <S.Wrapper>
-      {authStatus?.status === 'sucess' ? (
-        <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
-      ) : authStatus?.status === 'fail' ? (
-        <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
+      {isLoading ? (
+        authStatus?.status === 'sucess' ? (
+          <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
+        ) : authStatus?.status === 'fail' ? (
+          <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
+        ) : (
+          ''
+        )
       ) : (
-        ''
+        <Loader />
       )}
       <S.FormWrapper>
         <h2 className='heading-secondary ma-bt-lg'>Sign in</h2>
@@ -84,7 +92,9 @@ export default function SignIn(): JSX.Element {
           </S.FormGroup>
 
           <S.FormGroup>
-            <S.button color='#6c5dd3'>Continue</S.button>
+            <S.button color='#6c5dd3' onClick={() => setIsLoading(false)}>
+              Continue
+            </S.button>
           </S.FormGroup>
         </form>
 
