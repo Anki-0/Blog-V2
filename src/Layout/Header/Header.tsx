@@ -19,7 +19,7 @@ export default function Header(): JSX.Element {
   const { showSignin, setShowSignin } = useSigninComponentToggleValue();
   const { isAuthenticated } = useCheckAuth();
 
-  console.log('show Menu');
+  console.log('show Menu', process.env.PRODUCTION_URL);
 
   // const headerMenuHandler = (): void => {
   //   setShowMenu(!showMenu);

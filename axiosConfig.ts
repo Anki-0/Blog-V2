@@ -6,6 +6,9 @@ if (process.env.NODE_ENV.trim() === 'development') {
 } else {
   API = process.env.PRODUCTION_URL;
 }
+if (API === undefined) {
+  API = 'https://devblogapi.herokuapp.com/api/v1';
+}
 const axiosInstance = axios.create({
   baseURL: `${API}`
 });
