@@ -1,12 +1,13 @@
 import axios from 'axios';
 
-const API =
-  process.env.NODE_ENV.trim() === 'developement'
-    ? process.env.BASE_URL
-    : process.env.PRODUCTION_URL;
-
+let API;
+if (process.env.NODE_ENV.trim() === 'development') {
+  API = process.env.BASE_URL;
+} else {
+  API = process.env.PRODUCTION_URL;
+}
 const axiosInstance = axios.create({
-  baseURL: 'https://devblogapi.herokuapp.com/api/v1'
+  baseURL: `${API}`
 });
 
 axiosInstance.defaults.withCredentials = true;

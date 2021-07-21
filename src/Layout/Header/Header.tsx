@@ -10,6 +10,7 @@ import { Search } from '../Search/Search';
 
 import * as S from '../../../styles/Header.style';
 import LoginBtn from '../Button/LoginBtn';
+import LogoutBtn from '../Button/LogoutBtn';
 import useCheckAuth from '../../_services/useCheckAuth';
 
 export default function Header(): JSX.Element {
@@ -62,10 +63,14 @@ export default function Header(): JSX.Element {
         </S.HeaderBody>
       </S.HeaderBrowse>
       <Search />
-      {!isAuthenticated && (
+      {!isAuthenticated ? (
         <S.AuthControls>
           <LoginBtn text='Sign in' className='SignIn__btn' />
           <LoginBtn text='Create Account' className='SignUp__btn' />
+        </S.AuthControls>
+      ) : (
+        <S.AuthControls>
+          <LogoutBtn text='Logout' className='Logout__btn' />
         </S.AuthControls>
       )}
     </S.Header>

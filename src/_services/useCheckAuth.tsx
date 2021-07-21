@@ -6,14 +6,10 @@ import { Iauthor, IcheckAuth } from '../../interface/api';
 const useCheckAuth = (): IcheckAuth => {
   const { isAuthenticated, setIsAuthenticated } = useIsAuthenticatedValue();
 
-  const API =
-    process.env.NODE_ENV.trim() === 'developement'
-      ? process.env.BASE_URL
-      : process.env.PRODUCTION_URL;
-
-  console.log('API', API);
-
   useEffect(() => {
+    console.log('base URL =>', process.env.NODE_ENV.trim(), process.env.BASE_URL);
+    console.log('Pro URL =>', process.env.NODE_ENV.trim(), process.env.PRODUCTION_URL);
+
     const validateCookie = async () => {
       try {
         const res = await axiosInstance.post(`/users/validateUser`, 'Validating USER');
