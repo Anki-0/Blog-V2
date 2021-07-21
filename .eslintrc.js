@@ -30,6 +30,7 @@ module.exports = {
         'plugin:prettier/recommended', // Prettier plugin
       ],
       rules: {
+       
         'prettier/prettier': ['error', {}, { usePrettierrc: true }], // Includes .prettierrc.js rules
 
         // We will use TypeScript's types for component props instead

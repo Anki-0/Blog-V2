@@ -28,18 +28,18 @@ export default function Signup(): JSX.Element {
       const data: response = res.data;
       setIsLoading(true);
       setAuthStatus(data);
-      console.log(data);
+      // console.log(data);
       window.location.reload();
     } catch (error) {
       const err = await error.response.data;
       setIsLoading(true);
       setAuthStatus(err);
-      console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
+      // console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
       return error.response;
     }
   };
 
-  console.log(`${username} + ${email} + ${password} ${process.env.API}`);
+  // console.log(`${username} + ${email} + ${password} ${process.env.API}`);
 
   const message = authStatus?.message?.replace(/\{|\}/gi, '');
   console.log(message);

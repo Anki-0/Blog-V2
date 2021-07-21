@@ -1,5 +1,5 @@
 import React from 'react';
-import Image from 'next/image';
+// import Image from 'next/image';
 import { useThemeTogglerValue } from '../../Context/ThemeTogglerContext';
 import * as S from '../../../styles/Banner.style';
 

@@ -12,7 +12,7 @@ const PageWrapper = ({ children }: props): JSX.Element => {
   const { showMenu } = useHeaderMenuToggleValue();
   const { showAuthModel } = useAuthModelToggleValue();
 
-  console.log(`Show SignIn => ${showAuthModel.SignInModel}`);
+  // console.log(`Show SignIn => ${showAuthModel.SignInModel}`);
 
   return (
     <div className='page__wrapper'>

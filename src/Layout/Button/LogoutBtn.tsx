@@ -35,7 +35,7 @@ export default function LooutBtn({ text, className }: props): JSX.Element {
       const data: response = res.data;
       if (data.status === 'success') window.location.href = '/';
     } catch (error) {
-      console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
+      // console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
       alert('☠ Error Logging out try again!!');
       return error.response;
     }

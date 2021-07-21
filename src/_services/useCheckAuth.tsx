@@ -25,7 +25,7 @@ const useCheckAuth = (): IcheckAuth => {
 
     validateCookie();
   }, []);
-  console.log('ISLOGIN=>', isAuthenticated?.isAuthenticated);
+  // console.log('ISLOGIN=>', isAuthenticated?.isAuthenticated);
 
   return isAuthenticated;
 };

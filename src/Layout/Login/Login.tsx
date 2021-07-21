@@ -29,19 +29,19 @@ export default function SignIn(): JSX.Element {
       const data: response = res.data;
       setIsLoading(true);
       setAuthStatus(data);
-      console.log('res : =====> ', data);
+      // console.log('res : =====> ', data);
       router.push('/') && router.reload();
     } catch (error) {
       const err = await error.response.data;
       setIsLoading(true);
       setAuthStatus(err);
-      console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
+      // console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
 
       return error.response;
     }
   };
 
-  console.log(`${email} + ${password} +`);
+  // console.log(`${email} + ${password} +`);
 
   return (
     <S.Wrapper>

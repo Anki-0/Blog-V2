@@ -19,7 +19,7 @@ export default function Header(): JSX.Element {
   const { showAuthModel, setShowAuthModel } = useAuthModelToggleValue();
   const { isAuthenticated } = useCheckAuth();
 
-  console.log('show Menu', process.env.PRODUCTION_URL);
+  // console.log('show Menu', process.env.PRODUCTION_URL);
 
   // const headerMenuHandler = (): void => {
   //   setShowMenu(!showMenu);
