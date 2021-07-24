@@ -1,8 +1,8 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
 import { colors } from '../../styles/Theme/colors';
 import { useSideabarToggleValue } from '../Context/SidebarToggleContext';
 import { useThemeTogglerValue } from '../Context/ThemeTogglerContext';
-import { ThemeProvider } from 'styled-components';
 
 const ThemeHOC: React.FC = ({ children }) => {
   const { isDark } = useThemeTogglerValue();

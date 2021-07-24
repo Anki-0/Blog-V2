@@ -1,10 +1,10 @@
 import React from 'react';
-import { useHeaderMenuToggleValue } from '../Context/HeaderMenuTogglwContext';
-import Backdrop from '../Backdrop/Backdrop';
-import { useAuthModelToggleValue } from '../Context/AuthModelToggleContext';
 import dynamic from 'next/dynamic';
 const Signup = dynamic(() => import('../Layout/Signup/Signup'));
 const Login = dynamic(() => import('../Layout/Login/Login'));
+const Backdrop = dynamic(() => import('../Backdrop/Backdrop'));
+import { useHeaderMenuToggleValue } from '../Context/HeaderMenuTogglwContext';
+import { useAuthModelToggleValue } from '../Context/AuthModelToggleContext';
 
 type props = { children: JSX.Element };
 

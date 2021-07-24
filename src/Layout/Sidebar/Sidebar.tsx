@@ -4,9 +4,10 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
 import { sidebarItems } from '../../utils/sidebarItems';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
+
+import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
 import * as S from '../../../styles/Sidebar.style';
 
 const Sidebar: React.FC = () => {

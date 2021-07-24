@@ -6,7 +6,7 @@ import { PageCenter } from '../styles/PageCenter.style';
 
 const Banner = dynamic(() => import('../src/Layout/Banner/Banner'));
 const Tag = dynamic(() => import('../src/Layout/Tag/Tag'));
-import Post from '../src/Layout/Post/Post';
+import PostCard from '../src/Layout/PostCard/PostCard';
 import Trending from '../src/Layout/Trending/Trending';
 import MemberCard from '../src/Layout/Member/MemberCard';
 import { footerItems } from '../src/utils/footerItems';
@@ -22,7 +22,7 @@ type props = {
 let page: number;
 
 const Index = ({ data }: props): JSX.Element => {
-  console.log(data);
+  // console.log(data);
   const [posts, setPosts] = useState(data.posts);
   const [loading, setloading] = useState(false);
   const [postEnd, setPostEnd] = useState(false);
@@ -47,7 +47,7 @@ const Index = ({ data }: props): JSX.Element => {
     }
   };
 
-  console.log(page);
+  // console.log(page);
 
   return (
     <>
@@ -75,7 +75,7 @@ const Index = ({ data }: props): JSX.Element => {
             {data.posts &&
               posts.map(post => {
                 return (
-                  <Post
+                  <PostCard
                     key={post._id}
                     data={post}
                     authorImg='/images/author-1.png'

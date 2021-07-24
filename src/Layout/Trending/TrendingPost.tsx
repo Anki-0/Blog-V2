@@ -1,8 +1,9 @@
 import React from 'react';
-import * as S from '../../../styles/Trending';
-import { Post_Author, Post_Meta, Post_Date } from '../../../styles/Post';
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+
+import { Post_Author, Post_Meta, Post_Date } from '../../../styles/Post';
+import * as S from '../../../styles/Trending';
 
 type props = { Number: string; authorImg: string };
 

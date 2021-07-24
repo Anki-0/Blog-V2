@@ -50,6 +50,20 @@ export const FormWrapper = styled.div`
       transition: color 0.25s;
     }
   }
+
+  & > .form--signin {
+    span {
+      font-size: 1.2rem;
+      color: #d44949;
+      font-weight: 600;
+      cursor: pointer;
+      transition: color 0.2s;
+
+      &:hover {
+        color: #f51010;
+      }
+    }
+  }
 `;
 export const FormGroup = styled.div`
   margin-bottom: 2.4rem;

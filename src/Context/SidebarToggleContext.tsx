@@ -5,10 +5,7 @@ type contextType = {
   setToggle: (val: boolean) => void;
 };
 
-export const SidebarToggleContext = createContext<contextType>({
-  toggle: true,
-  setToggle: toggle => console.log(`toggle => ${toggle}`)
-});
+export const SidebarToggleContext = createContext<contextType>({} as contextType);
 
 export const SidebarToggleProvider: React.FC = ({ children }) => {
   const [toggle, setToggle] = useState(true);

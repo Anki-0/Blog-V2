@@ -5,10 +5,7 @@ type contextType = {
   setShowMenu: (val: boolean) => void;
 };
 
-export const HeaderMenuToggleContext = createContext<contextType>({
-  showMenu: false,
-  setShowMenu: showMenu => console.log(`showHeaderMenu => ${showMenu}`)
-});
+export const HeaderMenuToggleContext = createContext<contextType>({} as contextType);
 
 export const HeaderMenuToggleProvider: React.FC = ({ children }) => {
   const [showMenu, setShowMenu] = useState(false);

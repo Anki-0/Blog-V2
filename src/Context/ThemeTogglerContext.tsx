@@ -5,10 +5,7 @@ type contextType = {
   setIsDark: (val: boolean) => void;
 };
 
-export const ThemeTogglerContext = createContext<contextType>({
-  isDark: false,
-  setIsDark: isDark => console.log(isDark)
-});
+export const ThemeTogglerContext = createContext<contextType>({} as contextType);
 
 export const ThemeTogglerProvider: React.FC = ({ children }) => {
   const [isDark, setIsDark] = useState(true);

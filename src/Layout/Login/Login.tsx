@@ -1,11 +1,17 @@
 import axiosInstance from '../../../axiosConfig';
-import { useRouter } from 'next/router';
 import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+
 import { Iauth as response } from '../../../interface/api';
+
+const Loader = dynamic(() => import('../../Loader/Loader'));
+
+import { useAuthValue } from '../../Context/AuthContext';
+
 import * as M from '../../../styles/apiRes.style';
 import * as S from '../../../styles/Login.Style';
-import { useAuthValue } from '../../Context/AuthContext';
-import Loader from '../../Loader/Loader';
+import Link from 'next/link';
 
 export default function SignIn(): JSX.Element {
   // const [username, setUsername] = useState('');
@@ -46,7 +52,7 @@ export default function SignIn(): JSX.Element {
   return (
     <S.Wrapper>
       {isLoading ? (
-        authStatus?.status === 'sucess' ? (
+        authStatus?.status === 'success' ? (
           <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
         ) : authStatus?.status === 'fail' ? (
           <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
@@ -66,7 +72,7 @@ export default function SignIn(): JSX.Element {
           </a>
         </div>
 
-        <form className='form form--signup' onSubmit={loginHandler}>
+        <form className='form form--signin' onSubmit={loginHandler}>
           <S.FormGroup>
             <S.FormGroupLable>Email address</S.FormGroupLable>
 
@@ -79,7 +85,6 @@ export default function SignIn(): JSX.Element {
               onChange={e => setEmail(e.target.value)}
             />
           </S.FormGroup>
-
           <S.FormGroup>
             <S.FormGroupLable>Password</S.FormGroupLable>
 
@@ -92,12 +97,14 @@ export default function SignIn(): JSX.Element {
               onChange={e => setPassword(e.target.value)}
             />
           </S.FormGroup>
-
           <S.FormGroup>
             <S.button color='#6c5dd3' onClick={() => setIsLoading(false)}>
               Continue
             </S.button>
           </S.FormGroup>
+          <Link href='/forgetPassword' passHref>
+            <span>Forget Password</span>
+          </Link>
         </form>
 
         <div className='login__or'>Or continue with</div>

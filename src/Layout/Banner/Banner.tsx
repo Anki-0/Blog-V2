@@ -1,6 +1,5 @@
 import React from 'react';
-// import Image from 'next/image';
-import { useThemeTogglerValue } from '../../Context/ThemeTogglerContext';
+// import { useThemeTogglerValue } from '../../Context/ThemeTogglerContext';
 import * as S from '../../../styles/Banner.style';
 
 interface props {
@@ -9,7 +8,7 @@ interface props {
 }
 
 export default function Banner({ heading, subHeading }: props): JSX.Element {
-  const { isDark } = useThemeTogglerValue();
+  // const { isDark } = useThemeTogglerValue();
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <S.Banner>

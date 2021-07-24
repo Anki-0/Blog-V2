@@ -7,11 +7,11 @@ import { useAuthModelToggleValue } from '../../Context/AuthModelToggleContext';
 
 import { browseItems } from '../../utils/browseItems';
 import { Search } from '../Search/Search';
-
-import * as S from '../../../styles/Header.style';
 import Button from '../Button/Btn';
 import LogoutBtn from '../Button/LogoutBtn';
 import useCheckAuth from '../../_services/useCheckAuth';
+
+import * as S from '../../../styles/Header.style';
 
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();
@@ -19,12 +19,6 @@ export default function Header(): JSX.Element {
   const { showAuthModel, setShowAuthModel } = useAuthModelToggleValue();
   const { isAuthenticated } = useCheckAuth();
 
-  // console.log('show Menu', process.env.PRODUCTION_URL);
-
-  // const headerMenuHandler = (): void => {
-  //   setShowMenu(!showMenu);
-  //   // setShowMenu(prevState => !prevState);
-  // };
   return (
     <S.Header>
       <S.HeaderBurger onClick={() => setToggle(!toggle)} />
