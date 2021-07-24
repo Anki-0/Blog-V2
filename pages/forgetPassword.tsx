@@ -1,0 +1,98 @@
+import React, { useState } from 'react';
+import dynamic from 'next/dynamic';
+
+const Loader = dynamic(() => import('../src/Loader/Loader'));
+
+import * as M from '../styles/apiRes.style';
+import * as S from '../styles/Login.Style';
+import styled from 'styled-components';
+import axiosInstance from '../axiosConfig';
+import { useAuthValue } from '../src/Context/AuthContext';
+import { Iauth as response } from '../interface/api';
+
+export default function ForgetPassword(): JSX.Element {
+  const [Email, setEmail] = useState('');
+  const { authStatus, setAuthStatus } = useAuthValue();
+  const [isLoading, setIsLoading] = useState(false);
+
+  const resetUserPasswordHandler = async (
+    event: React.SyntheticEvent<EventTarget>
+  ): Promise<void> => {
+    event.preventDefault(); // don't redirect the page\
+
+    const reqPayload = {
+      userEmail: Email
+    };
+
+    try {
+      const res = await axiosInstance.post(`/users/forget`, reqPayload);
+      const data: response = res.data;
+      setAuthStatus(data);
+      setIsLoading(false);
+      console.log('RES => ', res, authStatus.message);
+    } catch (error) {
+      const err = await error.response.data;
+      setAuthStatus(err);
+      setIsLoading(false);
+
+      console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
+      return error.response;
+    }
+  };
+
+  return (
+    <Wrapper>
+      {isLoading ? (
+        <Loader />
+      ) : authStatus?.status === 'success' ? (
+        <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
+      ) : authStatus?.status === 'fail' ? (
+        <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
+      ) : (
+        ''
+      )}
+
+      <S.FormWrapper>
+        <h2 className='heading-secondary ma-bt-lg'>Forgot your password?</h2>
+
+        <form className='form form--signup' onSubmit={resetUserPasswordHandler}>
+          <S.FormGroup>
+            <S.FormGroupLable>Email address</S.FormGroupLable>
+            <S.FormGroupInput
+              className='form__input'
+              id='email'
+              type='email'
+              placeholder='you@example.com'
+              required
+              onChange={e => setEmail(e.target.value)}
+            />
+          </S.FormGroup>
+
+          <div className='form__group'>
+            <S.button color='#6c5dd3' onClick={() => setIsLoading(true)}>
+              {`Send me reset password Link`}
+            </S.button>
+          </div>
+        </form>
+      </S.FormWrapper>
+    </Wrapper>
+  );
+}
+
+const Wrapper = styled.div`
+  position: fixed;
+  margin: auto;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75rem;
+  /* z-index: 800; */
+  visibility: visible;
+  opacity: 1;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+  flex-shrink: 0;
+  padding: 48px 48px 64px;
+  border-radius: 40px;
+  background: #242731;
+`;
