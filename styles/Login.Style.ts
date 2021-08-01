@@ -67,6 +67,26 @@ export const FormWrapper = styled.div`
 `;
 export const FormGroup = styled.div`
   margin-bottom: 2.4rem;
+
+  & > #sign_up {
+    background: #5a49ce;
+    color: #ffffff;
+    min-width: 100%;
+    height: 56px;
+    padding: 0 20px;
+    border-radius: 16px/16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    font-weight: 700;
+    cursor: pointer;
+
+    transition: all 0.25s;
+
+    &:hover {
+      background: #5a49ce;
+    }
+  }
 `;
 export const Warning = styled.span`
   font-size: 1.4rem;
@@ -98,6 +118,26 @@ export const FormGroupInput = styled.input`
     border-color: #6c5dd3;
     color: #ffffff;
     background: rgba(228, 228, 228, 0.05);
+  }
+`;
+
+export const SignupBtn = styled.input<props>`
+  background: ${({ color }) => color};
+  color: #ffffff;
+  min-width: 100%;
+  height: 56px;
+  padding: 0 20px;
+  border-radius: 16px/16px;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  line-height: 1.42857;
+  font-weight: 700;
+  cursor: pointer;
+
+  transition: all 0.25s;
+
+  &:hover {
+    background: #5a49ce;
   }
 `;
 

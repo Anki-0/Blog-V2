@@ -18,6 +18,8 @@ export default function Signup(): JSX.Element {
   const { authStatus, setAuthStatus } = useAuthValue();
 
   const registerUser = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
+    console.log('REGISTERED USER');
+
     event.preventDefault(); // don't redirect the page
 
     const user = {
@@ -30,19 +32,19 @@ export default function Signup(): JSX.Element {
       const data: response = res.data;
       setAuthStatus(data);
       setIsLoading(false);
-      // console.log(data);
+      console.log(data);
       window.location.reload();
     } catch (error) {
       const err = await error.response.data;
       setAuthStatus(err);
       setIsLoading(false);
 
-      // console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
+      console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
       return error.response;
     }
   };
 
-  // console.log(`${username} + ${email} + ${password} ${process.env.API}`);
+  console.log(`${username} + ${email} + ${password} ${process.env.API}`);
 
   // const message = authStatus?.message?.replace(/\{|\}/gi, '');
   console.log('is Loading => ', isLoading);
@@ -67,7 +69,7 @@ export default function Signup(): JSX.Element {
             Login now
           </a>
         </div>
-        <form className='form form--signup' onSubmit={registerUser}>
+        <form id='sign_up__form' className='form form--signup' onSubmit={registerUser}>
           <S.FormGroup>
             <S.FormGroupLable>Your name</S.FormGroupLable>
             <S.FormGroupInput
@@ -119,11 +121,10 @@ export default function Signup(): JSX.Element {
             />
           </S.FormGroup>
 
-          <div className='form__group'>
-            <S.button color='#6c5dd3' onClick={() => setIsLoading(true)} disabled={isLoading}>
-              {`Sign up ${password === confirmPassword ? '👍' : '😫'}`}
-            </S.button>
-          </div>
+          <S.FormGroup>
+            {/* <input type='submit' value='TEST' /> */}
+            <input id='sign_up' type='submit' value='Sign Up' onClick={() => setIsLoading(true)} />
+          </S.FormGroup>
         </form>
       </S.FormWrapper>
     </S.Wrapper>
