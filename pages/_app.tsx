@@ -1,21 +1,24 @@
 import { GlobalStyle } from '../styles/GlobalStyled';
 import Head from 'next/head';
 import type { AppProps } from 'next/app';
-import Header from '../src/Layout/Header/Header';
+import { useRouter } from 'next/router';
 
-import ThemeHoc from '../src/HOC/ThemeHoc';
-import Sidebar from '../src/Layout/Sidebar/Sidebar';
+import { Header, Sidebar } from '@/src/Layout';
+import { ThemeHOC, PageWrapper } from '@/src/HOC';
 
-import { SidebarToggleProvider } from '../src/Context/SidebarToggleContext';
-import { ThemeTogglerProvider } from '../src/Context/ThemeTogglerContext';
-import { HeaderMenuToggleProvider } from '../src/Context/HeaderMenuTogglwContext';
-import PageWrapper from '../src/HOC/PageWrapper';
-import { Fragment } from 'react';
-import { AuthModelToggleProvider } from '../src/Context/AuthModelToggleContext';
-import { AuthProvider } from '../src/Context/AuthContext';
-import { IsAuthenticatedProvider } from '../src/Context/isAuthenticatedContext';
+import {
+  SidebarToggleProvider,
+  ThemeTogglerProvider,
+  HeaderMenuToggleProvider,
+  AuthModelToggleProvider,
+  IsAuthenticatedProvider,
+  AuthProvider
+} from '@/src/Context';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
+  const router = useRouter();
+  console.log(router.pathname);
+
   return (
     <>
       <Head>
@@ -27,18 +30,24 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
             <AuthModelToggleProvider>
               <AuthProvider>
                 <IsAuthenticatedProvider>
-                  <ThemeHoc>
+                  <ThemeHOC>
                     <GlobalStyle />
                     <div className='page'>
-                      <Sidebar />
-                      <PageWrapper>
-                        <Fragment>
-                          <Header />
-                          <Component {...pageProps} />
-                        </Fragment>
-                      </PageWrapper>
+                      {router.pathname !== '/login' ? (
+                        <>
+                          <Sidebar />
+                          <PageWrapper>
+                            <>
+                              <Header />
+                              <Component {...pageProps} />
+                            </>
+                          </PageWrapper>
+                        </>
+                      ) : (
+                        <Component {...pageProps} />
+                      )}
                     </div>
-                  </ThemeHoc>
+                  </ThemeHOC>
                 </IsAuthenticatedProvider>
               </AuthProvider>
             </AuthModelToggleProvider>
@@ -48,4 +57,5 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
     </>
   );
 }
+
 export default MyApp;

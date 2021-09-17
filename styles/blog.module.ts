@@ -48,12 +48,13 @@ export const FieldSelect = styled.select`
 export const SelectOptions = styled.option``;
 export const Container = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
 `;
 export const Posts = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  width: 100%;
+  /* justify-content: center;*/
   align-items: center;
   gap: 4.8rem;
 `;
@@ -123,5 +124,6 @@ export const SidebarFooter = styled.div`
     margin-right: 2.6rem;
     margin-bottom: 0.8rem;
     font-size: 1.3rem;
+    cursor: pointer;
   }
 `;

@@ -5,20 +5,20 @@ interface props {
 }
 
 export const Wrapper = styled.div`
-  position: fixed;
-  top: 50%;
+  /* position: fixed;
+  top: calc(50% + 5rem);
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 800;
+  z-index: 8000;
   visibility: visible;
   opacity: 1;
   box-shadow: rgb(0, 0, 0, 0.15) 0px 2px 10px;
-
   flex-shrink: 0;
-  width: 464px;
+  width: 80rem;
+  height: 66rem;
   padding: 48px 48px 64px;
   border-radius: 40px;
-  background: #242731;
+  background: #242731; */
 `;
 export const FormWrapper = styled.div`
   margin-top: 2rem;

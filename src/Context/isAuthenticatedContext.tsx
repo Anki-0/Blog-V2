@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { IcheckAuth } from '../../interface/api';
+import { IcheckAuth } from '@/interface/api';
 
 type conextType = {
   isAuthenticated: IcheckAuth;

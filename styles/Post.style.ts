@@ -3,11 +3,12 @@ import styled from 'styled-components';
 export const Post = styled.div`
   display: flex;
   flex: 1 1 auto;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: flex-start;
+  width: 100%;
 `;
 export const Post_Wrapper = styled.div`
-  margin-right: 2rem;
+  margin-right: auto;
 `;
 export const Post_Author = styled.div`
   display: flex;

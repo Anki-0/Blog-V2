@@ -9,7 +9,7 @@ const useCheckAuth = (): IcheckAuth => {
   useEffect(() => {
     const validateCookie = async (): Promise<void> => {
       try {
-        const res = await axiosInstance.post(`/users/validateUser`, 'Validating USER');
+        const res = await axiosInstance.get(`/users/validateUser`);
         const data: IcheckAuth = res.data;
         // console.log('res : =====> ', data);
         if (data?.status === 'success' && data?.isAuthenticated === true) {
@@ -19,6 +19,8 @@ const useCheckAuth = (): IcheckAuth => {
         const err = await error.response; // this is the main part. Use the response property from the error object
 
         setIsAuthenticated({ isAuthenticated: false, status: 'fail', user: {} as Iauthor });
+        // console.clear();
+        console.log(err);
         return err;
       }
     };

@@ -1,7 +1,7 @@
 import * as S from '../../../styles/Sidebar.style';
 import { WbSunnyTwoTone, NightsStayTwoTone } from '@material-ui/icons';
 
-import { useThemeTogglerValue } from '../../Context/ThemeTogglerContext';
+import { useThemeTogglerValue } from '@/src/Context/ThemeTogglerContext';
 
 const ThemeSwitcher = (): JSX.Element => {
   const { isDark, setIsDark } = useThemeTogglerValue();

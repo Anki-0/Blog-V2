@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useAuthModelToggleValue } from '../../Context/AuthModelToggleContext';
+import { useAuthModelToggleValue } from '@/src/Context';
 
 interface props {
   name: string;

@@ -1,6 +1,6 @@
 // import axios from 'axios';
 import React from 'react';
-import Loader from '../src/Loader/Loader';
+import Loader from '../src/utils/Loader/Loader';
 import useCheckAuth from '../src/_services/useCheckAuth';
 import toast, { Toaster } from 'react-hot-toast';
 

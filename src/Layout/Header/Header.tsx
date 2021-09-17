@@ -1,17 +1,18 @@
 import React from 'react';
 import Link from 'next/link';
 
-import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
-import { useHeaderMenuToggleValue } from '../../Context/HeaderMenuTogglwContext';
-import { useAuthModelToggleValue } from '../../Context/AuthModelToggleContext';
+import {
+  useSideabarToggleValue,
+  useAuthModelToggleValue,
+  useHeaderMenuToggleValue
+} from '@/src/Context';
 
-import { browseItems } from '../../utils/browseItems';
-import { Search } from '../Search/Search';
-import Button from '../Button/Btn';
-import LogoutBtn from '../Button/LogoutBtn';
-import useCheckAuth from '../../_services/useCheckAuth';
+import { browseItems } from '@/src/utils/browseItems';
+import { Search, Button, LogoutBtn } from '@/src/Layout';
 
-import * as S from '../../../styles/Header.style';
+import useCheckAuth from '@/src/_services/useCheckAuth';
+
+import * as S from '@/styles/Header.style';
 
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();

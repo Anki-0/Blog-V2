@@ -1,6 +1,6 @@
 import React from 'react';
 // import { useThemeTogglerValue } from '../../Context/ThemeTogglerContext';
-import * as S from '../../../styles/Banner.style';
+import * as S from '@/styles/Banner.style';
 
 interface props {
   heading: string;

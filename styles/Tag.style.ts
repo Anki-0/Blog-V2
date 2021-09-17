@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
-export const Tag = styled.div`
+type props = { fontSize: number };
+
+export const Tag = styled.div<props>`
   display: flex;
   justify-content: center;
   align-items: center;
@@ -28,7 +30,7 @@ export const Tag = styled.div`
 
   & > p {
     & > span {
-      font-size: 1.4rem;
+      font-size: ${({ fontSize }) => fontSize}rem;
     }
   }
 `;

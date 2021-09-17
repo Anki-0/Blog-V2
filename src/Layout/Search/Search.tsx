@@ -1,5 +1,5 @@
 import React from 'react';
-import * as S from '../../../styles/Search.style';
+import * as S from '@/styles/Search.style';
 
 export const Search = (): JSX.Element => {
   return (

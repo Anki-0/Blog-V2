@@ -4,11 +4,11 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-import { sidebarItems } from '../../utils/sidebarItems';
+import { sidebarItems } from '@/src/utils/sidebarItems';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
-import { useSideabarToggleValue } from '../../Context/SidebarToggleContext';
-import * as S from '../../../styles/Sidebar.style';
+import { useSideabarToggleValue } from '@/src/Context/SidebarToggleContext';
+import * as S from '@/styles/Sidebar.style';
 
 const Sidebar: React.FC = () => {
   const [active, setActive] = useState('Posts');

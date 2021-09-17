@@ -1,16 +1,16 @@
-import axiosInstance from '../../../axiosConfig';
+import axiosInstance from '@/axiosConfig';
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
-import { Iauth as response } from '../../../interface/api';
+import { Iauth as response } from '@/interface/api';
 
-const Loader = dynamic(() => import('../../Loader/Loader'));
+const Loader = dynamic(() => import('@/src/utils/Loader/Loader'));
 
-import { useAuthValue } from '../../Context/AuthContext';
+import { useAuthValue } from '@/src/Context';
 
-import * as M from '../../../styles/apiRes.style';
-import * as S from '../../../styles/Login.Style';
+import * as M from '@/styles/apiRes.style';
+import * as S from '@/styles/Login.Style';
 import Link from 'next/link';
 
 export default function SignIn(): JSX.Element {
@@ -36,6 +36,7 @@ export default function SignIn(): JSX.Element {
       setIsLoading(true);
       setAuthStatus(data);
       // console.log('res : =====> ', data);
+
       router.push('/') && router.reload();
     } catch (error) {
       const err = await error.response.data;

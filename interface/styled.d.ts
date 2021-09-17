@@ -5,6 +5,7 @@ type common = {
   bl: string;
   wh: string;
   purple: string;
+  purpleDark: string;
   purplelight: string;
   text: string;
   graydark: string;
@@ -36,7 +37,6 @@ declare module 'styled-components' {
       dark: dark;
     };
     isDark: boolean;
-    toggle: boolean;
     toggle: boolean;
   }
 }

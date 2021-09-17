@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import axiosInstance from '../../../axiosConfig';
+import axiosInstance from '@/axiosConfig';
 
 interface props {
   text: string;

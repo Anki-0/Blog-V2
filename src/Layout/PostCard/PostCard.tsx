@@ -2,9 +2,9 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
-import { IPost } from '../../../interface/api';
+import { IPost } from '@/interface/api';
 
-import * as S from '../../../styles/Post';
+import * as S from '@/styles/Post.style';
 
 type props = {
   authorImg: string;

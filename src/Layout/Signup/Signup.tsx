@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
-import axiosInstance from '../../../axiosConfig';
-import { useAuthValue } from '../../Context/AuthContext';
-import { Iauth as response } from '../../../interface/api';
+import axiosInstance from '@/axiosConfig';
+import { useAuthValue } from '@/src/Context/AuthContext';
+import { Iauth as response } from '@/interface/api';
 
-const Loader = dynamic(() => import('../../Loader/Loader'));
+const Loader = dynamic(() => import('../../utils/Loader/Loader'));
 
-import * as M from '../../../styles/apiRes.style';
-import * as S from '../../../styles/Login.Style';
+import * as M from '@/styles/apiRes.style';
+import * as S from '@/styles/Login.Style';
 
 export default function Signup(): JSX.Element {
   const [username, setUsername] = useState('');

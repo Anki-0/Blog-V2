@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter } from 'next/router';
 
-const Loader = dynamic(() => import('../../src/Loader/Loader'));
+const Loader = dynamic(() => import('../../src/utils/Loader/Loader'));
 
 import * as M from '../../styles/apiRes.style';
 import * as S from '../../styles/Login.Style';

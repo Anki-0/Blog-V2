@@ -241,7 +241,7 @@ export const Box = styled.div`
   position: relative;
   display: block;
   width: 6.4rem;
-  height: 2rem.4rem;
+  height: 2.4rem;
   background: ${({ theme }) =>
     theme.isDark ? 'rgba(240, 243, 246, 0.1)' : 'rgb(227, 227, 227, .5)'};
   border-radius: 1.6rem;

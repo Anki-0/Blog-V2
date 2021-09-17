@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState } from 'react';
-import { Iauth } from '../../interface/api';
+import { Iauth } from '@/interface/api';
 
 type conextType = {
   authStatus: Iauth;
