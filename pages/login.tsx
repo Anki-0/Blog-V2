@@ -14,7 +14,7 @@ import { Loader, Tag } from '@/src/Layout';
 type props = {
   data: ApiPosts;
 };
-type err = { status: string; message: string };
+// type err = { status: string; message: string };
 
 export default function Login({ data }: props): JSX.Element {
   console.log(data.posts);
