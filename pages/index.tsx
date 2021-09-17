@@ -91,13 +91,13 @@ const Index = ({ data }: props): JSX.Element => {
             <S.Recommended>
               <p>Recommended topics</p>
               <S.Tags>
-                <Tag tagName={'Product Management'} />
-                <Tag tagName={'Accessibility'} />
-                <Tag tagName={'Programming'} />
-                <Tag tagName={'Education'} />
-                <Tag tagName={'Music'} />
-                <Tag tagName={'Media'} />
-                <Tag tagName={'Next.js'} />
+                <Tag fontSize={2} tagName={'Product Management'} />
+                <Tag fontSize={2} tagName={'Accessibility'} />
+                <Tag fontSize={2} tagName={'Programming'} />
+                <Tag fontSize={2} tagName={'Education'} />
+                <Tag fontSize={2} tagName={'Music'} />
+                <Tag fontSize={2} tagName={'Media'} />
+                <Tag fontSize={2} tagName={'Next.js'} />
               </S.Tags>
             </S.Recommended>
             <S.WhoToFollow>
