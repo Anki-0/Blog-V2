@@ -1,14 +1,33 @@
-import React, { useState } from 'react';
 import dynamic from 'next/dynamic';
+import React, { useState } from 'react';
 
 const Loader = dynamic(() => import('../src/utils/Loader/Loader'));
+import { useAuthValue } from '../src/Context/AuthContext';
 
+import axiosInstance from '../axiosConfig';
+
+import { Iauth as response } from '../interface/api';
 import * as M from '../styles/apiRes.style';
 import * as S from '../styles/Login.Style';
 import styled from 'styled-components';
-import axiosInstance from '../axiosConfig';
-import { useAuthValue } from '../src/Context/AuthContext';
-import { Iauth as response } from '../interface/api';
+
+const Wrapper = styled.div`
+  position: fixed;
+  margin: auto;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 75rem;
+  /* z-index: 800; */
+  visibility: visible;
+  opacity: 1;
+  box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
+  flex-shrink: 0;
+  padding: 48px 48px 64px;
+  border-radius: 40px;
+  background: #242731;
+`;
 
 export default function ForgetPassword(): JSX.Element {
   const [Email, setEmail] = useState('');
@@ -78,21 +97,3 @@ export default function ForgetPassword(): JSX.Element {
     </Wrapper>
   );
 }
-
-const Wrapper = styled.div`
-  position: fixed;
-  margin: auto;
-
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 75rem;
-  /* z-index: 800; */
-  visibility: visible;
-  opacity: 1;
-  box-shadow: rgb(0 0 0 / 15%) 0px 2px 10px;
-  flex-shrink: 0;
-  padding: 48px 48px 64px;
-  border-radius: 40px;
-  background: #242731;
-`;

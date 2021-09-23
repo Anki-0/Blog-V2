@@ -5,7 +5,6 @@ import { useAuthModelToggleValue } from '@/src/Context';
 interface props {
   name: string;
   className: string;
-  type: string;
 }
 
 const Btn = styled.button`
@@ -26,17 +25,6 @@ const Btn = styled.button`
   }
 `;
 
-export default function Button({ name, className, type }: props): JSX.Element {
-  const { showAuthModel, setShowAuthModel } = useAuthModelToggleValue();
-
-  const setter = {
-    SignInModel: type === 'loginBtn' ? !showAuthModel.SignInModel : showAuthModel.SignInModel,
-    SignUpModel: type === 'signupBtn' ? !showAuthModel.SignUpModel : showAuthModel.SignUpModel
-  };
-
-  return (
-    <Btn className={className} onClick={() => setShowAuthModel(setter)}>
-      {name}
-    </Btn>
-  );
+export default function Button({ name, className }: props): JSX.Element {
+  return <Btn className={className}>{name}</Btn>;
 }

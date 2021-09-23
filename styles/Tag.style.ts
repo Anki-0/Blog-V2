@@ -30,7 +30,7 @@ export const Tag = styled.div<props>`
 
   & > p {
     & > span {
-      font-size: ${({ fontSize }) => fontSize}rem;
+      font-size: 1.2rem;
     }
   }
 `;

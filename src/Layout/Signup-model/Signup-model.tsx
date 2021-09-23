@@ -9,7 +9,7 @@ const Loader = dynamic(() => import('../../utils/Loader/Loader'));
 import * as M from '@/styles/apiRes.style';
 import * as S from '@/styles/Login.Style';
 
-export default function Signup(): JSX.Element {
+export default function Signup_model(): JSX.Element {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');

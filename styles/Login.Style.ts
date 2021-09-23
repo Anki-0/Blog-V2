@@ -1,3 +1,4 @@
+import { StepLabel } from '@material-ui/core';
 import styled from 'styled-components';
 
 interface props {
@@ -159,4 +160,18 @@ export const button = styled.button<props>`
   &:hover {
     background: #5a49ce;
   }
+`;
+
+export const Login__row = styled.div`
+  display: flex;
+  margin: 0 -8px;
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+`;
+
+export const Login_col = styled.div`
+  flex: 0 0 calc(50% - 16px);
+  width: calc(50% - 16px);
+  margin: 0 8px;
 `;

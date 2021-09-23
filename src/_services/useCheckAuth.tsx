@@ -16,12 +16,12 @@ const useCheckAuth = (): IcheckAuth => {
           setIsAuthenticated(data);
         }
       } catch (error) {
-        const err = await error.response; // this is the main part. Use the response property from the error object
+        // const err = await error.response; // this is the main part. Use the response property from the error object
 
         setIsAuthenticated({ isAuthenticated: false, status: 'fail', user: {} as Iauthor });
         // console.clear();
-        console.log(err);
-        return err;
+        // console.log('VALIDATE LOGIN ERROR => ', err);
+        // return err;
       }
     };
 

@@ -91,13 +91,13 @@ const Index = ({ data }: props): JSX.Element => {
             <S.Recommended>
               <p>Recommended topics</p>
               <S.Tags>
-                <Tag fontSize={2} tagName={'Product Management'} />
-                <Tag fontSize={2} tagName={'Accessibility'} />
-                <Tag fontSize={2} tagName={'Programming'} />
-                <Tag fontSize={2} tagName={'Education'} />
-                <Tag fontSize={2} tagName={'Music'} />
-                <Tag fontSize={2} tagName={'Media'} />
-                <Tag fontSize={2} tagName={'Next.js'} />
+                <Tag fontSize={1.2} tagName={'Product Management'} />
+                <Tag fontSize={1.2} tagName={'Accessibility'} />
+                <Tag fontSize={1.2} tagName={'Programming'} />
+                <Tag fontSize={1.2} tagName={'Education'} />
+                <Tag fontSize={1.2} tagName={'Music'} />
+                <Tag fontSize={1.2} tagName={'Media'} />
+                <Tag fontSize={1.2} tagName={'Next.js'} />
               </S.Tags>
             </S.Recommended>
             <S.WhoToFollow>
@@ -141,7 +141,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   try {
     const res = await axiosInstance.get('/posts?limit=4');
     const data: ApiPosts = res.data;
-    console.log('res : =====> ', data);
+    // console.log('res : =====> ', data);
 
     // will be passed to the page component as props
     return { props: { data } };
@@ -149,7 +149,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     /**
      * ! const data: response = error.response;
      */
-    console.log('err : =====> ', error.response);
+    // console.log('err : =====> ', error.response);
     return {
       redirect: {
         destination: '/login',

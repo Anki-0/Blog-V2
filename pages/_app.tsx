@@ -1,11 +1,9 @@
-import { GlobalStyle } from '../styles/GlobalStyled';
-import Head from 'next/head';
-import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
+import type { AppProps } from 'next/app';
+import Head from 'next/head';
 
 import { Header, Sidebar } from '@/src/Layout';
 import { ThemeHOC, PageWrapper } from '@/src/HOC';
-
 import {
   SidebarToggleProvider,
   ThemeTogglerProvider,
@@ -14,6 +12,8 @@ import {
   IsAuthenticatedProvider,
   AuthProvider
 } from '@/src/Context';
+
+import { GlobalStyle } from '../styles/GlobalStyled';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();

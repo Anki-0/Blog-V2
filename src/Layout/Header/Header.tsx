@@ -67,8 +67,16 @@ export default function Header(): JSX.Element {
       <Search />
       {!isAuthenticated ? (
         <S.AuthControls>
-          <Button type='loginBtn' name='Sign in' className='SignIn__btn' />
-          <Button type='signupBtn' name='Create Account' className='SignUp__btn' />
+          <Link href='/login'>
+            <a>
+              <Button name='Sign in' className='SignIn__btn' />
+            </a>
+          </Link>
+          <Link href='/signup'>
+            <a>
+              <Button name='Create Account' className='SignUp__btn' />
+            </a>
+          </Link>
         </S.AuthControls>
       ) : (
         <S.AuthControls>

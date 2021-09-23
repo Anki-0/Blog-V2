@@ -1,7 +1,7 @@
 import React from 'react';
 import dynamic from 'next/dynamic';
-const Signup = dynamic(() => import('@/src/Layout/Signup/Signup'));
-const Login = dynamic(() => import('@/src/Layout/Login/Login'));
+const Signup = dynamic(() => import('@/src/Layout/Signup-model/Signup-model'));
+const Login = dynamic(() => import('@/src/Layout/Login-Model/Login-model'));
 const Backdrop = dynamic(() => import('@/src/utils/Backdrop/Backdrop'));
 import { useHeaderMenuToggleValue } from '@/src/Context';
 import { useAuthModelToggleValue } from '@/src/Context';

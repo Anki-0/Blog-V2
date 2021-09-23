@@ -9,7 +9,7 @@ import axios from 'axios';
 // }
 
 const axiosInstance = axios.create({
-  baseURL: 'https://devblogapi.herokuapp.com/api/v1'
+  baseURL: 'https://devblog-324010.el.r.appspot.com/api/v1'
 });
 // const axiosInstance = axios.create({
 //   baseURL: `${API}`

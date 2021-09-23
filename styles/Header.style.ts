@@ -197,7 +197,7 @@ export const AuthControls = styled.div`
   align-items: center;
   padding: 1rem;
 
-  & > button:not(:last-child) {
+  & > a:not(:last-child) {
     margin-right: 1.5rem;
   }
 `;

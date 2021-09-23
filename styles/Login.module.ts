@@ -11,6 +11,16 @@ export const Login = styled.div`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
+  background: linear-gradient(
+    301.63deg,
+    rgba(58, 62, 69, 0.0001) 29.5%,
+    rgba(27, 29, 33, 0.707195) 74.66%
+  );
+  @media only screen and (max-width: 767px) {
+    min-height: auto;
+    padding: 0;
+    background: none !important;
+  }
 `;
 
 export const Container = styled.div`
@@ -25,6 +35,10 @@ export const LoginWrap = styled.div`
   flex-shrink: 0;
   width: 240px;
   margin-right: auto;
+
+  @media only screen and (max-width: 767px) {
+    display: none;
+  }
 
   .logo {
     color: #ffffff;
@@ -51,6 +65,13 @@ export const LoginForm = styled.div`
   @media only screen and (max-width: 1023px) {
     width: 400px;
     padding: 32px;
+  }
+  @media only screen and (max-width: 767px) {
+    width: 100%;
+    padding: 40px 32px;
+    border-radius: 0;
+    background: none;
+    background: #1f2128;
   }
 
   &::before {
@@ -91,6 +112,7 @@ export const IconClose = styled.a`
   box-shadow: 0 2px 7px rgb(0 0 0 / 10%);
   font-size: 0;
   transition: all 0.25s;
+  cursor: pointer;
 
   #icon-remove {
     width: 1em;

@@ -36,13 +36,11 @@ export default function SignIn(): JSX.Element {
       setIsLoading(true);
       setAuthStatus(data);
       // console.log('res : =====> ', data);
-
-      router.push('/') && router.reload();
     } catch (error) {
       const err = await error.response.data;
       setIsLoading(true);
       setAuthStatus(err);
-      // console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
+      console.log('LOGIN ERROR => ', err); // this is the main part. Use the response property from the error object
 
       return error.response;
     }

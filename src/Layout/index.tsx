@@ -7,9 +7,9 @@ import Header from './Header/Header';
 import MemberCard from './Member/MemberCard';
 import Post from './Post/Post';
 import Sidebar from './Sidebar/Sidebar';
-import Signup from './Signup/Signup';
+import Signup from './Signup-model/Signup-model';
 import Tag from './Tag/Tag';
-import Login from './Login/Login';
+import Login from './Login-Model/Login-model';
 
 export {
   Banner,

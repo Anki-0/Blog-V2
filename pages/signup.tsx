@@ -20,8 +20,9 @@ type props = {
 };
 // type err = { status: string; message: string };
 
-export default function Login({ data }: props): JSX.Element {
+export default function Signup({ data }: props): JSX.Element {
   console.log(data.posts);
+  const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(true);
@@ -41,22 +42,23 @@ export default function Login({ data }: props): JSX.Element {
     window.location.href = '/';
   };
 
-  const loginHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
+  const signUpHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
     event.preventDefault(); // don't redirect the page
 
     const userData = {
       userEmail: email,
-      userPassword: password
+      userPassword: password,
+      userUsername: username
     };
 
     try {
-      const res = await axiosInstance.post(`/users/login`, userData);
+      const res = await axiosInstance.post('/users/signup', userData);
       const data: response = res.data;
-      setIsLoading(true);
       setAuthStatus(data);
+      console.log(data);
+      setIsLoading(true);
       RedirectToHome();
       // console.log('res : =====> ', data);
-      // router.push('/') && router.reload();
     } catch (error) {
       const err = await error.response.data;
       setIsLoading(true);
@@ -119,16 +121,28 @@ export default function Login({ data }: props): JSX.Element {
               <Loader />
             )}
             <L.FormWrapper>
-              <h2 className='heading-secondary ma-bt-lg'>Sign in</h2>
+              <h2 className='heading-secondary ma-bt-lg'>Sign Up</h2>
 
               <div className='login__line'>
-                <div className='login__text'>New user?</div>
-                <Link href='/signup'>
-                  <a className='login__link'>Create an account</a>
+                <div className='login__text'>Already a user</div>
+                <Link href='/login'>
+                  <a className='login__link'>Login now</a>
                 </Link>
               </div>
 
-              <form className='form form--signin' onSubmit={loginHandler}>
+              <form className='form form--signin' onSubmit={signUpHandler}>
+                <L.FormGroup>
+                  <L.FormGroupLable>UserName</L.FormGroupLable>
+                  <div className='field__wrap'>
+                    <L.FormGroupInput
+                      className='field__input'
+                      type='text'
+                      placeholder='Unique Username'
+                      required
+                      onChange={e => setUsername(e.target.value)}
+                    />
+                  </div>
+                </L.FormGroup>
                 <L.FormGroup>
                   <L.FormGroupLable>Email address</L.FormGroupLable>
 
@@ -141,6 +155,7 @@ export default function Login({ data }: props): JSX.Element {
                     onChange={e => setEmail(e.target.value)}
                   />
                 </L.FormGroup>
+
                 <L.FormGroup>
                   <L.FormGroupLable>Password</L.FormGroupLable>
 
@@ -158,9 +173,6 @@ export default function Login({ data }: props): JSX.Element {
                     Continue
                   </L.button>
                 </L.FormGroup>
-                <Link href='/forgetPassword' passHref>
-                  <span>Forget Password</span>
-                </Link>
               </form>
 
               <div className='login__or'>Or continue with</div>
