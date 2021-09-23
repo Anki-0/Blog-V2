@@ -26,7 +26,7 @@ export default function Login({ data }: props): JSX.Element {
   const [email, setEmail] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const { authStatus, setAuthStatus } = useAuthValue();
-  const { isAuthenticated, user, status } = useCheckAuth();
+  const { isAuthenticated } = useCheckAuth();
   console.log(isAuthenticated);
 
   useEffect(() => {
