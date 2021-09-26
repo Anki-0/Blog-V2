@@ -37,7 +37,7 @@ export default function Login({ data }: props): JSX.Element {
     }
   }, [isAuthenticated]);
 
-  const RedirectToHome = () => {
+  const RedirectToHome = (): void => {
     window.location.href = '/';
   };
 

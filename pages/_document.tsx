@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-document-import-in-page */
 import Document, {
   Html,
   Head,
@@ -6,6 +7,7 @@ import Document, {
   DocumentContext,
   DocumentInitialProps
 } from 'next/document';
+
 import { ServerStyleSheet } from 'styled-components';
 import { ReactElement } from 'react';
 
@@ -44,6 +46,10 @@ class MyDocument extends Document {
           <link
             href='https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap'
             rel='stylesheet'
+          />
+          <link
+            rel='stylesheet'
+            href='https://unpkg.com/dracula-prism/dist/css/dracula-prism.css'
           />
         </Head>
         <body>

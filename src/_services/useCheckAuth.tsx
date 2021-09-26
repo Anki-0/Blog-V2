@@ -1,4 +1,4 @@
-import axiosInstance from '../../axiosConfig';
+import axiosInstance from '@/axiosConfig';
 import { useEffect } from 'react';
 import { useIsAuthenticatedValue } from '../Context/isAuthenticatedContext';
 import { Iauthor, IcheckAuth } from '../../interface/api';

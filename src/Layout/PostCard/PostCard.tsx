@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+import moment from 'moment';
+
 import { IPost } from '@/interface/api';
 
-import * as S from '@/styles/Post.style';
+import * as S from '@/styles/Posts.module';
 
 type props = {
   authorImg: string;
@@ -37,13 +39,15 @@ const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
 
         <S.Post_Content>
           <S.Post_Title>
-            <h2 className='post__title'>{data?.post_title}</h2>
+            <Link href={`${data.post_title}`}>
+              <h2 className='post__title'>{data?.post_title}</h2>
+            </Link>
           </S.Post_Title>
           <S.Post_Demo>
             <h3 className='demo'>{data?.post_content}</h3>
           </S.Post_Demo>
           <S.Post_Meta>
-            <S.Post_Date>{data?.createdAt}</S.Post_Date>
+            <S.Post_Date>{`${moment(data?.createdAt).format('MMM Do YY')}`}</S.Post_Date>
           </S.Post_Meta>
         </S.Post_Content>
       </S.Post_Wrapper>

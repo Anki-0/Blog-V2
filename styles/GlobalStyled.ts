@@ -29,10 +29,6 @@ export const GlobalStyle = createGlobalStyle`
       theme.isDark ? theme.colors.dark.dark : theme.colors.light.wh};
   }
 
-  ul,
-  ol {
-    list-style: none;
-  }
 
   a {
     text-decoration: none;
@@ -55,6 +51,94 @@ export const GlobalStyle = createGlobalStyle`
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
+  }
+
+  article{
+    &  h1,h2,h3,h4,h5,h6{
+      padding-bottom: .9rem;
+    border-bottom: 1px solid #333;
+    margin-bottom: 1.6rem;
+    }
+    &  h1{
+      font-size: 3.2rem;
+    }
+    &  h2{
+      font-size: 2.4rem;
+    }
+    &  h3{
+      font-size: 2rem;
+    }
+    &  h4{
+      font-size: 1.6rem;
+    }
+    &  h5{
+     font-size:1.4rem
+    }
+    &  h6{
+     font-size:1.36rem
+    }
+
+    & hr{height: .25em;
+    padding: 0;
+    margin: 24px 0;
+    background-color: #30363d;
+    border: 0;}
+
+    &  blockquote{
+      padding: 1rem 1.6rem;
+    color: #8b949e;
+    border-left: .25em solid #3a424a;
+    margin-bottom: 1.6rem;
+    }
+    & ul,ol{
+      padding-left: 2em;
+    margin-bottom: 1.6rem;
+    & li{
+      list-style: circle;
+      & p{
+        margin: 1.6rem;
+      }
+    }
+    }
+
+    & ol{
+      & li{
+        list-style: unset;    
+        margin-top: .25em;
+      }
+    }
+  
+
+    & img{
+      max-width: 35%;
+      border: none;
+      vertical-align: middle;
+      display: inline-block;
+    }
+
+    & pre {
+    padding: 1.8rem;
+    overflow: auto;
+    font-size: 85%;
+    line-height: 1.45;
+    background: #161b22 !important;
+    border-radius: 6px;
+    margin: 1.6rem 0;
+    color: #d9d9d9;
+  }
+  &  code {
+    padding: 0.2em 0.4em;
+    margin: 0;
+    /* font-size: 85%; */
+    background: #161b22 !important;
+    color: #c9d1d9;
+    border-radius: 6px;
+  }
+  &  p{
+    font-size: 1.6rem;
+    margin-bottom: 1.6rem;
+
+  }
   }
   
   .page{

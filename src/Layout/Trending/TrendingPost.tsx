@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Post_Author, Post_Meta, Post_Date } from '@/styles/Post.style';
+import { Post_Author, Post_Meta, Post_Date } from '@/styles/Posts.module';
 import * as S from '@/styles/Trending.style';
 
 type props = { Number: string; authorImg: string };
