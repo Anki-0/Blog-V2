@@ -10,6 +10,7 @@ import { Iauth as response } from '../interface/api';
 import * as M from '../styles/apiRes.style';
 import * as S from '../styles/Login.Style';
 import styled from 'styled-components';
+import { AxiosError } from 'axios';
 
 const Wrapper = styled.div`
   position: fixed;
@@ -50,12 +51,11 @@ export default function ForgetPassword(): JSX.Element {
       setIsLoading(false);
       console.log('RES => ', res, authStatus.message);
     } catch (error) {
-      const err = await error.response.data;
-      setAuthStatus(err);
+      const { response } = (await error) as AxiosError;
+      setAuthStatus(response?.data);
       setIsLoading(false);
 
-      console.log('ERROR => ', err); // this is the main part. Use the response property from the error object
-      return error.response;
+      console.log('ERROR => ', response); // this is the main part. Use the response property from the error object
     }
   };
 

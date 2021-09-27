@@ -14,6 +14,7 @@ import * as L from '@/styles/Login.Style';
 import * as M from '@/styles/apiRes.style';
 import useCheckAuth from '@/src/_services/useCheckAuth';
 import { useEffect } from 'react';
+import { AxiosError } from 'axios';
 
 type props = {
   data: ApiPosts;
@@ -60,10 +61,10 @@ export default function Signup({ data }: props): JSX.Element {
       RedirectToHome();
       // console.log('res : =====> ', data);
     } catch (error) {
-      const err = await error.response.data;
+      const { response } = (await error) as AxiosError;
       setIsLoading(true);
-      setAuthStatus(err);
-      console.log('LOGIN ERROR => ', error.response); // this is the main part. Use the response property from the error object
+      setAuthStatus(response?.data);
+      console.log('LOGIN ERROR => ', response); // this is the main part. Use the response property from the error object
     }
   };
 
@@ -195,10 +196,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     // will be passed to the page component as props
     return { props: { data } };
   } catch (error) {
-    /**
-     * ! const data: response = error.response;
-     */
-    console.log('err : =====> ', error.response);
+    const { response } = (await error) as AxiosError;
+
+    console.log('err : =====> ', response);
     return {
       redirect: {
         destination: '/404',

@@ -131,13 +131,15 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     /* font-size: 85%; */
     background: #161b22 !important;
-    color: #c9d1d9;
+    /* color: #c9d1d9; */
+    color: #3e8eff;
     border-radius: 6px;
   }
   &  p{
     font-size: 1.6rem;
     margin-bottom: 1.6rem;
-
+    line-height: 3.1rem;
+    letter-spacing:.8px;
   }
   }
   
