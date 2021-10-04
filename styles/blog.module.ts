@@ -127,3 +127,20 @@ export const SidebarFooter = styled.div`
     cursor: pointer;
   }
 `;
+
+export const loadMorePost = styled.button`
+  padding: 1rem 4rem;
+  background: #216bf3;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  &:hover {
+    transform: scale(1.04);
+  }
+`;

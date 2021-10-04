@@ -7,6 +7,7 @@ import moment from 'moment';
 import { IPost } from '@/interface/api';
 
 import * as S from '@/styles/Posts.module';
+import Tag from '../Tag/Tag';
 
 type props = {
   authorImg: string;
@@ -16,7 +17,7 @@ type props = {
 
 const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
   return (
-    <S.Post>
+    <S.Posts>
       <S.Post_Wrapper>
         <S.Post_Author>
           <Link href='/'>
@@ -39,13 +40,15 @@ const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
 
         <S.Post_Content>
           <S.Post_Title>
-            <Link href={`${data.post_title}`}>
+            <Link href={`${data.post_title}`} passHref>
               <h2 className='post__title'>{data?.post_title}</h2>
             </Link>
           </S.Post_Title>
-          <S.Post_Demo>
-            <h3 className='demo'>{data?.post_content}</h3>
-          </S.Post_Demo>
+          <S.Post_Tags>
+            {data.post_tags.map(tagname => (
+              <Tag tagName={tagname} fontSize={1.2} key={tagname} />
+            ))}
+          </S.Post_Tags>
           <S.Post_Meta>
             <S.Post_Date>{`${moment(data?.createdAt).format('MMM Do YY')}`}</S.Post_Date>
           </S.Post_Meta>
@@ -54,7 +57,7 @@ const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
       <S.Post_Image>
         <div>
           <Image
-            className='img'
+            className='Post__Img'
             src={postImg}
             alt='Banner_Pic'
             layout='fill'
@@ -64,7 +67,7 @@ const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
           />
         </div>
       </S.Post_Image>
-    </S.Post>
+    </S.Posts>
   );
 };
 export default Post;

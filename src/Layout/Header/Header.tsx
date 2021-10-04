@@ -1,11 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 
-import {
-  useSideabarToggleValue,
-  useAuthModelToggleValue,
-  useHeaderMenuToggleValue
-} from '@/src/Context';
+import { useSideabarToggleValue, useHeaderMenuToggleValue } from '@/src/Context';
 
 import { browseItems } from '@/src/utils/browseItems';
 import { Search, Button, LogoutBtn } from '@/src/Layout';
@@ -17,8 +13,7 @@ import * as S from '@/styles/Header.style';
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();
   const { showMenu, setShowMenu } = useHeaderMenuToggleValue();
-  const { showAuthModel, setShowAuthModel } = useAuthModelToggleValue();
-  const { isAuthenticated } = useCheckAuth();
+  const { isAuthenticated, user } = useCheckAuth();
 
   return (
     <S.Header>
@@ -43,22 +38,8 @@ export default function Header(): JSX.Element {
                     <items.icon />
                   </S.StarIcon>
                 ) : null}
-                {items.title === 'Sign In' ? (
-                  <S.BrowseText
-                    onClick={() =>
-                      setShowAuthModel({
-                        SignInModel: !showAuthModel.SignInModel,
-                        SignUpModel: showAuthModel.SignUpModel
-                      })
-                    }
-                  >
-                    {items.title}
-                  </S.BrowseText>
-                ) : items.title === 'Sign Up' ? (
-                  <S.BrowseText>{items.title}</S.BrowseText>
-                ) : (
-                  <S.BrowseText>{items.title}</S.BrowseText>
-                )}
+
+                <S.BrowseText>{items.title}</S.BrowseText>
               </div>
             </Link>
           ))}
@@ -80,6 +61,8 @@ export default function Header(): JSX.Element {
         </S.AuthControls>
       ) : (
         <S.AuthControls>
+          {<Link href={`/settings/${user?._id}`}>SETTINGS</Link>}
+
           <LogoutBtn text='Logout' className='Logout__btn' />
         </S.AuthControls>
       )}

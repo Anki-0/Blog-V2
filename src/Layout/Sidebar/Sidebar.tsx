@@ -18,7 +18,9 @@ const Sidebar: React.FC = () => {
     <S.Sidebar>
       <S.Top>
         <S.Logo aria-label='SideBar Toggle Btn'>
-          <h2>BLOG</h2>
+          <Link href='/' passHref>
+            <h2>BLOG</h2>
+          </Link>
           {/* <svg
             xmlns='http://www.w3.org/2000/svg'
             width='28'
@@ -42,11 +44,11 @@ const Sidebar: React.FC = () => {
               {sidebarItems.map(items => (
                 <Link href={items.url} key={items.title}>
                   <a
-                    className={'items ' + (active === items.title ? 'active' : '')}
                     onClick={() => setActive(items.title)}
+                    className={'items ' + (active === items.title ? 'active' : '')}
                   >
                     <S.SidebarIcon data-title='Members'>
-                      <items.icon height='22px' width='22px' />
+                      <items.icon />
                     </S.SidebarIcon>
                     <S.SidebarText>{items.title}</S.SidebarText>
                   </a>

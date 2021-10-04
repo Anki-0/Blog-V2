@@ -70,68 +70,72 @@ const Index = ({ data }: props): JSX.Element => {
             </S.FieldWrap>
           </S.Sorting>
         </S.Head>
-        <S.Container>
-          <S.Posts>
-            {data.posts &&
-              posts.map(post => {
-                return (
-                  <PostCard
-                    key={post._id}
-                    data={post}
-                    authorImg='/images/author-1.png'
-                    postImg='/images/asset-1.png'
-                  />
-                );
-              })}
+        <div className='center'>
+          <S.Container>
+            <S.Posts>
+              {data.posts &&
+                posts.map(post => {
+                  return (
+                    <PostCard
+                      key={post._id}
+                      data={post}
+                      authorImg='/images/author-1.png'
+                      postImg='/images/asset-1.png'
+                    />
+                  );
+                })}
 
-            {!loading && !postEnd && <button onClick={getMorePost}>LOAD more</button>}
-            {postEnd && <p>END RACHED</p>}
-          </S.Posts>
-          <S.Sidebar>
-            <S.Recommended>
-              <p>Recommended topics</p>
-              <S.Tags>
-                <Tag fontSize={1.2} tagName={'Product Management'} />
-                <Tag fontSize={1.2} tagName={'Accessibility'} />
-                <Tag fontSize={1.2} tagName={'Programming'} />
-                <Tag fontSize={1.2} tagName={'Education'} />
-                <Tag fontSize={1.2} tagName={'Music'} />
-                <Tag fontSize={1.2} tagName={'Media'} />
-                <Tag fontSize={1.2} tagName={'Next.js'} />
-              </S.Tags>
-            </S.Recommended>
-            <S.WhoToFollow>
-              <p>Who to follow</p>
-              <MemberCard
-                img={'/images/2.png'}
-                name={'LIONDEX'}
-                about={'Decentralized Finance at its best'}
-              />
-              <MemberCard
-                img={'/images/1.png'}
-                name={'disBalancer'}
-                about={
-                  'disBalancer — is a decentralized network that provides DDoS Resistance service and decentralized load balancer for infrastructure.'
-                }
-              />
-              <MemberCard
-                img={'/images/3.png'}
-                name={'PancakeSwap'}
-                about={
-                  'The #1 AMM and yield farm on Binance Smart Chain. https://pancakeswap.finance/'
-                }
-              />
-            </S.WhoToFollow>
-            <S.SidebarFooter>
-              {footerItems &&
-                footerItems.map((item, index) => (
-                  <div className='footerItems' key={index}>
-                    {item.itemName}
-                  </div>
-                ))}
-            </S.SidebarFooter>
-          </S.Sidebar>
-        </S.Container>
+              {!loading && !postEnd && (
+                <S.loadMorePost onClick={getMorePost}>LOAD more</S.loadMorePost>
+              )}
+              {postEnd && <p>END RACHED</p>}
+            </S.Posts>
+            <S.Sidebar>
+              <S.Recommended>
+                <p>Recommended topics</p>
+                <S.Tags>
+                  <Tag fontSize={1.2} tagName={'Product Management'} />
+                  <Tag fontSize={1.2} tagName={'Accessibility'} />
+                  <Tag fontSize={1.2} tagName={'Programming'} />
+                  <Tag fontSize={1.2} tagName={'Education'} />
+                  <Tag fontSize={1.2} tagName={'Music'} />
+                  <Tag fontSize={1.2} tagName={'Media'} />
+                  <Tag fontSize={1.2} tagName={'Next.js'} />
+                </S.Tags>
+              </S.Recommended>
+              <S.WhoToFollow>
+                <p>Who to follow</p>
+                <MemberCard
+                  img={'/images/2.png'}
+                  name={'LIONDEX'}
+                  about={'Decentralized Finance at its best'}
+                />
+                <MemberCard
+                  img={'/images/1.png'}
+                  name={'disBalancer'}
+                  about={
+                    'disBalancer — is a decentralized network that provides DDoS Resistance service and decentralized load balancer for infrastructure.'
+                  }
+                />
+                <MemberCard
+                  img={'/images/3.png'}
+                  name={'PancakeSwap'}
+                  about={
+                    'The #1 AMM and yield farm on Binance Smart Chain. https://pancakeswap.finance/'
+                  }
+                />
+              </S.WhoToFollow>
+              <S.SidebarFooter>
+                {footerItems &&
+                  footerItems.map((item, index) => (
+                    <div className='footerItems' key={index}>
+                      {item.itemName}
+                    </div>
+                  ))}
+              </S.SidebarFooter>
+            </S.Sidebar>
+          </S.Container>
+        </div>
       </PageCenter>
     </>
   );

@@ -43,3 +43,18 @@ export interface IcheckAuth {
   isAuthenticated: boolean;
   user: Iauthor;
 }
+
+export interface UserInterface {
+  user_role: string;
+  _id: string;
+  user_email: string;
+  user_nickname: string;
+  createdAt: date;
+  updatedAt: date;
+  __v: 0;
+  user_dob: string;
+  user_name: string;
+  user_phone: string;
+  user_registered: Date;
+  user_status: string;
+}

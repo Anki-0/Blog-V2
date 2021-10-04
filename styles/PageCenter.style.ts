@@ -5,6 +5,11 @@ export const PageCenter = styled.div`
   margin: 0 auto;
   padding: 4.4rem 6rem;
 
+  & > .center {
+    display: flex;
+    justify-content: center;
+  }
+
   & > hr {
     background: ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgba(60, 63, 70, .15)')};
     height: 0.1rem;

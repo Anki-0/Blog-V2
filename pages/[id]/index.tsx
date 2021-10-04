@@ -107,9 +107,9 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ctx => {
-  console.log(ctx.params?.id);
-  const id: string = ctx.params?.id as string;
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  console.log(params?.id);
+  const id: string = params?.id as string;
 
   const res = await axiosInstance.get(`/posts/${encodeURI(id)}`);
   const { data }: { data: SpecificPost } = res;
