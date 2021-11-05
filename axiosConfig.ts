@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 // let API;
-
 // if (process.env.NODE_ENV.trim() === 'development') {
 //   API = process.env.BASE_URL;
 // } else {
