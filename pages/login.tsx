@@ -1,63 +1,87 @@
-import Link from 'next/link';
+import React from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
-import React, { useState } from 'react';
-import { GetServerSideProps } from 'next';
+
+import { AxiosError } from 'axios';
+import axiosInstance from '@/axiosConfig';
 
 import { useAuthValue } from '@/src/Context';
-import { Loader, Tag } from '@/src/Layout';
-import { Iauth as response } from '@/interface/api';
-import { ApiPosts } from '@/interface/api';
-
-import axiosInstance from '@/axiosConfig';
-import * as S from '@/styles/Login.module';
-import * as L from '@/styles/Login.Style';
-import * as M from '@/styles/apiRes.style';
+import { Loader } from '@/src/Layout';
 import useCheckAuth from '@/src/_services/useCheckAuth';
-import { useEffect } from 'react';
-import { AxiosError } from 'axios';
 
-type props = {
-  data: ApiPosts;
-};
-// type err = { status: string; message: string };
+import { Iauth as response } from '@/interface/api';
 
-export default function Login({ data }: props): JSX.Element {
-  console.log(data.posts);
-  const [password, setPassword] = useState('');
+import * as M from '@/styles/apiRes.style';
+import * as S from '@/styles/login/login.module';
+
+export default function Login2(): JSX.Element {
+  const [{ loginButtonActive, RegistratonButtonActive }, setActive] = useState({
+    loginButtonActive: true,
+    RegistratonButtonActive: false
+  });
+  const [password, setPassword] = useState('TEXT');
+  const [repeatPassword, setRepeatPassword] = useState('TEXT');
+  const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
-  const [isLoading, setIsLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(false);
   const { authStatus, setAuthStatus } = useAuthValue();
   const { isAuthenticated } = useCheckAuth();
-  console.log(isAuthenticated);
-
-  useEffect(() => {
-    console.log('useeffect', isAuthenticated);
-
-    if (isAuthenticated) {
-      RedirectToHome();
-    }
-  }, [isAuthenticated]);
+  console.log(password, username);
 
   const RedirectToHome = (): void => {
     window.location.href = '/';
   };
 
-  const loginHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
-    event.preventDefault(); // don't redirect the page
+  useEffect(() => {
+    console.log(isAuthenticated);
 
+    // if isAuthentiacted is true redirect to home
+    if (isAuthenticated) {
+      RedirectToHome();
+    }
+  }, [isAuthenticated]);
+
+  //HANDLE LOGIN
+  const LoginHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
+    event.preventDefault(); // don't redirect the page
+    console.log('loginhandler');
+
+    //PayLood for the body
     const userData = {
-      userEmail: email,
-      userPassword: password
+      user_email: email,
+      user_pass: password
     };
 
     try {
       const res = await axiosInstance.post(`/users/login`, userData);
       const data: response = res.data;
-      setIsLoading(true);
+      setIsLoading(false);
       setAuthStatus(data);
       RedirectToHome();
+    } catch (error) {
+      const { response } = (await error) as AxiosError;
+      setIsLoading(true);
+      setAuthStatus(response?.data);
+    }
+  };
+
+  const signUpHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
+    event.preventDefault(); // don't redirect the page
+
+    const payload = {
+      user_email: email,
+      user_pass: password,
+      user_name: username
+    };
+
+    try {
+      const res = await axiosInstance.post('/users/signup', payload);
+      const data: response = res.data;
+      setAuthStatus(data);
+      console.log(data);
+      setIsLoading(true);
+      RedirectToHome();
       // console.log('res : =====> ', data);
-      // router.push('/') && router.reload();
     } catch (error) {
       const { response } = (await error) as AxiosError;
       setIsLoading(true);
@@ -67,48 +91,72 @@ export default function Login({ data }: props): JSX.Element {
   };
 
   return (
-    <S.Login>
-      <S.Container>
-        <S.LoginWrap>
-          <Link href='/'>
-            <a className='logo'>DEV BLOG</a>
-          </Link>
-          <div className='info'>Keep up-to-date with Dev Community</div>
-          <S.PopularPost>
-            {data &&
-              data.posts.map(post => {
-                return (
-                  <a className='post' href='#' key={post._id}>
-                    <div className='post__preview'>
-                      <Image
-                        className='post__pic'
-                        alt='post_img'
-                        src='/images/bg-sign-in.png'
-                        width={120}
-                        height={96}
-                      />
-                    </div>
-                    <div className='post__details'>
-                      <div className='post__title'>{post.post_title}</div>
-                      <div className='post__category'>
-                        {post.post_tags &&
-                          post.post_tags.map(tag => <Tag tagName={tag} key={tag} fontSize={1} />)}
-                      </div>
-                      <div className='status orange'>{post.likecount}K viewers</div>
-                    </div>
-                  </a>
-                );
-              })}
-          </S.PopularPost>
-        </S.LoginWrap>
-        <S.LoginForm>
-          <S.IconClose onClick={RedirectToHome}>
-            <svg id='icon-remove' viewBox='0 0 10 10'>
-              <path d='M1.613.21l.094.083L5 3.585 8.293.293a1 1 0 0 1 1.497 1.32l-.083.094L6.415 5l3.292 3.293a1 1 0 0 1-1.32 1.497l-.094-.083L5 6.415 1.707 9.707A1 1 0 0 1 .21 8.387l.083-.094L3.585 5 .293 1.707A1 1 0 0 1 1.613.21z'></path>
-            </svg>
-          </S.IconClose>
-          <L.Wrapper>
-            {isLoading ? (
+    <S.landing>
+      <S.landing_decoration></S.landing_decoration>
+
+      <S.landing_info>
+        <S.logo>
+          <svg className='icon-logo-vikinger'>
+            <use xlinkHref='#svg-logo-vikinger'></use>
+          </svg>
+        </S.logo>
+
+        <h2 className='landing-info-pretitle'>Welcome to</h2>
+
+        <h1 className='landing-info-title'>
+          Dev
+          <span role='img' aria-label='laptop'>
+            (💻)
+          </span>
+          - Blog
+        </h1>
+
+        <p className='landing-info-text'>
+          The next generation social network &amp; community! Connect with your friends and play
+          with our quests and badges gamification system!
+        </p>
+
+        <S.tab_switch>
+          <button
+            className={`tab-switch-button login-register-form-trigger ${
+              loginButtonActive ? 'active' : ''
+            }`}
+            onClick={() =>
+              setActive(prev => {
+                return { ...prev, loginButtonActive: true, RegistratonButtonActive: false };
+              })
+            }
+          >
+            Login
+          </button>
+
+          <button
+            className={`tab-switch-button login-register-form-trigger ${
+              RegistratonButtonActive ? 'active' : ''
+            }`}
+            onClick={() =>
+              setActive(prev => {
+                return { ...prev, RegistratonButtonActive: true, loginButtonActive: false };
+              })
+            }
+          >
+            Register
+          </button>
+        </S.tab_switch>
+      </S.landing_info>
+
+      <S.landing_form>
+        <S.form_box className={`form-box ${loginButtonActive ? 'active' : ''}`}>
+          <button className='cross-icon' onClick={() => RedirectToHome()} />
+
+          <div className='form-box-decoration'>
+            <Image src='/landing/rocket.png' alt='rocket' width={160} height={156} quality={60} />
+          </div>
+
+          <h2 className='form-box-title'>Account Login</h2>
+
+          <S.form onSubmit={LoginHandler}>
+            {!isLoading ? (
               authStatus?.status === 'success' ? (
                 <M.Message status={authStatus?.status}>{authStatus?.message}</M.Message>
               ) : authStatus?.status === 'fail' ? (
@@ -119,79 +167,195 @@ export default function Login({ data }: props): JSX.Element {
             ) : (
               <Loader />
             )}
-            <L.FormWrapper>
-              <h2 className='heading-secondary ma-bt-lg'>Sign in</h2>
 
-              <div className='login__line'>
-                <div className='login__text'>New user?</div>
-                <Link href='/signup'>
-                  <a className='login__link'>Create an account</a>
-                </Link>
-              </div>
-
-              <form className='form form--signin' onSubmit={loginHandler}>
-                <L.FormGroup>
-                  <L.FormGroupLable>Email address</L.FormGroupLable>
-
-                  <L.FormGroupInput
-                    className='form__input'
-                    id='email'
-                    type='email'
-                    placeholder='you@example.com'
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='login' className='label'>
+                    Username or Email
+                  </label>
+                  <input
+                    type='text'
+                    id='loginEmail'
+                    name='login_username'
                     required
                     onChange={e => setEmail(e.target.value)}
                   />
-                </L.FormGroup>
-                <L.FormGroup>
-                  <L.FormGroupLable>Password</L.FormGroupLable>
+                </div>
+              </div>
+            </div>
 
-                  <L.FormGroupInput
-                    className='form__input'
-                    id='password'
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='login-password'>Password</label>
+                  <input
                     type='password'
-                    placeholder='••••••••'
+                    id='login-password'
+                    name='login_password'
                     required
                     onChange={e => setPassword(e.target.value)}
                   />
-                </L.FormGroup>
-                <L.FormGroup>
-                  <L.button color='#6c5dd3' onClick={() => setIsLoading(false)}>
-                    Continue
-                  </L.button>
-                </L.FormGroup>
-                <Link href='/forgetPassword' passHref>
-                  <span>Forget Password</span>
-                </Link>
-              </form>
+                </div>
+              </div>
+            </div>
 
-              <div className='login__or'>Or continue with</div>
+            <div className='form-row space-between'>
+              <div className='form-item'>
+                <div className='checkbox-wrap'>
+                  <input type='checkbox' id='login-remember' name='login_remember' />
+                  <div className='checkbox-box'>
+                    {/* <svg className='icon-cross'>
+                        <use xlinkHref='#svg-cross'></use>
+                      </svg> */}
+                  </div>
+                  <label htmlFor='login-remember'>Remember Me</label>
+                </div>
+              </div>
 
-              <L.button color='#3F8CFF'>Google</L.button>
-            </L.FormWrapper>
-          </L.Wrapper>
-        </S.LoginForm>
-      </S.Container>
-    </S.Login>
+              <div className='form-item'>
+                <a className='form-link' href='#'>
+                  Forgot Password?
+                </a>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <S.button onClick={() => setIsLoading(true)}>Login to your Account!</S.button>
+              </div>
+            </div>
+          </S.form>
+
+          <p className='lined-text'>Login with your Social Account</p>
+
+          {/* <div className='social-links'>
+              <a className='social-link facebook' href='#'>
+                <svg className='icon-facebook'>
+                  <use xlinkHref='#svg-facebook'></use>
+                </svg>
+              </a>
+
+              <a className='social-link twitter' href='#'>
+                <svg className='icon-twitter'>
+                  <use xlinkHref='#svg-twitter'></use>
+                </svg>
+              </a>
+
+              <a className='social-link twitch' href='#'>
+                <svg className='icon-twitch'>
+                  <use xlinkHref='#svg-twitch'></use>
+                </svg>
+              </a>
+
+              <a className='social-link youtube' href='#'>
+                <svg className='icon-youtube'>
+                  <use xlinkHref='#svg-youtube'></use>
+                </svg>
+              </a>
+            </div>
+          */}
+        </S.form_box>
+
+        <S.form_box className={`form-box ${RegistratonButtonActive ? 'active' : ''}`}>
+          <button className='cross-icon' onClick={() => RedirectToHome()} />
+
+          <div className='form-box-decoration'>
+            <Image src='/landing/rocket.png' alt='rocket' width={160} height={156} quality={60} />
+          </div>
+
+          <h2 className='form-box-title'>Create your Account!</h2>
+
+          <S.form onSubmit={signUpHandler}>
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='register-email'>Your Email</label>
+                  <input
+                    type='text'
+                    id='register-email'
+                    name='register_email'
+                    required
+                    onChange={e => setEmail(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='register-username'>Username</label>
+                  <input
+                    type='text'
+                    id='register-username'
+                    name='register_username'
+                    required
+                    onChange={e => setUsername(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='register-password'>Password</label>
+                  <input
+                    type='password'
+                    id='register-password'
+                    name='register_password'
+                    required
+                    onChange={e => setPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='form-input'>
+                  <label htmlFor='register-password-repeat'>Repeat Password</label>
+                  <input
+                    type='password'
+                    id='register-password-repeat'
+                    name='register_password_repeat'
+                    required
+                    onChange={e => setRepeatPassword(e.target.value)}
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <div className='checkbox-wrap'>
+                  <input type='checkbox' id='register-newsletter' name='register_newsletter' />
+                  <div className='checkbox-box'>
+                    {/* <svg className='icon-cross'>
+                        <use xlinkHref='#svg-cross'></use>
+                      </svg> */}
+                  </div>
+                  <label htmlFor='register-newsletter'>Send me news and updates via email</label>
+                </div>
+              </div>
+            </div>
+
+            <div className='form-row'>
+              <div className='form-item'>
+                <S.button disabled={password !== repeatPassword}>
+                  {password === repeatPassword ? 'Register Now!' : '🙄Password Not Matched!!'}
+                </S.button>
+              </div>
+            </div>
+          </S.form>
+
+          <p className='form-text'>
+            You&apos;ll receive a confirmation email in your inbox with a link to activate your
+            account. If you have any problems, <a href='#'>contact us</a>!
+          </p>
+        </S.form_box>
+      </S.landing_form>
+    </S.landing>
   );
 }
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const res = await axiosInstance.get('/posts?limit=3');
-    const data: ApiPosts = res.data;
-    console.log('res : =====> ', data);
-
-    // will be passed to the page component as props
-    return { props: { data } };
-  } catch (error) {
-    const { response } = (await error) as AxiosError;
-
-    console.log('err : =====> ', response);
-    return {
-      redirect: {
-        destination: '/404',
-        statusCode: 307
-      }
-    };
-  }
-};

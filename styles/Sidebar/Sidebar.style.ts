@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { rotate } from './Animation/Animaion';
+import { rotate } from '@/styles/Animation/Animaion';
 
 /**(Toggle True) = SM Sidebar
  * &&

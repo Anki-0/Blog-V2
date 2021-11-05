@@ -1,4 +1,4 @@
-import * as S from '../../../styles/Sidebar.style';
+import * as S from '../../../styles/Sidebar/Sidebar.style';
 import { WbSunnyTwoTone, NightsStayTwoTone } from '@material-ui/icons';
 
 import { useThemeTogglerValue } from '@/src/Context/ThemeTogglerContext';

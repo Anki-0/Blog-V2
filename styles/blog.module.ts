@@ -52,15 +52,20 @@ export const Container = styled.div`
 `;
 export const Posts = styled.div`
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  /* justify-content: center;*/
-  align-items: center;
-  gap: 4.8rem;
+  margin: 0 -16px;
+  flex-wrap: wrap;
+  height: fit-content;
+  justify-content: center;
+
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 `;
 export const Sidebar = styled.div`
   max-width: 36.6rem;
-  min-width: 24.1rem;
+  min-width: 20%;
 
   /* padding: 0 5.6rem; */
 
@@ -129,16 +134,17 @@ export const SidebarFooter = styled.div`
 `;
 
 export const loadMorePost = styled.button`
-  padding: 1rem 4rem;
+  padding: 2rem 5rem;
   background: #216bf3;
   color: #fff;
   border: none;
   outline: none;
-  border-radius: 0.5rem;
-  font-weight: 700;
-  text-transform: lowercase;
+  border-radius: 1.5rem;
+  font-weight: 800;
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+  align-self: center;
+  box-shadow: 0px 4px 9px #216bf39c;
 
   &:hover {
     transform: scale(1.04);

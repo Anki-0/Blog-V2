@@ -8,7 +8,6 @@ import {
   SidebarToggleProvider,
   ThemeTogglerProvider,
   HeaderMenuToggleProvider,
-  AuthModelToggleProvider,
   IsAuthenticatedProvider,
   AuthProvider
 } from '@/src/Context';
@@ -27,30 +26,28 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
       <HeaderMenuToggleProvider>
         <ThemeTogglerProvider>
           <SidebarToggleProvider>
-            <AuthModelToggleProvider>
-              <AuthProvider>
-                <IsAuthenticatedProvider>
-                  <ThemeHOC>
-                    <GlobalStyle />
-                    <div className='page'>
-                      {router.pathname !== '/login' ? (
-                        <>
-                          <Sidebar />
-                          <PageWrapper>
-                            <>
-                              <Header />
-                              <Component {...pageProps} />
-                            </>
-                          </PageWrapper>
-                        </>
-                      ) : (
-                        <Component {...pageProps} />
-                      )}
-                    </div>
-                  </ThemeHOC>
-                </IsAuthenticatedProvider>
-              </AuthProvider>
-            </AuthModelToggleProvider>
+            <AuthProvider>
+              <IsAuthenticatedProvider>
+                <ThemeHOC>
+                  <GlobalStyle />
+                  <div className='page'>
+                    {router.pathname !== '/login' ? (
+                      <>
+                        <Sidebar />
+                        <PageWrapper>
+                          <>
+                            <Header />
+                            <Component {...pageProps} />
+                          </>
+                        </PageWrapper>
+                      </>
+                    ) : (
+                      <Component {...pageProps} />
+                    )}
+                  </div>
+                </ThemeHOC>
+              </IsAuthenticatedProvider>
+            </AuthProvider>
           </SidebarToggleProvider>
         </ThemeTogglerProvider>
       </HeaderMenuToggleProvider>

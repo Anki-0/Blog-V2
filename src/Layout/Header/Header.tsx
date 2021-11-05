@@ -4,16 +4,34 @@ import Link from 'next/link';
 import { useSideabarToggleValue, useHeaderMenuToggleValue } from '@/src/Context';
 
 import { browseItems } from '@/src/utils/browseItems';
-import { Search, Button, LogoutBtn } from '@/src/Layout';
+import { Search, Button } from '@/src/Layout';
 
 import useCheckAuth from '@/src/_services/useCheckAuth';
 
-import * as S from '@/styles/Header.style';
+import * as S from '@/styles/Header/Header.style';
+import axiosInstance from '@/axiosConfig';
+
+interface response {
+  status: string;
+  message: string;
+}
 
 export default function Header(): JSX.Element {
   const { toggle, setToggle } = useSideabarToggleValue();
   const { showMenu, setShowMenu } = useHeaderMenuToggleValue();
   const { isAuthenticated, user } = useCheckAuth();
+  console.log(user?._id);
+
+  const logoutHandler = async (): Promise<void> => {
+    try {
+      const res = await axiosInstance.get(`/users/logout`);
+      const data: response = res.data;
+      if (data.status === 'success') window.location.href = '/';
+    } catch (error) {
+      // console.log('ERROR => ', error.response); // this is the main part. Use the response property from the error object
+      alert('☠ Error Logging out try again!!');
+    }
+  };
 
   return (
     <S.Header>
@@ -50,12 +68,7 @@ export default function Header(): JSX.Element {
         <S.AuthControls>
           <Link href='/login'>
             <a>
-              <Button name='Sign in' className='SignIn__btn' />
-            </a>
-          </Link>
-          <Link href='/signup'>
-            <a>
-              <Button name='Create Account' className='SignUp__btn' />
+              <Button buttonText='Sign in' className='signin-button' />
             </a>
           </Link>
         </S.AuthControls>
@@ -63,7 +76,7 @@ export default function Header(): JSX.Element {
         <S.AuthControls>
           {<Link href={`/settings/${user?._id}`}>SETTINGS</Link>}
 
-          <LogoutBtn text='Logout' className='Logout__btn' />
+          <Button buttonText='Logout' className='logout-button' onClick={logoutHandler} />
         </S.AuthControls>
       )}
     </S.Header>

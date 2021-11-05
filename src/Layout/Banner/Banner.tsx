@@ -8,7 +8,6 @@ interface props {
 }
 
 export default function Banner({ heading, subHeading }: props): JSX.Element {
-  // const { isDark } = useThemeTogglerValue();
   return (
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <S.Banner>

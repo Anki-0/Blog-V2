@@ -1,6 +1,6 @@
 import React from 'react';
 import TrendingPost from './TrendingPost';
-import * as S from '@/styles/Trending.style';
+import * as S from '@/styles/Trending Posts/Trending.style';
 import { TrendingUpTwoTone } from '@material-ui/icons';
 
 export default function Trending(): JSX.Element {

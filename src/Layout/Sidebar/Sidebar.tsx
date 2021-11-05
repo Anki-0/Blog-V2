@@ -8,7 +8,7 @@ import { sidebarItems } from '@/src/utils/sidebarItems';
 import ThemeSwitcher from '../ThemeSwitcher/ThemeSwitcher';
 
 import { useSideabarToggleValue } from '@/src/Context/SidebarToggleContext';
-import * as S from '@/styles/Sidebar.style';
+import * as S from '@/styles/Sidebar/Sidebar.style';
 
 const Sidebar: React.FC = () => {
   const [active, setActive] = useState('Posts');

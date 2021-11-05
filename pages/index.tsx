@@ -33,7 +33,7 @@ const Index = ({ data }: props): JSX.Element => {
   }, []);
 
   const getMorePost: () => Promise<void> = async () => {
-    const LIMIT = 4;
+    const LIMIT = 10;
     setloading(true);
     const res = await axiosInstance.get(`/posts?page=${page}&limit=${LIMIT}`);
     page += 1;
@@ -73,20 +73,22 @@ const Index = ({ data }: props): JSX.Element => {
         <div className='center'>
           <S.Container>
             <S.Posts>
-              {data.posts &&
-                posts.map(post => {
-                  return (
-                    <PostCard
-                      key={post._id}
-                      data={post}
-                      authorImg='/images/author-1.png'
-                      postImg='/images/asset-1.png'
-                    />
-                  );
-                })}
+              <div className=''>
+                {data.posts &&
+                  posts.map(post => {
+                    return (
+                      <PostCard
+                        key={post._id}
+                        data={post}
+                        authorImg='/images/author-1.png'
+                        postImg='/images/w.webp'
+                      />
+                    );
+                  })}
+              </div>
 
               {!loading && !postEnd && (
-                <S.loadMorePost onClick={getMorePost}>LOAD more</S.loadMorePost>
+                <S.loadMorePost onClick={getMorePost}>Load More</S.loadMorePost>
               )}
               {postEnd && <p>END RACHED</p>}
             </S.Posts>
@@ -94,13 +96,13 @@ const Index = ({ data }: props): JSX.Element => {
               <S.Recommended>
                 <p>Recommended topics</p>
                 <S.Tags>
-                  <Tag fontSize={1.2} tagName={'Product Management'} />
-                  <Tag fontSize={1.2} tagName={'Accessibility'} />
-                  <Tag fontSize={1.2} tagName={'Programming'} />
-                  <Tag fontSize={1.2} tagName={'Education'} />
-                  <Tag fontSize={1.2} tagName={'Music'} />
-                  <Tag fontSize={1.2} tagName={'Media'} />
-                  <Tag fontSize={1.2} tagName={'Next.js'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Product Management'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Accessibility'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Programming'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Education'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Music'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Media'} />
+                  <Tag fontSize={1.2} height={'3rem'} tagName={'Next.js'} />
                 </S.Tags>
               </S.Recommended>
               <S.WhoToFollow>
@@ -143,7 +145,7 @@ const Index = ({ data }: props): JSX.Element => {
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-    const res = await axiosInstance.get('/posts?limit=4');
+    const res = await axiosInstance.get('/posts?limit=10');
     const data: ApiPosts = res.data;
     // console.log('res : =====> ', data);
 

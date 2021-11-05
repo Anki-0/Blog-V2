@@ -10,6 +10,8 @@ const ProtectedRoute = <P extends t>(WrapperComponent: React.ComponentType<P>) =
     const { isAuthenticated } = useCheckAuth();
 
     useEffect(() => {
+      console.log(isAuthenticated);
+
       if (isAuthenticated !== undefined && !isAuthenticated) {
         // Router.push('/login');
         window.history.back();

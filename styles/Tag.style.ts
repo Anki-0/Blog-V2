@@ -1,19 +1,18 @@
 import styled from 'styled-components';
 
-type props = { fontSize: number };
+type props = { fontSize: number; height: string };
 
 export const Tag = styled.div<props>`
   display: flex;
   justify-content: center;
   align-items: center;
-
   border-radius: 0.7rem;
   background: ${({ theme }) => (theme.isDark ? theme.colors.dark.dark1 : '#fafafa')};
   box-shadow: ${({ theme }) =>
     theme.isDark
       ? '5px 5px 17px #1c1e26, -5px -5px 17px #2c303c'
       : '7px 7px 14px #e6e6e6,-7px -7px 14px #ffffff'};
-  height: 3.6rem;
+  height: ${({ height }) => height};
   width: max-content;
   text-align: center;
   padding: 0.8rem 1.6rem;
@@ -30,7 +29,7 @@ export const Tag = styled.div<props>`
 
   & > p {
     & > span {
-      font-size: 1.2rem;
+      font-size: ${({ fontSize }) => fontSize}rem;
     }
   }
 `;

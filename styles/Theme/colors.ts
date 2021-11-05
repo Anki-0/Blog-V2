@@ -15,7 +15,7 @@ export const colors: theme = {
     text: '#11142D',
     graydark: '#545863',
     graymd: '#757575',
-    graylight: '#B2B3BD',
+    graylight: '#adafca',
     orange: '#FF754C',
     pink: '#FFA2C0',
     pinklight: '#FFEBF6',

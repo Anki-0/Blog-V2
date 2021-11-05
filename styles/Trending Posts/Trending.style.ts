@@ -41,6 +41,12 @@ export const TrendingMain_Wrapper = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(28.6rem, 1fr));
   gap: 5.2rem 3.2rem;
 
+  @media only screen and (max-width: ${1440 / 16}em) {
+    grid-template-columns: repeat(auto-fit, minmax(32.6rem, 1fr));
+  }
+  @media only screen and (min-width: ${1440 / 16}em) {
+    grid-template-columns: repeat(auto-fit, minmax(34.6rem, 1fr));
+  }
   @media only screen and (max-width: ${691 / 16}em) {
     gap: 4.2rem 3.2rem;
   }

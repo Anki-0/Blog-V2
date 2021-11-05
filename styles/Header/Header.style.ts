@@ -196,6 +196,7 @@ export const AuthControls = styled.div`
   justify-content: center;
   align-items: center;
   padding: 1rem;
+  margin-left: auto;
 
   & > a:not(:last-child) {
     margin-right: 1.5rem;

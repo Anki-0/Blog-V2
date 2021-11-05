@@ -16,8 +16,8 @@ export const MemeberAvatar = styled.div`
   width: 4.8rem;
 `;
 export const MemeberMain = styled.a`
-  min-width: 13.5rem;
-  max-width: 18rem;
+  /* min-width: 13.5rem; */
+  max-width: 75%;
   margin-left: 1.6rem;
   margin-right: 0.8rem;
   & > p,

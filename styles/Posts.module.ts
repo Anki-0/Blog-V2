@@ -30,11 +30,12 @@ export const Post_Author = styled.div`
 
   .author__img {
     position: relative;
-    width: 2rem;
-    height: 2rem;
+    width: 3.2rem;
+    height: 3.2rem;
   }
   & > p {
     font-size: 1.3rem;
+    line-height: 2.2rem;
     font-weight: 600;
   }
 `;

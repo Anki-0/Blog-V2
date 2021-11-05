@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Post_Author, Post_Meta, Post_Date } from '@/styles/Posts.module';
-import * as S from '@/styles/Trending.style';
+import * as S from '@/styles/Trending Posts/Trending.style';
 
 type props = { Number: string; authorImg: string };
 
@@ -21,10 +21,10 @@ export default function TrendingPost({ Number, authorImg }: props): JSX.Element 
                 <Image
                   src={authorImg}
                   alt='Banner_Pic'
-                  width={1086}
-                  height={1082}
+                  width={32}
+                  height={32}
                   layout='responsive'
-                  quality={45}
+                  quality={60}
                 />
               </div>
             </a>

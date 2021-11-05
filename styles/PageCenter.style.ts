@@ -8,6 +8,11 @@ export const PageCenter = styled.div`
   & > .center {
     display: flex;
     justify-content: center;
+    @media only screen and (min-width: ${1440 / 16}em) {
+      max-width: 195rem;
+      margin: 0 auto;
+      padding: 64px;
+    }
   }
 
   & > hr {
