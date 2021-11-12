@@ -1,12 +1,39 @@
-export type Iauthor = {
-  user_role: string;
+export interface IPostData {
   _id: string;
-  user_email: string;
+  post_tags: [strings];
+  likecount: number;
+  post_title: string;
+  post_author: string;
+  post_content: string;
+  status: string;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface IAuthourData {
+  _id: string;
+  user_name: string;
   user_nickname: string;
-  createdAt: string;
-  updatedAt: string;
+  user_role: string;
+  user_status: string;
+  user_registered: Date;
+  updatedAt: Date;
+  createdAt: Date;
   user_passwordChangedAt: string;
-};
+  passwordResetExp: Date;
+  passwordResetToken: string;
+
+  user_description: string;
+  user_country: string;
+  user_state: string;
+  user_occupation: string;
+  user_birthplace: string;
+  user_dob: Date;
+  user_phone: number;
+  user_email: string;
+  user_tagline: string;
+  user_website: string;
+}
 
 export type IPost = {
   createdAt: string;
@@ -18,6 +45,16 @@ export type IPost = {
   status: string;
   updatedAt: string;
   _id: string;
+};
+
+export type Iauthor = {
+  user_role: string;
+  _id: string;
+  user_email: string;
+  user_nickname: string;
+  createdAt: string;
+  updatedAt: string;
+  user_passwordChangedAt: string;
 };
 
 export interface ApiPosts {
@@ -45,16 +82,16 @@ export interface IcheckAuth {
 }
 
 export interface UserInterface {
-  user_role: string;
   _id: string;
+  user_role: string;
   user_email: string;
   user_nickname: string;
   createdAt: date;
   updatedAt: date;
-  __v: 0;
   user_dob: string;
   user_name: string;
   user_phone: string;
   user_registered: Date;
   user_status: string;
+  __v: 0;
 }

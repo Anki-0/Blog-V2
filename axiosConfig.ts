@@ -6,7 +6,6 @@ import axios from 'axios';
 // } else {
 //   API = process.env.BASE_URL;
 // }
-
 // const axiosInstance = axios.create({
 //   baseURL: `${API}`
 // });

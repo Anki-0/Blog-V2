@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+type props = {
+  active: boolean;
+};
+
 export const Banner = styled.div`
   text-align: center;
   padding: 8rem;
@@ -219,7 +223,7 @@ export const BasicSettings = styled.div`
   }
 `;
 
-export const Widget_Box = styled.div`
+export const Widget_Box = styled.div<props>`
   .widget-box {
     padding: 3.2rem 2.8rem;
     border-radius: 1.2rem;
@@ -260,6 +264,20 @@ export const Widget_Box = styled.div`
             height: 12.6rem;
           }
         }
+
+        &-input:focus-within {
+          label {
+            color: #fff;
+            font-size: 1.2rem;
+            top: -6px;
+            left: 12px;
+            transform: unset;
+            background-color: #2e2e47;
+            border-radius: 30rem;
+            padding: 0rem 0.8rem;
+            text-align: center;
+          }
+        }
         &-item {
           width: 100%;
           margin-right: 1.6rem;
@@ -272,15 +290,20 @@ export const Widget_Box = styled.div`
           }
 
           & label {
-            color: #adafca;
+            background-color: ${({ active }) => (active ? '#fff' : '#fff')};
+            color: ${({ active }) => (active ? '#2e2e47' : '#adafca')};
+            border-radius: ${({ active }) => (active ? '30rem' : 0)};
+            font-size: ${({ active }) => (active ? '1.2rem' : '1.4rem')};
             font-weight: 600;
             position: absolute;
-            top: 50%;
-            left: 20px;
-            transform: translateY(-50%);
-            transition: all 0.3s ease-in-out;
-            font-size: 1.4rem;
+            top: ${({ active }) => (active ? '-.6rem' : '50%')};
+            left: ${({ active }) => (active ? '1.2rem' : '2rem')};
+            transform: ${({ active }) => (active ? 'unset' : 'translateY(-50%)')};
             pointer-events: none;
+            padding: 0rem 0.8rem;
+            text-align: center;
+
+            transition: all 0.3s ease-in-out;
           }
           input[type='password'],
           input[type='text'],
@@ -294,9 +317,17 @@ export const Widget_Box = styled.div`
             width: 100%;
             border-radius: 1.2rem;
             font-size: 1.4rem;
+            padding: 0 1.8rem;
             font-weight: 700;
             transition: border-color 0.2s ease-in-out;
           }
+
+          input:focus,
+          textarea:focus,
+          select:focus {
+            border-color: #615dfa;
+          }
+
           textarea {
             height: 100%;
             padding: 14px 18px;

@@ -75,7 +75,6 @@ export default function Header(): JSX.Element {
       ) : (
         <S.AuthControls>
           {<Link href={`/settings/${user?._id}`}>SETTINGS</Link>}
-
           <Button buttonText='Logout' className='logout-button' onClick={logoutHandler} />
         </S.AuthControls>
       )}
