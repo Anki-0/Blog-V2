@@ -23,6 +23,7 @@ export const Banner = styled.div`
 export const BannerConetent = styled.div`
   color: ${({ theme }) => theme.colors.light.wh};
   .heading {
+    text-transform: uppercase;
     font-family: ${({ theme }) => theme.fonts.cubano};
     font-size: 4rem;
     font-weight: 400;
@@ -51,7 +52,7 @@ export const BannerConetent = styled.div`
     }
   }
   @media only screen and (max-width: ${768 / 16}em) {
-    text-align: center;
+    /* text-align: center; */
     margin: auto;
   }
 `;
