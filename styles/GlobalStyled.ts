@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
 
 ${fonts};
 
+
 *,
   *::before,
   *::after {

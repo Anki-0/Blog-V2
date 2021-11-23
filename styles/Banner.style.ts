@@ -24,7 +24,7 @@ export const BannerConetent = styled.div`
   color: ${({ theme }) => theme.colors.light.wh};
   .heading {
     text-transform: uppercase;
-    font-family: ${({ theme }) => theme.fonts.cubano};
+    font-family: 'cubano';
     font-size: 4rem;
     font-weight: 500;
     max-width: 49rem;
@@ -39,17 +39,22 @@ export const BannerConetent = styled.div`
   }
 
   .subHeading {
+    color: ${({ theme }) => theme.colors.light.graylight};
     font-size: 2rem;
     max-width: 54rem;
     line-height: 1.6;
     font-weight: 300;
 
     & > span {
+      color: #fff;
       background-image: linear-gradient(90deg, #fa8142, #ff4088);
       padding: 0.5rem 0.5rem;
       border-radius: 3px;
       font-size: 0.85em;
       font-weight: 700;
+    }
+    & > strong {
+      color: #fff;
     }
   }
   @media only screen and (max-width: ${768 / 16}em) {

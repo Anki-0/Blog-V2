@@ -54,7 +54,7 @@ const Index = ({ data }: props): JSX.Element => {
       <Banner
         heading={'Build and ship your app <span> faster </span>'}
         subHeading={
-          'Errorstack.io is a <span>gateway drug</span> for developers who want to build awesome web & mobile apps.'
+          'Errorstack.io is a <span>gateway drug</span> for developers who want to <strong>build awesome web & mobile apps.</strong>'
         }
       />
 
