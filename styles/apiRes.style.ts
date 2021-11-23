@@ -17,6 +17,6 @@ export const Message = styled.span<props>`
     status === 'success'
       ? 'rgba(100, 254, 136,.1)'
       : status === 'fail'
-      ? 'rgba(56, 25, 26, .38)'
+      ? 'rgb(249, 198, 200);'
       : ''}; ;
 `;

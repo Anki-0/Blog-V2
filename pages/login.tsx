@@ -26,15 +26,12 @@ export default function Login2(): JSX.Element {
   const [isLoading, setIsLoading] = useState(false);
   const { authStatus, setAuthStatus } = useAuthValue();
   const { isAuthenticated } = useCheckAuth();
-  console.log(password, username);
 
   const RedirectToHome = (): void => {
     window.location.href = '/';
   };
 
   useEffect(() => {
-    console.log(isAuthenticated);
-
     // if isAuthentiacted is true redirect to home
     if (isAuthenticated) {
       RedirectToHome();
@@ -44,7 +41,6 @@ export default function Login2(): JSX.Element {
   //HANDLE LOGIN
   const LoginHandler = async (event: React.SyntheticEvent<EventTarget>): Promise<void> => {
     event.preventDefault(); // don't redirect the page
-    console.log('loginhandler');
 
     //PayLood for the body
     const userData = {
@@ -56,11 +52,13 @@ export default function Login2(): JSX.Element {
       const res = await axiosInstance.post(`/users/login`, userData);
       const data: response = res.data;
       setIsLoading(false);
-      setAuthStatus(data);
+      console.log('🟢login res data ======> ', data);
       RedirectToHome();
     } catch (error) {
       const { response } = (await error) as AxiosError;
-      setIsLoading(true);
+      setIsLoading(false);
+      console.log('🔥 LOGIN ERROR => ', response); // this is the main part. Use the response property from the error object
+
       setAuthStatus(response?.data);
     }
   };
@@ -78,15 +76,14 @@ export default function Login2(): JSX.Element {
       const res = await axiosInstance.post('/users/signup', payload);
       const data: response = res.data;
       setAuthStatus(data);
-      console.log(data);
+      console.log('🟢 login res data ======> ', data);
       setIsLoading(true);
       RedirectToHome();
-      // console.log('res : =====> ', data);
     } catch (error) {
       const { response } = (await error) as AxiosError;
       setIsLoading(true);
       setAuthStatus(response?.data);
-      console.log('LOGIN ERROR => ', response); // this is the main part. Use the response property from the error object
+      console.log('🔥 LOGIN ERROR => ', response); // this is the main part. Use the response property from the error object
     }
   };
 
