@@ -26,7 +26,7 @@ export const BannerConetent = styled.div`
     text-transform: uppercase;
     font-family: 'cubano';
     font-size: 4rem;
-    font-weight: 500;
+    font-weight: 600;
     max-width: 49rem;
     margin-block-end: 2.6rem;
     word-wrap: break-word;
