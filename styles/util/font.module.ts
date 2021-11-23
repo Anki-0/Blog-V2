@@ -63,10 +63,4 @@ export const fonts = css`
     font-weight: normal;
     font-style: normal;
   }
-  @font-face {
-    font-family: 'R Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('R Regular'), url('../../public/fonts/cubano/R Regular.woff') format('woff');
-  }
 `;
