@@ -1,6 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
+import { fonts } from './util/font.module';
 
 export const GlobalStyle = createGlobalStyle`
+
+${fonts};
 
 *,
   *::before,
@@ -23,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     /* min-width: 375px; */
-    font-family: 'Montserrat', sans-serif, Arial, sans-serif;
+    font-family: 'sofia-pro', sans-serif;
     color:${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)}; ;
     background-color: ${({ theme }) =>
       theme.isDark ? theme.colors.dark.dark : theme.colors.light.wh};

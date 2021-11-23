@@ -10,6 +10,7 @@ import useCheckAuth from '@/src/_services/useCheckAuth';
 
 import * as S from '@/styles/Header/Header.style';
 import axiosInstance from '@/axiosConfig';
+import SvgLogin from '@/public/svg/login';
 
 interface response {
   status: string;
@@ -68,7 +69,10 @@ export default function Header(): JSX.Element {
         <S.AuthControls>
           <Link href='/login'>
             <a>
-              <Button buttonText='Sign in' className='signin-button' />
+              <span className='login'>
+                <SvgLogin className='login-svg' />
+                <span className='item-label'>login</span>
+              </span>
             </a>
           </Link>
         </S.AuthControls>

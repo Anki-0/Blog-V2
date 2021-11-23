@@ -1,7 +1,7 @@
 // import original module declarations
 import 'styled-components';
 
-type common = {
+interface Icommon {
   bl: string;
   wh: string;
   purple: string;
@@ -23,18 +23,23 @@ type common = {
   borderlight: string;
   green: string;
   link: string;
-};
-type dark = {
+}
+interface Idark {
   dark: string;
   dark1: string;
-};
+}
 
+export interface font {
+  cubano: string;
+  sofia: string;
+}
 declare module 'styled-components' {
   export interface DefaultTheme {
     colors: {
-      light: common;
-      dark: dark;
+      light: Icommon;
+      dark: Idark;
     };
+    fonts: font;
     isDark: boolean;
     toggle: boolean;
   }

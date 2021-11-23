@@ -16,15 +16,39 @@ export const Banner = styled.div`
   backdrop-filter: ${({ theme }) => (theme.isDark ? 'blur(8px)' : 'blur(0px)')};
   overflow: hidden;
 
-  .heading {
-    font-size: 7rem;
+  @media only screen and (max-width: ${768 / 16}em) {
+    padding: 0 5rem;
   }
 `;
 export const BannerConetent = styled.div`
   color: ${({ theme }) => theme.colors.light.wh};
+  .heading {
+    font-family: ${({ theme }) => theme.fonts.cubano};
+    font-size: 4rem;
+    font-weight: 400;
+    max-width: 49rem;
+    margin-block-end: 2.6rem;
+    word-wrap: break-word;
+
+    & > span {
+      background-image: linear-gradient(90deg, #fa8142, #ff4088);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+  }
 
   .subHeading {
     font-size: 2rem;
+    max-width: 54rem;
+    line-height: 1.6;
+
+    & > span {
+      background-image: linear-gradient(90deg, #fa8142, #ff4088);
+      padding: 0.5rem 0.5rem;
+      border-radius: 3px;
+      font-size: 0.85em;
+      font-weight: 700;
+    }
   }
   @media only screen and (max-width: ${768 / 16}em) {
     text-align: center;

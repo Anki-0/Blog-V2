@@ -30,7 +30,23 @@ const Post = ({ authorImg, postImg, data }: props): JSX.Element => {
         />
       </S.Post_preview>
       <S.body>
-        <Tag tagName='Component' fontSize={1.2} height={'2rem'} />
+        <S.Post_Tags>
+          {data?.post_tags &&
+            data.post_tags.map((tag, index) => {
+              return (
+                <Tag
+                  tagName={tag}
+                  fontSize={1.2}
+                  height={'2rem'}
+                  key={index}
+                  backgroundColor='#6c5dd3'
+                  color={'#FFF'}
+                  borderRadius={'0'}
+                />
+              );
+            })}
+        </S.Post_Tags>
+
         <S.card_Content>
           <S.card_title>
             <Link href={`${data.post_title}`} passHref>

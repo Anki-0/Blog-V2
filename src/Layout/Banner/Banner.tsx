@@ -12,8 +12,8 @@ export default function Banner({ heading, subHeading }: props): JSX.Element {
     <div style={{ position: 'relative', overflow: 'hidden' }}>
       <S.Banner>
         <S.BannerConetent>
-          <h1 className='heading'>{heading}</h1>
-          <h2 className='subHeading'>{subHeading}</h2>
+          <h1 className='heading' dangerouslySetInnerHTML={{ __html: heading }} />
+          <h2 className='subHeading' dangerouslySetInnerHTML={{ __html: subHeading }} />
         </S.BannerConetent>
       </S.Banner>
       {/* {isDark ? (

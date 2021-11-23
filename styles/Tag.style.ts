@@ -1,13 +1,27 @@
 import styled from 'styled-components';
 
-type props = { fontSize: number; height: string };
+type props = {
+  fontSize: number;
+  height: string;
+  backgroundColor?: string;
+  borderRadius?: string;
+  color?: string;
+};
 
 export const Tag = styled.div<props>`
   display: flex;
   justify-content: center;
   align-items: center;
-  border-radius: 0.7rem;
-  background: ${({ theme }) => (theme.isDark ? theme.colors.dark.dark1 : '#fafafa')};
+  border-radius: ${({ borderRadius }) => (!borderRadius ? '0.7rem' : borderRadius)};
+
+  //if color prop is not avilable then check for darkmode
+  //if enabled set @color to white
+  //else set @color to black
+  //if color-prop then set @color to color-prop
+  color: ${({ theme, color }) =>
+    !color ? (theme.isDark ? theme.colors.light.wh : theme.colors.light.text) : color};
+
+  background: ${({ backgroundColor }) => backgroundColor};
   box-shadow: ${({ theme }) =>
     theme.isDark
       ? '5px 5px 17px #1c1e26, -5px -5px 17px #2c303c'

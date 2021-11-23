@@ -19,6 +19,14 @@ export const Head = styled.div`
     margin: 5.6rem auto;
   }
 `;
+export const center = styled.div`
+  display: flex;
+  justify-content: center;
+  @media only screen and (min-width: ${1440 / 16}em) {
+    max-width: 195rem;
+    margin: 0 auto;
+  }
+`;
 
 export const Sorting = styled.div`
   min-width: 235px;

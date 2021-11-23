@@ -51,7 +51,12 @@ const Index = ({ data }: props): JSX.Element => {
 
   return (
     <>
-      <Banner heading={'Blog'} subHeading={'Keep up-to-date with Dev Community'} />
+      <Banner
+        heading={'Build and ship your app <span> faster </span>'}
+        subHeading={
+          'Errorstack.io is a <span>gateway drug</span> for developers who want to build awesome web & mobile apps.'
+        }
+      />
 
       <PageCenter>
         <Trending />
@@ -70,7 +75,7 @@ const Index = ({ data }: props): JSX.Element => {
             </S.FieldWrap>
           </S.Sorting>
         </S.Head>
-        <div className='center'>
+        <S.center>
           <S.Container>
             <S.Posts>
               <div className=''>
@@ -137,7 +142,7 @@ const Index = ({ data }: props): JSX.Element => {
               </S.SidebarFooter>
             </S.Sidebar>
           </S.Container>
-        </div>
+        </S.center>
       </PageCenter>
     </>
   );

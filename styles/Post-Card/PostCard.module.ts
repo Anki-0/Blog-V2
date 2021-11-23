@@ -8,7 +8,7 @@ export const PostCard = styled.div`
   padding: 1rem;
   margin: 2rem 2.5rem;
   cursor: pointer;
-  background: #fff;
+  background: ${({ theme }) => (theme.isDark ? 'rgba(38, 40, 49, 1)' : theme.colors.light.wh)};
 
   width: calc(30% - 32px);
   height: inherit;
@@ -87,12 +87,11 @@ export const body = styled.div`
     }
   }
 `;
-export const card_Content = styled.div``;
 export const card_title = styled.div`
   & a {
     font-size: 1.6rem;
     line-height: 2.2rem;
-    color: #000;
+    color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.text)};
     font-weight: 600;
 
     @media only screen and (max-width: ${551 / 16}em) {
@@ -115,7 +114,7 @@ export const card_Author = styled.div`
   display: flex;
   align-items: center;
   position: absolute;
-  bottom: 1rem;
+  bottom: 1.2rem;
   @media only screen and (max-width: ${638 / 16}em) {
     bottom: 2rem;
   }
@@ -126,7 +125,7 @@ export const card_ava = styled.div`
 `;
 
 export const card_desc = styled.div`
-  color: #000;
+  color: ${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.light.text)};
   font-size: 1.2rem;
   font-weight: 500;
   line-height: 1.6rem;
@@ -142,11 +141,18 @@ export const card_desc = styled.div`
     font-size: 1rem;
     line-height: 1.3rem;
     font-weight: 500;
+    color: ${({ theme }) =>
+      theme.isDark ? theme.colors.light.graylight : theme.colors.light.text};
   }
+`;
+export const Post_Tags = styled.div`
+  gap: 1rem;
+  display: flex;
 `;
 export const foot = styled.div``;
 export const Post_Date = styled.div``;
 export const status = styled.div``;
 
-export const Post_Tags = styled.div``;
 export const Post_Meta = styled.div``;
+
+export const card_Content = styled.div``;

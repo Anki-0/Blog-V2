@@ -84,8 +84,6 @@ export const HeaderBrowse = styled.div`
 `;
 export const HeaderHead = styled.div<props>`
   position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   align-items: center;
   height: 2.4rem;
@@ -200,5 +198,47 @@ export const AuthControls = styled.div`
 
   & > a:not(:last-child) {
     margin-right: 1.5rem;
+  }
+
+  .login {
+    position: relative;
+
+    .item-label {
+      position: absolute;
+      display: grid;
+      place-items: center;
+      background-color: #6c5dd3c2;
+      top: 0;
+      left: -8px;
+      width: 5rem;
+      height: 2.5rem;
+      color: #fff;
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      border-radius: 0.2rem;
+      transform: scale(0) translateY(-15.3rem);
+      transition: transform 0.2s ease;
+    }
+
+    &:hover {
+      .item-label {
+        transform: scale(1) translateY(1.6rem);
+      }
+    }
+  }
+
+  .login-svg {
+    width: 3rem;
+    height: 3rem;
+    path {
+      transition: fill 0.5s ease;
+    }
+
+    &:hover {
+      path:first-child {
+        fill: #12181b;
+      }
+    }
   }
 `;
