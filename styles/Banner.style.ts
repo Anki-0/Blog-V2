@@ -26,7 +26,7 @@ export const BannerConetent = styled.div`
     text-transform: uppercase;
     font-family: ${({ theme }) => theme.fonts.cubano};
     font-size: 4rem;
-    font-weight: 600;
+    font-weight: 500;
     max-width: 49rem;
     margin-block-end: 2.6rem;
     word-wrap: break-word;
@@ -42,6 +42,7 @@ export const BannerConetent = styled.div`
     font-size: 2rem;
     max-width: 54rem;
     line-height: 1.6;
+    font-weight: 300;
 
     & > span {
       background-image: linear-gradient(90deg, #fa8142, #ff4088);
