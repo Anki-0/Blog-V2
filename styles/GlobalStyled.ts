@@ -1,36 +1,70 @@
 import { createGlobalStyle } from 'styled-components';
 import { fonts } from './util/font.module';
+import { prismDarkTheme } from '@/styles/Prism.module';
 
 export const GlobalStyle = createGlobalStyle`
 
 ${fonts};
+${prismDarkTheme};
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  display: block;
+  overflow: auto;
+  width: 100%;
+  font-variant-numeric: lining-nums;
+}
+hr {
+  background-color: var(--gray-1);
+  border: 0;
+  border-radius: 3px;
+  height: calc(0.25 * (1em + 1ex));
+}
+tr {
+  border-block-start: 1px solid var(--gray-3);
+}
 
+tr:nth-child(even) {
+  background-color: hsl(210deg 17% 82% / 20%); /* gray-1 */
+}
+
+td,
+th {
+  border: 1px solid var(--gray-3);
+  padding-block: calc(0.33 * (1 / 0.8 * 1ex));
+  padding-inline: calc(0.66 * (1 / 0.8 * 1ex));
+}
 
 *,
-  *::before,
-  *::after {
-    margin: 0;
-    padding: 0;
-    border: none;
-    outline: none;
-    box-sizing: border-box;
-  }
+*::before,
+*::after{
+  padding: 0;
+  margin: 0;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
 
   html {
     box-sizing: border-box;
     font-size: 62.5%;
     zoom: 90%!important;
-    /* @media only screen and (max-width: ${1200 / 16}em) {
-      font-size: 50%;
-      } */
+    line-height: calc(1em + 1ex);
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
   }
 
   body {
-    /* min-width: 375px; */
     font-family: 'sofia-pro', sans-serif;
     color:${({ theme }) => (theme.isDark ? theme.colors.light.wh : theme.colors.dark.dark1)}; ;
     background-color: ${({ theme }) =>
       theme.isDark ? theme.colors.dark.dark : theme.colors.light.wh};
+  }
+  
+  button,
+  input {
+    font-family: inherit;
+    font-size: inherit;
   }
 
 
@@ -47,17 +81,17 @@ ${fonts};
   input,
   textarea,
   select {
-    font-family: 'Montserrat',sans-serif;
+    font-family: 'sofia-pro',sans-serif;
  
   }
   
-  table {
+  /* table {
     border-spacing: 0;
     border-collapse: collapse;
     width: 100%;
-  }
+  } */
 
-  article{
+  /* article{
     &  h1,h2,h3,h4,h5,h6{
       padding-bottom: .9rem;
     border-bottom: 1px solid #333;
@@ -133,10 +167,8 @@ ${fonts};
   &  code {
     padding: 0.2em 0.4em;
     margin: 0;
-    /* font-size: 85%; */
     background: #161b22 !important;
-    /* color: #c9d1d9; */
-    color: #3e8eff;
+    color: #c9d1d9;
     border-radius: 6px;
   }
   &  p{
@@ -145,7 +177,7 @@ ${fonts};
     line-height: 3.1rem;
     letter-spacing:.8px;
   }
-  }
+  } */
   
   .page{
     display: flex;
@@ -172,4 +204,9 @@ ${fonts};
   color: #fff;
   background: #6C5DD3;
 }
+
+
+
+
+
 `;

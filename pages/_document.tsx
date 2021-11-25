@@ -41,10 +41,10 @@ class MyDocument extends Document {
     return (
       <Html lang='en'>
         <Head>
-          <link
+          {/* <link
             rel='stylesheet'
             href='https://unpkg.com/dracula-prism/dist/css/dracula-prism.css'
-          />
+          /> */}
         </Head>
         <body>
           <Main />

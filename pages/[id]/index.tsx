@@ -1,8 +1,7 @@
 import axiosInstance from '@/axiosConfig';
 import { ApiPosts, SpecificPost } from '@/interface/api';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import Head from 'next/head';
 import { useState } from 'react';
@@ -11,42 +10,22 @@ import * as S from '@/styles/post.module';
 import Author from '@/src/Layout/Author/Author';
 
 import { serialize } from 'next-mdx-remote/serialize';
+import rehypeAutolinkHeadings from 'rehype-autolink-headings';
+import rehypeHighlight from 'rehype-highlight';
+import slug from 'rehype-slug';
+import rehypeMeta from 'rehype-meta';
+import remarkGemoji from 'remark-gemoji';
+
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
-import remarkHtml from 'remark-html';
-import emoji from 'remark-emoji';
 
-type posts = {
-  data: ApiPosts;
-};
-
-export default function Index({
-  data,
-  mdxSource
-}: {
+type props = {
   data: SpecificPost;
   mdxSource: MDXRemoteSerializeResult;
-}): JSX.Element {
+};
+
+export default function Index({ data, mdxSource }: props): JSX.Element {
   const [post] = useState(data.post);
-  console.log(post);
-
-  useEffect(() => {
-    const test = async (): Promise<void> => {
-      try {
-        const res = await axiosInstance.get('/posts');
-        // const res = await axiosInstance.get(
-        //   '/posts/How to Make $1,000,000 a Year In Data Science and Machine Learning''A Fool-Proof Method'
-        // );
-        const { data }: posts = res;
-        console.log(data);
-      } catch (error) {
-        alert('errror');
-      }
-    };
-    test();
-  }, []);
-
-  const router = useRouter();
-  console.log(router.query);
+  console.log('MDX SOURCE =>>', mdxSource.compiledSource);
 
   return (
     <S.ArticalWrapper>
@@ -82,6 +61,7 @@ export default function Index({
 
         <S.PostArticleBody>
           <MDXRemote {...mdxSource} />
+          {/* {data.post.post_content} */}
         </S.PostArticleBody>
 
         <S.PostComments>Comment</S.PostComments>
@@ -95,7 +75,7 @@ export default function Index({
 export const getStaticPaths: GetStaticPaths = async () => {
   // Call an external API endpoint to get posts
   const res = await axiosInstance.get('/posts');
-  const { data }: posts = await res;
+  const { data }: { data: ApiPosts } = await res;
 
   // Get the paths we want to pre-render based on posts
   const paths = data.posts.map(post => ({
@@ -115,9 +95,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const { data }: { data: SpecificPost } = res;
   const mdxSource = await serialize(data.post.post_content, {
     mdxOptions: {
-      // rehypePlugins: [rehypeHighlight],
-      remarkPlugins: [remarkHtml, emoji]
-      // hastPlugins: [remarkPrism]
+      rehypePlugins: [
+        require('@jsdevtools/rehype-toc'),
+        slug,
+        rehypeAutolinkHeadings,
+        rehypeHighlight,
+        rehypeMeta
+      ],
+      remarkPlugins: [require('remark-mdx-code-meta'), require('remark-code-titles'), remarkGemoji]
     }
   });
 
