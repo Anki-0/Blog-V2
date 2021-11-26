@@ -271,7 +271,7 @@ export const prismDarkTheme = css`
     position: relative;
     z-index: 0;
     border: 1px solid red;
-    padding: 5rem;
+    padding: 3.5%;
   }
   .frame {
     &-tab {
@@ -296,17 +296,14 @@ export const prismDarkTheme = css`
     }
     &-tab-language,
     &-tab-metaString {
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
-      /* font-family: var(--mono); */
+      border-radius: 0.5rem;
       line-height: calc(1em + 1.25ex);
       margin: calc(0.3125em + 0.3125ex);
-      /* margin-block-end: 0; */
       padding-block: calc(0.3125em + 0.3125ex);
       padding-inline: calc(0.625em + 0.625ex);
       white-space: nowrap;
-      background-color: #0067f7 !important;
       float: right;
+      background: linear-gradient(45deg, #f44336, #e91e63);
     }
 
     &-tab-metaString {
