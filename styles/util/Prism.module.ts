@@ -8,6 +8,15 @@ export const prismDarkTheme = css`
     line-height: calc(1em + (1 / 0.8 * 1ex));
   }
 
+  code {
+    border-radius: 3px;
+    padding-block: 0.4125ex;
+    padding-inline: 0.825ex;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #2196f3;
+  }
+
   pre {
     margin-top: 0 !important;
     word-wrap: normal;

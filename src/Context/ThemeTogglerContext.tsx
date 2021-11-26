@@ -8,7 +8,7 @@ type contextType = {
 export const ThemeTogglerContext = createContext<contextType>({} as contextType);
 
 export const ThemeTogglerProvider: React.FC = ({ children }) => {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
 
   return (
     <ThemeTogglerContext.Provider value={{ isDark, setIsDark }}>
