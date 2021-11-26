@@ -6,8 +6,8 @@ import { PageCenter } from '../styles/PageCenter.style';
 
 const Banner = dynamic(() => import('../src/Layout/Banner/Banner'));
 const Tag = dynamic(() => import('../src/Layout/Tag/Tag'));
-// const PostCard = dynamic(() => import('../src/Layout/PostCard/PostCard'));
-import PostCard from '../src/Layout/PostCard/PostCard';
+const PostCard = dynamic(() => import('../src/Layout/PostCard/PostCard'));
+// import PostCard from '../src/Layout/PostCard/PostCard';
 import Trending from '../src/Layout/Trending/Trending';
 import MemberCard from '../src/Layout/Member/MemberCard';
 import { footerItems } from '../src/utils/footerItems';
