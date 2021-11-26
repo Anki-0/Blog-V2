@@ -13,6 +13,9 @@ import {
 } from '@/src/Context';
 
 import { GlobalStyle } from '../styles/GlobalStyled';
+import { MDXProvider } from '@mdx-js/react';
+
+import components from '@/src/_components/components';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
@@ -37,7 +40,9 @@ function MyApp({ Component, pageProps }: AppProps): JSX.Element {
                         <PageWrapper>
                           <>
                             <Header />
-                            <Component {...pageProps} />
+                            <MDXProvider components={components}>
+                              <Component {...pageProps} />
+                            </MDXProvider>
                           </>
                         </PageWrapper>
                       </>

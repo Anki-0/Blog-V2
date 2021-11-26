@@ -10,12 +10,7 @@ import * as S from '@/styles/post.module';
 import Author from '@/src/Layout/Author/Author';
 
 import { serialize } from 'next-mdx-remote/serialize';
-import rehypeAutolinkHeadings from 'rehype-autolink-headings';
-import rehypeHighlight from 'rehype-highlight';
-import slug from 'rehype-slug';
-import rehypeMeta from 'rehype-meta';
-import remarkGemoji from 'remark-gemoji';
-
+// import remarkGemoji from 'remark-gemoji';
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote';
 
 type props = {
@@ -25,7 +20,7 @@ type props = {
 
 export default function Index({ data, mdxSource }: props): JSX.Element {
   const [post] = useState(data.post);
-  console.log('MDX SOURCE =>>', mdxSource.compiledSource);
+  // console.log('MDX SOURCE =>>', mdxSource.compiledSource);
 
   return (
     <S.ArticalWrapper>
@@ -88,21 +83,15 @@ export const getStaticPaths: GetStaticPaths = async () => {
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  console.log(params?.id);
+  // console.log(params?.id);
   const id: string = params?.id as string;
 
   const res = await axiosInstance.get(`/posts/${encodeURI(id)}`);
   const { data }: { data: SpecificPost } = res;
   const mdxSource = await serialize(data.post.post_content, {
     mdxOptions: {
-      rehypePlugins: [
-        require('@jsdevtools/rehype-toc'),
-        slug,
-        rehypeAutolinkHeadings,
-        rehypeHighlight,
-        rehypeMeta
-      ],
-      remarkPlugins: [require('remark-mdx-code-meta'), require('remark-code-titles'), remarkGemoji]
+      // rehypePlugins: [rehypeAccessibleEmojis]
+      // remarkPlugins: [remarkGemoji]
     }
   });
 
