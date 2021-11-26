@@ -9,12 +9,15 @@ export const prismDarkTheme = css`
   }
 
   code {
-    border-radius: 3px;
-    padding-block: 0.4125ex;
+    border-radius: 4px;
+    padding-block: 0.7125ex;
     padding-inline: 0.825ex;
     font-weight: bold;
     text-decoration: underline;
-    color: #2196f3;
+    color: rgb(33, 150, 243);
+    text-align: center;
+    vertical-align: middle;
+    background-color: #454546c2;
   }
 
   pre {
