@@ -79,7 +79,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 
   // We'll pre-render only these paths at build time.
   // { fallback: false } means other routes should 404.
-  return { paths, fallback: false };
+  return { paths, fallback: 'blocking' };
 };
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
@@ -96,5 +96,5 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   });
 
   // will be passed to the page component as props
-  return { props: { data, mdxSource }, revalidate: 5000 };
+  return { props: { data, mdxSource }, revalidate: 60 };
 };
