@@ -194,7 +194,7 @@ export const SidebarIcon = styled.div`
 
   flex-shrink: 0;
   width: ${({ theme }) => (theme.toggle ? '5.6rem' : '6rem')};
-  height: 56px;
+  height: 5.6rem;
   padding: ${({ theme }) => (theme.toggle ? '0rem' : '0 0 0 .4rem')};
 
   & > svg {
@@ -253,7 +253,7 @@ export const Box = styled.div`
     position: absolute;
     top: 50%;
     left: 2px;
-    transform: ${({ theme }) => (theme.isDark ? 'translate(48px, -50%);' : 'translateY(-50%)')};
+    transform: ${({ theme }) => (theme.isDark ? 'translate(4.8rem, -50%);' : 'translateY(-50%)')};
     width: ${({ theme }) => (theme.isDark ? '.4rem' : '2rem')};
     height: ${({ theme }) => (theme.isDark ? '1.6rem' : '2rem')};
     border-radius: ${({ theme }) => (theme.isDark ? '.2rem' : '50%')};

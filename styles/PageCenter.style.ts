@@ -11,7 +11,7 @@ export const PageCenter = styled.div`
     @media only screen and (min-width: ${1440 / 16}em) {
       max-width: 195rem;
       margin: 0 auto;
-      padding: 64px;
+      padding: 6.4rem;
     }
   }
 

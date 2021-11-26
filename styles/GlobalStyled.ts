@@ -22,6 +22,10 @@ ${fonts};
     zoom: 90%!important;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
+
+    @media only screen and (max-width:${639 / 16}em){
+      font-size: 58%;
+    }
   }
 
   body {
@@ -72,7 +76,7 @@ ${fonts};
     padding-left: 0;
     }
     @media only screen and (max-width: ${767 / 16}em){
-    padding-top: 80px;
+    padding-top: 8.0rem;
     }
   }
 

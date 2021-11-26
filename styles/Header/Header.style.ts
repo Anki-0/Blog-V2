@@ -24,8 +24,8 @@ export const Header = styled.div`
     left: 0;
   }
   @media only screen and (max-width: ${767 / 16}em) {
-    height: 80px;
-    padding: 0 24px;
+    height: 8rem;
+    padding: 0 2%.4rem;
   }
 `;
 export const HeaderBurger = styled.button`
@@ -127,12 +127,12 @@ export const HeaderBody = styled.div<props>`
   visibility: ${({ show }) => (show ? 'visible' : 'hidden')};
   opacity: ${({ show }) => (show ? 1 : 0)};
   transition: all 0.25s;
-  padding: 6px 22px;
+  padding: 0.6rem 2.2rem;
   background: #3f8cff;
   border-radius: 16px;
   top: calc(100% + 3.8rem);
   left: 0;
-  width: 256px;
+  width: 25.6rem;
 
   &:before {
     content: '';
@@ -143,15 +143,15 @@ export const HeaderBody = styled.div<props>`
     bottom: -6px;
     z-index: -1;
     background: rgba(63, 140, 255, 0.5);
-    border-radius: 16px;
+    border-radius: 1.6rem;
   }
   &:after {
     content: '';
     position: absolute;
     bottom: 100%;
-    width: 16px;
+    width: 1.6rem;
     height: 6px;
-    left: 57px;
+    left: 5.7rem;
     background-color: #3f8cff;
     clip-path: polygon(50% 0, 0 100%, 100% 100%);
     border-radius: 5rem;
@@ -160,8 +160,8 @@ export const HeaderBody = styled.div<props>`
   & > .links {
     display: flex;
     align-items: center;
-    height: 56px;
-    font-size: 14px;
+    height: 5.6rem;
+    font-size: 1.4rem;
     font-weight: 600;
     color: #ffffff;
     transition: opacity 0.25s;
@@ -173,12 +173,12 @@ export const StarIcon = styled.div`
   justify-content: center;
   align-items: center;
   flex-shrink: 0;
-  width: 24px;
-  height: 24px;
+  width: 2.4rem;
+  height: 2.4rem;
   font-size: 0;
 
   & > svg {
-    font-size: 20px;
+    font-size: 2rem;
     fill: #ffffff;
 
     transition: fill 0.25s;
@@ -186,7 +186,7 @@ export const StarIcon = styled.div`
 `;
 export const BrowseText = styled.div`
   flex-grow: 1;
-  padding: 0 16px;
+  padding: 0 1.6rem;
 `;
 
 export const AuthControls = styled.div`

@@ -10,16 +10,17 @@ export const Main__Wrapper = styled.div`
 export const Settings__wrapper = styled.div`
   display: flex;
   justify-content: center;
-  max-width: 1040px !important;
+  max-width: 104rem !important;
+
   padding-top: 6rem;
-  padding-right: 20px;
-  padding-left: 20px;
+  padding-right: 2rem;
+  padding-left: 2rem;
   margin-right: auto;
   margin-left: auto;
 `;
 export const Settings__sidebar = styled.div`
-  padding-right: 20px !important;
-  width: 265px !important;
+  padding-right: 20rem !important;
+  width: 26.5rem !important;
   flex: 0 0 auto;
   @media screen and (max-width: 1199px) {
     display: none !important;
@@ -41,7 +42,7 @@ export const Settings__sidebar = styled.div`
 `;
 export const Settings__content = styled.div`
   width: 100%;
-  max-width: 760px !important;
+  max-width: 76rem !important;
   flex: 0 0 auto;
 `;
 export const AboutYou = styled.div``;
@@ -59,7 +60,7 @@ export const List__Items = styled.li`
   list-style: none;
   display: flex;
   align-items: center;
-  padding: 40px 0 35px;
+  padding: 4rem 0 3%.5rem;
   @media (max-width: 767px) {
     flex-wrap: wrap;
   }
@@ -85,8 +86,8 @@ export const List__Items = styled.li`
       font-weight: 700 !important;
       font-style: normal !important;
       letter-spacing: 0 !important;
-      font-size: 21px !important;
-      line-height: 24px !important;
+      font-size: 2.1rem !important;
+      line-height: 2.4rem !important;
       transform: translateY(-1.88px);
       letter-spacing: -0.29px !important;
     }
@@ -123,8 +124,8 @@ export const List__Items = styled.li`
     /* display: flex; */
     align-self: flex-start;
     .button {
-      line-height: 37px;
-      padding: 0 16px;
+      line-height: 3.7rem;
+      padding: 0 1.6rem;
       border: 1px solid rgb(255 255 255 / 63%);
       border-radius: 1rem;
       background: none;

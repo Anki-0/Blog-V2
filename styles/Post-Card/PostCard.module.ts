@@ -2,15 +2,15 @@ import styled from 'styled-components';
 
 export const PostCard = styled.div`
   position: relative;
-  flex: 0 0 calc(30% - 32px);
+  flex: 0 0 calc(30% - 3.2rem);
   display: block;
-  border-radius: 5px;
+  border-radius: 0.5rem;
   padding: 1rem;
   margin: 2rem 2.5rem;
   cursor: pointer;
   background: ${({ theme }) => (theme.isDark ? 'rgba(38, 40, 49, 1)' : theme.colors.light.wh)};
 
-  width: calc(30% - 32px);
+  width: calc(30% - 3.2rem);
   height: inherit;
   transition: box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out;
 
@@ -20,25 +20,25 @@ export const PostCard = styled.div`
   }
 
   @media only screen and (max-width: ${1771 / 16}em) {
-    -ms-flex: 0 0 calc(33.33% - 32px);
-    flex: 0 0 calc(32% - 32px);
-    width: calc(32% - 32px);
+    -ms-flex: 0 0 calc(33.33% - 3.2rem);
+    flex: 0 0 calc(32% - 3.2rem);
+    width: calc(32% - 3.2rem);
     margin: 2rem;
   }
   @media only screen and (max-width: ${1307 / 16}em) {
-    /* -ms-flex: 0 0 calc(33.33% - 32px); */
-    flex: 0 0 calc(33% - 32px);
-    width: calc(33% - 32px);
+    /* -ms-flex: 0 0 calc(33.33% - 3.2rem); */
+    flex: 0 0 calc(33% - 3.2rem);
+    width: calc(33% - 3.2rem);
     margin: 1.6rem;
   }
   @media only screen and (max-width: ${1000 / 16}em) {
-    /* -ms-flex: 0 0 calc(33.33% - 32px); */
-    flex: 0 0 calc(33.33% - 32px);
-    width: calc(33.33% - 32px);
+    /* -ms-flex: 0 0 calc(33.33% - 3.2rem); */
+    flex: 0 0 calc(33.33% - 3.2rem);
+    width: calc(33.33% - 3.2rem);
   }
   @media only screen and (max-width: ${829 / 16}em) {
-    flex: 0 0 calc(48.33% - 32px);
-    width: calc(48.33% - 32px);
+    flex: 0 0 calc(48.33% - 3.2rem);
+    width: calc(48.33% - 3.2rem);
   }
   @media only screen and (max-width: ${741 / 16}em) {
     width: 100%;

@@ -238,12 +238,12 @@ export const form_box = styled.div`
     font-weight: 700;
     text-align: center;
     position: relative;
-    margin-top: 40px;
+    margin-top: 4rem;
 
     &::before,
     &::after {
       content: '';
-      width: 70px;
+      width: 7rem;
       height: 1px;
       background-color: #eaeaf5;
       position: absolute;
@@ -378,22 +378,22 @@ export const form = styled.form`
 
 export const button = styled.button`
   display: inline-block;
-  height: 48px;
-  border-radius: 10px;
+  height: 4.8rem;
+  border-radius: 1rem;
   background-color: #615dfa;
   box-shadow: 4px 7px 12px 0 rgb(97 93 250 / 20%);
   color: #fff;
   font-size: 1.4rem;
   font-weight: 700;
   text-align: center;
-  line-height: 48px;
+  line-height: 4.8rem;
   cursor: pointer;
-  height: 54px;
-  line-height: 54px;
+  height: 5.4rem;
+  line-height: 5.4rem;
   width: 100%;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
     border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  box-shadow: 3px 5px 10px 0 rgb(62 63 94 / 20%);
+  box-shadow: 0.3rem 0.5rem 1rem 0 rgb(62 63 94 / 20%);
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.light.bluedark};
@@ -402,6 +402,6 @@ export const button = styled.button`
 
 export const box_form_decoration = styled.div`
   position: absolute;
-  top: -14px;
-  left: -80px;
+  top: -1.4rem;
+  left: -8rem;
 `;

@@ -4,7 +4,7 @@ export const ArticalWrapper = styled.div`
   max-width: 134.4rem;
   /* margin: 0 auto; */
   padding: 6.4rem;
-  @media only screen and (max-width: 767px) {
+  @media only screen and (max-width: 768px) {
     padding: 0;
   }
 `;

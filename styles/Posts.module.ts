@@ -16,7 +16,7 @@ export const Posts = styled.div`
   border-radius: 1rem;
 `;
 export const Post_Wrapper = styled.div`
-  margin-right: 20px;
+  margin-right: 2rem;
   width: 100%;
   display: block;
 `;

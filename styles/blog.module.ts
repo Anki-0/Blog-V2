@@ -12,7 +12,7 @@ export const Head = styled.div`
   }
   @media only screen and (max-width: ${767 / 16}em) {
     display: block;
-    margin-bottom: 24px;
+    margin-bottom: 2.4rem;
   }
   @media only screen and (min-width: ${1440 / 16}em) {
     max-width: 180.5rem;
@@ -29,8 +29,8 @@ export const center = styled.div`
 `;
 
 export const Sorting = styled.div`
-  min-width: 235px;
-  margin-left: 30px;
+  min-width: 23.5rem;
+  margin-left: 3rem;
   margin: auto 0;
   @media only screen and (max-width: ${767 / 16}em) {
     margin: 2rem 0 0 0;
@@ -39,14 +39,14 @@ export const Sorting = styled.div`
 export const FieldWrap = styled.div``;
 export const FieldSelect = styled.select`
   min-width: 100%;
-  height: 56px;
-  padding: 0 45px 0 24px;
+  height: 5.6rem;
+  padding: 0 4.5rem 0 2.4rem;
   appearance: none;
   border: none;
-  border-radius: 16px;
+  border-radius: 1.6rem;
   background: ${({ theme }) =>
     theme.isDark ? 'rgba(240,243,246,0.1)' : ' rgba(228, 228, 228, 0.5)'};
-  font-size: 14px;
+  font-size: 1.4rem;
   font-weight: 600;
   color: ${({ theme }) =>
     theme.isDark ? theme.colors.light.graylight : theme.colors.light.graydark};
@@ -60,7 +60,7 @@ export const Container = styled.div`
 `;
 export const Posts = styled.div`
   display: flex;
-  margin: 0 -16px;
+  margin: 0 -1.6rem;
   flex-wrap: wrap;
   height: fit-content;
   justify-content: center;
@@ -97,11 +97,11 @@ export const Sidebar = styled.div`
 
 export const Recommended = styled.div`
   padding-bottom: 4rem;
-  border-bottom: 1px solid
+  border-bottom: 1rem solid
     ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgb(60,63,70,.15)')};
 
   & > p {
-    line-height: 18px;
+    line-height: 18rem;
     font-size: 1.3rem;
     text-transform: uppercase;
     margin-bottom: 3rem;
@@ -118,7 +118,7 @@ export const WhoToFollow = styled.div`
   padding: 4rem 0;
   display: flex;
   flex-direction: column;
-  border-bottom: 1px solid
+  border-bottom: 1rem solid
     ${({ theme }) => (theme.isDark ? 'rgb(60, 63, 70)' : 'rgba(60,63,70,.15)')};
   & > p {
     font-size: 1.3rem;
@@ -152,7 +152,7 @@ export const loadMorePost = styled.button`
   cursor: pointer;
   transition: transform 0.2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
   align-self: center;
-  box-shadow: 0px 4px 9px #216bf39c;
+  box-shadow: 0rem 4rem 9rem #216bf39c;
 
   &:hover {
     transform: scale(1.04);

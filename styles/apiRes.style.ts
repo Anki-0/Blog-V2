@@ -12,7 +12,7 @@ export const Message = styled.span<props>`
   color: ${({ status }) =>
     status === 'success' ? 'rgb(100, 254, 136)' : status === 'fail' ? 'rgb(254, 100, 100)' : ''};
   border: ${({ status }) => (status === 'success' ? '#6bef9d' : status === 'fail' ? '#ff9393' : '')}
-    1px solid;
+    0.1rem solid;
   background-color: ${({ status }) =>
     status === 'success'
       ? 'rgba(100, 254, 136,.1)'

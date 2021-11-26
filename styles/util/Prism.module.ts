@@ -64,26 +64,26 @@ export const prismDarkTheme = css`
 
   h1,
   h2 {
-    font-size: 4.5rem;
-    line-height: calc(1em + (1 / 2.5 * 1ex));
-    margin-block: calc(1 / 2.5 * (1em + 1ex));
+    font-size: 2.5em;
+    line-height: calc(1em + 0.4ex);
+    margin-block: calc(0.4em + 0.4ex);
   }
 
   h3 {
-    font-size: 2.25em;
-    line-height: calc(1em + (1 / 1.5 * 1ex));
-    margin-block: calc(1 / 1.5 * (1em + 1ex));
+    font-size: 2em;
+    line-height: calc(1em + 0.66667ex);
+    margin-block: calc(0.66667em + 0.66667ex);
   }
 
   h4 {
     font-size: 1.25em;
-    line-height: calc(1em + (1 / 1.25 * 1ex));
-    margin-block: calc(1 / 1.25 * (1em + 1ex));
+    line-height: calc(1em + 0.8ex);
+    margin-block: calc(0.8em + 0.8ex);
   }
 
   h5,
   h6 {
-    font-size: 1.13em;
+    font-size: 1em;
     line-height: calc(1em + 1ex);
     margin-block: calc(1em + 1ex);
   }
@@ -210,6 +210,22 @@ export const prismDarkTheme = css`
     color: #8250df;
   }
 
+  sup {
+    vertical-align: top;
+  }
+
+  main {
+    margin-block-start: calc(4 * (1em + 1ex));
+  }
+
+  label {
+    display: block;
+  }
+
+  summary {
+    cursor: pointer;
+  }
+
   .navigation a {
     display: block;
     color: inherit;
@@ -229,6 +245,24 @@ export const prismDarkTheme = css`
     border-radius: 10px;
     position: relative;
     color: #fff;
+    margin-block: calc(1em + 1ex);
+  }
+
+  div[type='important'] {
+    color: #f0f6fc;
+    background-color: #4c0014;
+    inset: 0;
+    --squircle-radius: 10px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: calc(1em + 1.25ex);
+    margin-block: calc(1.25em + 1.25ex);
+    padding-inline: calc(1.25em + 1.25ex);
+    position: relative;
+    z-index: 0;
+    border: 1px solid red;
+    padding: 5rem;
   }
   .frame {
     &-tab {
@@ -293,6 +327,7 @@ export const prismDarkTheme = css`
   code[class*='language-'],
   pre[class*='language-'] {
     color: #abb2bf;
+    font-size: 1.5rem;
     background: none;
     font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
     text-align: left;

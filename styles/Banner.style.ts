@@ -12,8 +12,8 @@ export const Banner = styled.div`
     theme.isDark
       ? 'linear-gradient(45deg, rgb(31, 33, 40, 0), rgb(31, 33, 40, 0.69))'
       : 'linear-gradient(90deg, rgba(34,34,34,1) 0%, rgba(55,55,55,1) 38%, rgba(60,72,89,1) 100%);'};
-  box-shadow: inset 0 -1px 0 0 ${({ theme }) => (theme.isDark ? 'rgba(228, 228, 228, .1)' : theme.colors.light.border)};
-  backdrop-filter: ${({ theme }) => (theme.isDark ? 'blur(8px)' : 'blur(0px)')};
+  box-shadow: inset 0 -1rem 0 0 ${({ theme }) => (theme.isDark ? 'rgba(228, 228, 228, .1)' : theme.colors.light.border)};
+  backdrop-filter: ${({ theme }) => (theme.isDark ? 'blur(8rem)' : 'blur(0rem)')};
   overflow: hidden;
 
   @media only screen and (max-width: ${768 / 16}em) {
@@ -49,7 +49,7 @@ export const BannerConetent = styled.div`
       color: #fff;
       background-image: linear-gradient(90deg, #fa8142, #ff4088);
       padding: 0.5rem 0.5rem;
-      border-radius: 3px;
+      border-radius: 0.3rem;
       font-size: 0.85em;
       font-weight: 700;
     }

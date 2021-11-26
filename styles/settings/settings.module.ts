@@ -30,7 +30,7 @@ export const Grid = styled.div`
   align-items: start;
   grid-template-areas: 'sidebar content';
   grid-template-columns: 23.9864864865% 74.6621621622%;
-  max-width: 1180px;
+  max-width: 118rem;
   margin: 5rem auto 0;
   @media screen and (max-width: 1365px) {
     grid-template-columns: 100%;
@@ -41,19 +41,19 @@ export const Grid = styled.div`
   }
 `;
 export const Sidebar = styled.div`
-  border-radius: 12px;
+  border-radius: 1.2rem;
   background-color: #fff;
   box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
 `;
 export const Sidebar_Menu = styled.div`
   & .sidebar-menu-head {
-    height: 112px;
-    padding: 28px 26px 0 60px;
+    height: 11.2rem;
+    padding: 2.8rem 2.6rem 0 6rem;
     background-color: #fff;
     cursor: pointer;
     position: relative;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 1.2rem;
+    border-top-right-radius: 1.2rem;
 
     & > div {
       display: flex;
@@ -111,11 +111,11 @@ export const Sidebar_Menu = styled.div`
 
     .menu-link {
       display: block;
-      height: 34px;
+      height: 3.4rem;
       color: #3a3a3a;
       font-size: 1.4rem;
       font-weight: 600;
-      line-height: 34px;
+      line-height: 3.4rem;
       cursor: pointer;
       transition: transform 0.2s ease-in-out, color 0.25s ease-in-out;
 
@@ -228,7 +228,7 @@ export const Widget_Box = styled.div<props>`
     padding: 3.2rem 2.8rem;
     border-radius: 1.2rem;
     background-color: #fff;
-    box-shadow: 0 0 40px 0 rgb(94 92 154 / 6%);
+    box-shadow: 0 0 4rem 0 rgb(94 92 154 / 6%);
     position: relative;
 
     &__title {
