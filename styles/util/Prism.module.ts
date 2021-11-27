@@ -10,11 +10,9 @@ export const prismDarkTheme = css`
 
   code {
     border-radius: 4px;
-    padding-block: 0.7125ex;
+    padding-block: 0.3525ex;
     padding-inline: 0.825ex;
     font-weight: bold;
-    text-decoration: underline;
-    color: rgb(33, 150, 243);
     text-align: center;
     vertical-align: middle;
     background-color: #454546c2;
@@ -213,13 +211,19 @@ export const prismDarkTheme = css`
     margin-inline-start: calc(1em + 1ex);
   }
   a {
-    color: #0969da;
     transition: 200ms;
     transition-property: color;
+    text-decoration: underline;
+    color: rgb(33, 150, 243);
   }
 
   a.alt {
     color: #8250df;
+  }
+  p {
+    line-height: 1.8;
+    font-size: 1.8rem;
+    color: #b2becd;
   }
 
   sup {
@@ -299,14 +303,13 @@ export const prismDarkTheme = css`
     }
     &-tab-language,
     &-tab-metaString {
-      border-radius: 0.5rem;
+      /* border-radius: 0.5rem; */
       line-height: calc(1em + 1.25ex);
       margin: calc(0.3125em + 0.3125ex);
       padding-block: calc(0.3125em + 0.3125ex);
       padding-inline: calc(0.625em + 0.625ex);
       white-space: nowrap;
       float: right;
-      background: linear-gradient(45deg, #f44336, #e91e63);
     }
 
     &-tab-metaString {
@@ -317,7 +320,7 @@ export const prismDarkTheme = css`
       border-top-left-radius: 2px;
       border-top-right-radius: 2px;
       /* font-family: var(--mono); */
-      font-size: smaller;
+      font-size: 1.5rem;
       line-height: calc(1em + 1.25ex);
       margin: calc(0.3125em + 0.3125ex);
       margin-block-end: 0;

@@ -1,7 +1,5 @@
-import { useRouter } from 'next/router';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-
 import { Header, Sidebar } from '@/src/Layout';
 import { ThemeHOC, PageWrapper } from '@/src/HOC';
 import {
@@ -16,10 +14,19 @@ import { GlobalStyle } from '../styles/GlobalStyled';
 import { MDXProvider } from '@mdx-js/react';
 
 import components from '@/src/_components/components';
+// import { useEffect } from 'react';
+// import NProgress from 'nprogress';
+import { /*Router, */ useRouter } from 'next/router';
 
 function MyApp({ Component, pageProps }: AppProps): JSX.Element {
   const router = useRouter();
   console.log(router.pathname);
+
+  // useEffect(() => {
+  //   Router.events.on('routeChangeStart', () => NProgress.start());
+  //   Router.events.on('routeChangeComplete', () => NProgress.done());
+  //   Router.events.on('routeChangeError', () => NProgress.done());
+  // }, []);
 
   return (
     <>

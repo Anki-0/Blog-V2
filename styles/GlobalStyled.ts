@@ -79,6 +79,11 @@ ${fonts};
     padding-top: 8.0rem;
     }
   }
+  .nprogress-busy{
+    z-index:5000000;
+    background-color: #fff;
+    height: 2rem;
+  }
 
   ::selection {
   color: #fff;
