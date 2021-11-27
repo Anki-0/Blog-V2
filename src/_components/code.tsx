@@ -34,7 +34,11 @@ export const Code = (props: props): JSX.Element => {
           ) : (
             <div className='frame-tab'>
               <span className='frame-tab-language'>{`${language.toUpperCase()}`}</span>
-              {!meta ? '' : <span className='frame-tab-metaString'>{`${meta}`}</span>}
+              {!meta ? (
+                ''
+              ) : (
+                <span className='frame-tab-metaString'>{`${meta.replace(/['"]+/g, '')}`}</span>
+              )}
             </div>
           )}
           <CopyButton code={code} />
